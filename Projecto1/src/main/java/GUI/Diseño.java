@@ -63,7 +63,6 @@ public class Diseño extends javax.swing.JFrame {
         btnAFCpartidoXpartido = new javax.swing.JButton();
         btnAFCtodosLOSpartido = new javax.swing.JButton();
         btnAFCsedesYpaises = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,28 +90,6 @@ public class Diseño extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 891, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnCAFsedeYpaises, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                        .addComponent(btnCAFpartidoXpartido, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(btnCAFtodosLOSpartidos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(btnCAFpartidoXpartido)
-                .addGap(18, 18, 18)
-                .addComponent(btnCAFtodosLOSpartidos)
-                .addGap(18, 18, 18)
-                .addComponent(btnCAFsedeYpaises)
-                .addContainerGap(280, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-=======
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -134,12 +111,7 @@ public class Diseño extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addComponent(btnCAFpartidoXpartido)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-<<<<<<< HEAD
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-=======
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
->>>>>>> Fabricio
         );
 
         tblAFC.addTab("CAF", jPanel1);
@@ -168,13 +140,8 @@ public class Diseño extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
-=======
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCONCACAFpartidoXpartido)
                     .addComponent(btnCONCACAFtodosLOSpartidos)
@@ -184,18 +151,7 @@ public class Diseño extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(btnCONCACAFpartidoXpartido)
-                .addGap(55, 55, 55)
-                .addComponent(btnCONCACAFtodosLOSpartidos)
-                .addGap(52, 52, 52)
-=======
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
                 .addComponent(btnCONCACAFsedesYpaises)
                 .addGap(18, 18, 18)
                 .addComponent(btnCONCACAFpartidoXpartido)
@@ -243,18 +199,11 @@ public class Diseño extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-=======
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCOMEBOLsedesYpaises)
                 .addGap(18, 18, 18)
                 .addComponent(btnCOMEBOLpartidoXpartido)
                 .addGap(18, 18, 18)
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
                 .addComponent(btnCOMEBOLtodosLOSpartidos)
                 .addGap(24, 24, 24))
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -289,18 +238,9 @@ public class Diseño extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
-=======
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-=======
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
->>>>>>> Fabricio
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnOFCsedesYpaises)
                     .addComponent(btnOFCtodosLOSpartidos)
@@ -310,12 +250,6 @@ public class Diseño extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-=======
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
@@ -327,16 +261,8 @@ public class Diseño extends javax.swing.JFrame {
                         .addGap(0, 273, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
-<<<<<<< HEAD
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-                .addComponent(btnOFCtodosLOSpartidos)
-                .addGap(0, 84, Short.MAX_VALUE))
-=======
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addGap(0, 60, Short.MAX_VALUE))
->>>>>>> Fabricio
         );
 
         tblAFC.addTab("OFC", jPanel5);
@@ -365,52 +291,17 @@ public class Diseño extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 863, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnUEFAtodosLOSpartidos)
-                    .addComponent(btnUEFApartidoXpartido)
-                    .addComponent(btnUEFAsedesYpaises))
-                .addContainerGap(40, Short.MAX_VALUE))
-=======
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(btnUEFAsedesYpaises))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(btnUEFAtodosLOSpartidos))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(btnUEFApartidoXpartido)))
-                .addContainerGap(648, Short.MAX_VALUE))
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-=======
                     .addComponent(btnUEFAsedesYpaises)
                     .addComponent(btnUEFApartidoXpartido)
                     .addComponent(btnUEFAtodosLOSpartidos))
                 .addContainerGap(774, Short.MAX_VALUE))
->>>>>>> Fabricio
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addContainerGap()
-                .addComponent(btnUEFApartidoXpartido)
-                .addGap(18, 18, 18)
-                .addComponent(btnUEFAtodosLOSpartidos)
-                .addGap(18, 18, 18)
-                .addComponent(btnUEFAsedesYpaises)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 36, Short.MAX_VALUE))
-=======
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -420,12 +311,7 @@ public class Diseño extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(btnUEFAtodosLOSpartidos))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< HEAD
-                .addContainerGap(13, Short.MAX_VALUE))
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-=======
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> Fabricio
         );
 
         tblAFC.addTab("UEFA", jPanel4);
@@ -454,13 +340,8 @@ public class Diseño extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 457, Short.MAX_VALUE)
-=======
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAFCpartidoXpartido)
                     .addComponent(btnAFCsedesYpaises)
@@ -470,18 +351,6 @@ public class Diseño extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGap(29, 29, 29)
-                .addComponent(btnAFCtodosLOSpartido)
-                .addGap(30, 30, 30)
-                .addComponent(btnAFCpartidoXpartido)
-                .addGap(34, 34, 34)
-                .addComponent(btnAFCsedesYpaises)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-=======
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
@@ -491,18 +360,10 @@ public class Diseño extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addComponent(btnAFCtodosLOSpartido))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< HEAD
-                .addGap(0, 3, Short.MAX_VALUE))
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-=======
                 .addGap(0, 0, Short.MAX_VALUE))
->>>>>>> Fabricio
         );
 
         tblAFC.addTab("AFC", jPanel6);
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("Clasificacion mundial 2023");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -512,19 +373,13 @@ public class Diseño extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(tblAFC)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(371, 371, 371))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tblAFC, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(tblAFC, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
@@ -533,7 +388,10 @@ public class Diseño extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    // Botones
+    
+   
+    
+     // Botones
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAFCpartidoXpartido;
     private javax.swing.JButton btnAFCsedesYpaises;
@@ -553,7 +411,6 @@ public class Diseño extends javax.swing.JFrame {
     private javax.swing.JButton btnUEFApartidoXpartido;
     private javax.swing.JButton btnUEFAsedesYpaises;
     private javax.swing.JButton btnUEFAtodosLOSpartidos;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

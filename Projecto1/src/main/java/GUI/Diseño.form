@@ -28,21 +28,14 @@
               <Component id="tblAFC" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="298" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="371" max="-2" attributes="0"/>
-          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="tblAFC" min="-2" pref="455" max="-2" attributes="0"/>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="tblAFC" min="-2" pref="514" max="-2" attributes="0"/>
+              <EmptySpace pref="13" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,18 +58,6 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
-                      <Component id="jScrollPane1" min="-2" pref="891" max="-2" attributes="0"/>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnCAFsedeYpaises" pref="170" max="32767" attributes="0"/>
-                              <Component id="btnCAFpartidoXpartido" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="btnCAFtodosLOSpartidos" alignment="1" min="-2" pref="169" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-=======
                       <Component id="jScrollPane1" min="-2" pref="758" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -91,29 +72,12 @@
                               </Group>
                           </Group>
                       </Group>
-<<<<<<< HEAD
-                      <EmptySpace pref="774" max="32767" attributes="0"/>
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-=======
                       <EmptySpace pref="761" max="32767" attributes="0"/>
->>>>>>> Fabricio
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="btnCAFpartidoXpartido" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnCAFtodosLOSpartidos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnCAFsedeYpaises" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="280" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
-=======
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="btnCAFsedeYpaises" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
@@ -122,12 +86,7 @@
                       <Component id="btnCAFpartidoXpartido" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-<<<<<<< HEAD
-                  <Component id="jScrollPane1" alignment="0" pref="545" max="32767" attributes="0"/>
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-=======
                   <Component id="jScrollPane1" alignment="0" pref="483" max="32767" attributes="0"/>
->>>>>>> Fabricio
               </Group>
             </DimensionLayout>
           </Layout>
@@ -246,13 +205,8 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
-                      <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="264" max="32767" attributes="0"/>
-=======
                       <Component id="jScrollPane2" min="-2" pref="759" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnCONCACAFpartidoXpartido" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnCONCACAFtodosLOSpartidos" min="-2" max="-2" attributes="0"/>
@@ -265,19 +219,6 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
-                      <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                      <Component id="btnCONCACAFpartidoXpartido" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                      <Component id="btnCONCACAFtodosLOSpartidos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="btnCONCACAFsedesYpaises" min="-2" max="-2" attributes="0"/>
-=======
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnCONCACAFsedesYpaises" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -420,10 +361,6 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
-                      <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-=======
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnCOMEBOLsedesYpaises" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -431,7 +368,6 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnCOMEBOLtodosLOSpartidos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -555,20 +491,10 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="260" max="32767" attributes="0"/>
-=======
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane4" min="-2" pref="757" max="-2" attributes="0"/>
-<<<<<<< HEAD
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-=======
                       <EmptySpace max="-2" attributes="0"/>
->>>>>>> Fabricio
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnOFCsedesYpaises" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btnOFCtodosLOSpartidos" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -581,13 +507,6 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
-                      <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-=======
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
@@ -603,14 +522,7 @@
                               <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-<<<<<<< HEAD
-                      <EmptySpace max="-2" attributes="0"/>
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-                      <Component id="btnOFCtodosLOSpartidos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="84" max="32767" attributes="0"/>
-=======
                       <EmptySpace min="0" pref="60" max="32767" attributes="0"/>
->>>>>>> Fabricio
                   </Group>
               </Group>
             </DimensionLayout>
@@ -729,17 +641,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane5" min="-2" pref="863" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnUEFAtodosLOSpartidos" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnUEFApartidoXpartido" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnUEFAsedesYpaises" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
-=======
                   <Group type="102" attributes="0">
                       <Component id="jScrollPane5" min="-2" pref="759" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -748,27 +649,13 @@
                           <Component id="btnUEFApartidoXpartido" min="-2" max="-2" attributes="0"/>
                           <Component id="btnUEFAtodosLOSpartidos" min="-2" max="-2" attributes="0"/>
                       </Group>
-<<<<<<< HEAD
-                      <EmptySpace pref="648" max="32767" attributes="0"/>
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-=======
                       <EmptySpace pref="774" max="32767" attributes="0"/>
->>>>>>> Fabricio
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnUEFApartidoXpartido" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnUEFAtodosLOSpartidos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnUEFAsedesYpaises" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-=======
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
@@ -780,16 +667,7 @@
                           </Group>
                           <Component id="jScrollPane5" alignment="0" min="-2" pref="532" max="-2" attributes="0"/>
                       </Group>
-<<<<<<< HEAD
-                      <EmptySpace pref="13" max="32767" attributes="0"/>
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane5" min="-2" pref="388" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
-=======
                       <EmptySpace max="32767" attributes="0"/>
->>>>>>> Fabricio
                   </Group>
               </Group>
             </DimensionLayout>
@@ -908,19 +786,8 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="457" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnAFCtodosLOSpartido" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnAFCpartidoXpartido" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnAFCsedesYpaises" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-=======
                   <Group type="102" attributes="0">
                       <Component id="jScrollPane6" min="-2" pref="758" max="-2" attributes="0"/>
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnAFCpartidoXpartido" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -934,19 +801,6 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-<<<<<<< HEAD
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="btnAFCtodosLOSpartido" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="btnAFCpartidoXpartido" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="btnAFCsedesYpaises" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-=======
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -958,12 +812,7 @@
                           </Group>
                           <Component id="jScrollPane6" alignment="0" min="-2" pref="542" max="-2" attributes="0"/>
                       </Group>
-<<<<<<< HEAD
-                      <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
->>>>>>> 7f59f740728f3d86b116a9e3337058f977616e1d
-=======
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
->>>>>>> Fabricio
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1072,13 +921,5 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="24" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Clasificacion mundial 2023"/>
-      </Properties>
-    </Component>
   </SubComponents>
 </Form>
