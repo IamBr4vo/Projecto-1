@@ -533,10 +533,7 @@ public class Diseño extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
-   
-    
-     // Botones
+    // Botones
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAFCpartidoXpartido;
     private javax.swing.JButton btnAFCsedesYpaises;
