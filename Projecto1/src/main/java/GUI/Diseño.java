@@ -91,23 +91,27 @@ public class Diseño extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCAFpartidoXpartido)
-                    .addComponent(btnCAFtodosLOSpartidos)
-                    .addComponent(btnCAFsedeYpaises))
-                .addContainerGap(774, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnCAFpartidoXpartido))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCAFtodosLOSpartidos)
+                            .addComponent(btnCAFsedeYpaises))))
+                .addContainerGap(761, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(btnCAFsedeYpaises)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addComponent(btnCAFtodosLOSpartidos)
-                .addGap(28, 28, 28)
+                .addGap(37, 37, 37)
                 .addComponent(btnCAFpartidoXpartido)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
         );
 
         tblAFC.addTab("CAF", jPanel1);
@@ -236,28 +240,29 @@ public class Diseño extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnOFCpartidoXpartido)
                     .addComponent(btnOFCsedesYpaises)
-                    .addComponent(btnOFCtodosLOSpartidos))
-                .addContainerGap(763, Short.MAX_VALUE))
+                    .addComponent(btnOFCtodosLOSpartidos)
+                    .addComponent(btnOFCpartidoXpartido))
+                .addContainerGap(770, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(365, 365, 365)
+                        .addGap(19, 19, 19)
+                        .addComponent(btnOFCpartidoXpartido)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnOFCtodosLOSpartidos)
+                        .addGap(29, 29, 29)
                         .addComponent(btnOFCsedesYpaises)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnOFCpartidoXpartido))
+                        .addGap(0, 273, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOFCtodosLOSpartidos)
-                .addGap(0, 84, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addGap(0, 60, Short.MAX_VALUE))
         );
 
         tblAFC.addTab("OFC", jPanel5);
@@ -287,31 +292,26 @@ public class Diseño extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(btnUEFAsedesYpaises))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(btnUEFAtodosLOSpartidos))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(btnUEFApartidoXpartido)))
-                .addContainerGap(648, Short.MAX_VALUE))
+                    .addComponent(btnUEFAsedesYpaises)
+                    .addComponent(btnUEFApartidoXpartido)
+                    .addComponent(btnUEFAtodosLOSpartidos))
+                .addContainerGap(774, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
+                        .addGap(21, 21, 21)
+                        .addComponent(btnUEFApartidoXpartido)
+                        .addGap(27, 27, 27)
                         .addComponent(btnUEFAsedesYpaises)
-                        .addGap(61, 61, 61)
-                        .addComponent(btnUEFAtodosLOSpartidos)
-                        .addGap(77, 77, 77)
-                        .addComponent(btnUEFApartidoXpartido))
+                        .addGap(27, 27, 27)
+                        .addComponent(btnUEFAtodosLOSpartidos))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tblAFC.addTab("UEFA", jPanel4);
@@ -343,29 +343,24 @@ public class Diseño extends javax.swing.JFrame {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAFCtodosLOSpartido)
-                            .addComponent(btnAFCsedesYpaises))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
-                        .addComponent(btnAFCpartidoXpartido)
-                        .addGap(431, 431, 431))))
+                    .addComponent(btnAFCpartidoXpartido)
+                    .addComponent(btnAFCsedesYpaises)
+                    .addComponent(btnAFCtodosLOSpartido))
+                .addContainerGap(775, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(361, 361, 361)
+                        .addContainerGap()
+                        .addComponent(btnAFCpartidoXpartido)
+                        .addGap(28, 28, 28)
                         .addComponent(btnAFCsedesYpaises)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnAFCtodosLOSpartido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnAFCpartidoXpartido))
+                        .addGap(40, 40, 40)
+                        .addComponent(btnAFCtodosLOSpartido))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 3, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         tblAFC.addTab("AFC", jPanel6);
@@ -393,7 +388,9 @@ public class Diseño extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     
-
+   
+    
+     // Botones
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAFCpartidoXpartido;
     private javax.swing.JButton btnAFCsedesYpaises;
