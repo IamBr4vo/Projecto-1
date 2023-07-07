@@ -41,120 +41,194 @@ public class Equipo {
         this.DF = 0;
     }
     public void agregarEquipo(Equipo equipo) {
-        listaEquipos.add(equipo);
+        getListaEquipos().add(equipo);
     }
     
+    // Metodos para actualizar la información del equipo
+
+    public void aumentarPartidosJugados() {
+        this.setPTS(this.getPTS() + 1);
+    }
+
+    public void aumentarPartidosGanados() {
+        this.setPG(this.getPG() + 1);
+    }
+    
+    public void aumentarPartidosEmpatados() {
+        this.setPE(this.getPE() + 1);
+    }
+
+    public void aumentarPartidosPerdidos() {
+        this.setPP(this.getPP() + 1);
+    }
+
+    public void aumentarGolesFavor(int goles) {
+        this.setGF(this.getGF() + goles);
+    }
+
+    public void aumentarGolesContra(int goles) {
+        this.setGC(this.getGC() + goles);
+    }
+
+    public void calcularDiferenciaGoles() {
+        this.setDF(getGF() - getGC());
+    }
+
+    public void actualizarPuntos(int puntos) {
+        this.setPTS(this.getPTS() + getPTS());
+    }
+
+    /**
+     * @return the listaEquipos
+     */
+    public List<Equipo> getListaEquipos() {
+        return listaEquipos;
+    }
+
+    /**
+     * @param listaEquipos the listaEquipos to set
+     */
+    public void setListaEquipos(List<Equipo> listaEquipos) {
+        this.listaEquipos = listaEquipos;
+    }
+
+    /**
+     * @return the nombre
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * @param nombre the nombre to set
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * @return the confederacion
+     */
     public String getConfederacion() {
         return confederacion;
     }
 
+    /**
+     * @param confederacion the confederacion to set
+     */
     public void setConfederacion(String confederacion) {
         this.confederacion = confederacion;
     }
 
-    public int getPuntos() {
+    /**
+     * @return the PTS
+     */
+    public int getPTS() {
         return PTS;
     }
 
-    public void setPuntos(int PTS) {
+    /**
+     * @param PTS the PTS to set
+     */
+    public void setPTS(int PTS) {
         this.PTS = PTS;
     }
 
-    public int getPartidosJugados() {
+    /**
+     * @return the PJ
+     */
+    public int getPJ() {
         return PJ;
     }
 
-    public void setPartidosJugados(int PJ) {
+    /**
+     * @param PJ the PJ to set
+     */
+    public void setPJ(int PJ) {
         this.PJ = PJ;
     }
 
-    public int getPartidosGanados() {
+    /**
+     * @return the PG
+     */
+    public int getPG() {
         return PG;
     }
 
-    public void setPartidosGanados(int PG) {
+    /**
+     * @param PG the PG to set
+     */
+    public void setPG(int PG) {
         this.PG = PG;
     }
 
-    public int getPartidosEmpatados() {
+    /**
+     * @return the PE
+     */
+    public int getPE() {
         return PE;
     }
 
-    public void setPartidosEmpatados(int PE) {
+    /**
+     * @param PE the PE to set
+     */
+    public void setPE(int PE) {
         this.PE = PE;
     }
 
-    public int getPartidosPerdidos() {
+    /**
+     * @return the PP
+     */
+    public int getPP() {
         return PP;
     }
 
-    public void setPartidosPerdidos(int PP) {
+    /**
+     * @param PP the PP to set
+     */
+    public void setPP(int PP) {
         this.PP = PP;
     }
 
-    public int getGolesFavor() {
+    /**
+     * @return the GF
+     */
+    public int getGF() {
         return GF;
     }
 
-    public void setGolesFavor(int GF) {
+    /**
+     * @param GF the GF to set
+     */
+    public void setGF(int GF) {
         this.GF = GF;
     }
 
-    public int getGolesContra() {
+    /**
+     * @return the GC
+     */
+    public int getGC() {
         return GC;
     }
 
-    public void setGolesContra(int GC) {
+    /**
+     * @param GC the GC to set
+     */
+    public void setGC(int GC) {
         this.GC = GC;
     }
 
-    public int getDiferenciaGoles() {
+    /**
+     * @return the DF
+     */
+    public int getDF() {
         return DF;
     }
 
-    public void setDiferenciaGoles(int DF) {
+    /**
+     * @param DF the DF to set
+     */
+    public void setDF(int DF) {
         this.DF = DF;
-    }
-
-    // Metodos para actualizar la información del equipo
-
-    public void aumentarPartidosJugados() {
-        this.PTS++;
-    }
-
-    public void aumentarPartidosGanados() {
-        this.PG++;
-    }
-    
-    public void aumentarPartidosEmpatados() {
-        this.PE++;
-    }
-
-    public void aumentarPartidosPerdidos() {
-        this.PP++;
-    }
-
-    public void aumentarGolesFavor(int goles) {
-        this.GF += goles;
-    }
-
-    public void aumentarGolesContra(int goles) {
-        this.GC += goles;
-    }
-
-    public void calcularDiferenciaGoles() {
-        this.DF = GF - GC;
-    }
-
-    public void actualizarPuntos(int puntos) {
-        this.PTS += PTS;
     }
 }
