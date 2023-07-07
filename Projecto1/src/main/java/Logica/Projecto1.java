@@ -5,6 +5,16 @@ import GUI.*;
  * @author Bravo
  */
 public class Projecto1 {
+    
+    public static void man (String [] args){
+        // Crear confederaciones
+        Confederaciones CAF = new Confederaciones(9,1);
+        Confederaciones CONCACAF = new Confederaciones(6,2);
+        Confederaciones CONMEBOL = new Confederaciones(6,1);
+        Confederaciones OFC = new Confederaciones(1,1);
+        Confederaciones UEFA = new Confederaciones(16,0);
+        Confederaciones AFC = new Confederaciones(8,1);
+    }
     public static void main(String[] args) {
         // Crear equipos para Concacaf
         Equipo Concacaf = new Equipo();

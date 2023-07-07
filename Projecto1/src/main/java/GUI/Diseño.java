@@ -84,6 +84,11 @@ public class Diseño extends javax.swing.JFrame {
         btnCAFtodosLOSpartidos.setText("Simular todos los partidos");
 
         btnCAFsedeYpaises.setText("Ver sedes y paises");
+        btnCAFsedeYpaises.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCAFsedeYpaisesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -381,6 +386,13 @@ public class Diseño extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCAFsedeYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCAFsedeYpaisesActionPerformed
+        // TODO add your handling code here:
+        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del JFrame2
+        frame2.setVisible(true); // Hacer visible el JFrame2
+        this.dispose(); // Cerrar el JFrame1 actual
+    }//GEN-LAST:event_btnCAFsedeYpaisesActionPerformed
 
     /**
      * @param args the command line arguments
