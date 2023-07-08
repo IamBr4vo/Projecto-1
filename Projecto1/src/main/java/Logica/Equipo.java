@@ -3,18 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Logica;
-import java.util.List;
-import java.util.ArrayList;
-
 /**
  *
  * @author Bravo
  */
-//Metodo constructor y se crea una lista donde van a ir todos los equipos que jugaran y sus respectivas confederaciones
 public class Equipo {
-    private List<Equipo> listaEquipos;
     private String nombre;
-    private String confederacion;
     private int PTS;
     private int PJ;
     private int PG;
@@ -23,14 +17,9 @@ public class Equipo {
     private int GF;
     private int GC;
     private int DF;
-    
-    public Equipo() {
-    listaEquipos = new ArrayList<>();
-    }
   
-    public Equipo(String nombre, String confederacion) {
+    public Equipo(String nombre) {
         this.nombre = nombre;
-        this.confederacion = confederacion;
         this.PTS = 0;
         this.PJ = 0;
         this.PG = 0;
@@ -40,10 +29,6 @@ public class Equipo {
         this.GC = 0;
         this.DF = 0;
     }
-    public void agregarEquipo(Equipo equipo) {
-        getListaEquipos().add(equipo);
-    }
-    
     // Metodos para actualizar la información del equipo
 
     public void aumentarPartidosJugados() {
@@ -79,20 +64,6 @@ public class Equipo {
     }
 
     /**
-     * @return the listaEquipos
-     */
-    public List<Equipo> getListaEquipos() {
-        return listaEquipos;
-    }
-
-    /**
-     * @param listaEquipos the listaEquipos to set
-     */
-    public void setListaEquipos(List<Equipo> listaEquipos) {
-        this.listaEquipos = listaEquipos;
-    }
-
-    /**
      * @return the nombre
      */
     public String getNombre() {
@@ -105,21 +76,6 @@ public class Equipo {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    /**
-     * @return the confederacion
-     */
-    public String getConfederacion() {
-        return confederacion;
-    }
-
-    /**
-     * @param confederacion the confederacion to set
-     */
-    public void setConfederacion(String confederacion) {
-        this.confederacion = confederacion;
-    }
-
     /**
      * @return the PTS
      */
