@@ -24,10 +24,11 @@ public class Confederacion {
     public Confederacion(int plazasDirectas, int plazasRepechaje){
         this.plazasDirectas = plazasDirectas;
         this.plazasRepechaje = plazasRepechaje;
+        listaEquipos = new ArrayList<>();
     }
     
-    public void agregarEquipo(Equipo equipo) {
-        getListaEquipos().add(equipo);
+     public void agregarEquipo(Equipo equipo) {
+        listaEquipos.add(equipo);
     }  
 
     /**
