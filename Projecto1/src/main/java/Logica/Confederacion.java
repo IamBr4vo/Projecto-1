@@ -18,13 +18,13 @@ public class Confederacion {
     private int plazasRepechaje;
     
     public Confederacion() {
-    listaEquipos = new ArrayList<>();
+    listaEquipos = new ArrayList<>(); // Inicializar la lista de equipos
     }
     
     public Confederacion(int plazasDirectas, int plazasRepechaje){
         this.plazasDirectas = plazasDirectas;
         this.plazasRepechaje = plazasRepechaje;
-        listaEquipos = new ArrayList<>();
+        listaEquipos = new ArrayList<>(); // Inicializar la lista de equipos
     }
     
      public void agregarEquipo(Equipo equipo) {
