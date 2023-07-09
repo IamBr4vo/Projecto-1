@@ -1,5 +1,6 @@
 package Logica;
 import GUI.*;
+import java.util.ArrayList;
 /**
  *
  * @author Bravo
@@ -477,6 +478,28 @@ public class Projecto1 {
         AFC.agregarEquipo(Afc45);
         AFC.agregarEquipo(Afc46);
         AFC.agregarEquipo(Afc47);
+        
+        ArrayList<String> sedesEstadosUnidos = new ArrayList<>();
+        sedesEstadosUnidos.add("Atlanta");
+        sedesEstadosUnidos.add("Boston");
+        sedesEstadosUnidos.add("Dallas");
+        sedesEstadosUnidos.add("Houston");
+        sedesEstadosUnidos.add("Kansas City");
+        sedesEstadosUnidos.add("Los Ángeles");
+        sedesEstadosUnidos.add("Miami");
+        sedesEstadosUnidos.add("Nueva York/Nueva Jersey");
+        sedesEstadosUnidos.add("Filadelfia");
+        sedesEstadosUnidos.add("San Francisco");
+        sedesEstadosUnidos.add("Seattle");
+
+        ArrayList<String> sedesMexico = new ArrayList<>();
+        sedesMexico.add("Guadalajara");
+        sedesMexico.add("Ciudad de México");
+        sedesMexico.add("Monterrey");
+
+        ArrayList<String> sedesCanada = new ArrayList<>();
+        sedesCanada.add("Vancouver");
+        sedesCanada.add("Toronto");
         
         //Metodo principal para ejecutar la interfaz
         Diseño v = new Diseño();

@@ -4,38 +4,61 @@
  */
 package Logica;
 
-import java.util.ArrayList;
-/**
- *
- * @author fabri
- */
-public class Sedes {
+import java.util.UUID;
+
+
+class Sedes extends Partido {
     
- 
-    private ArrayList<String> ubicaciones;
+    private String paisSede;
+    private String sede;
+    private String identificador;
+    private int gollocal;
+    private int golvisitante;
 
-    public Sedes() {
-        ubicaciones = new ArrayList<>();
-        // Agregar ubicaciones de Estados Unidos
-        ubicaciones.add("Atlanta");
-        ubicaciones.add("Boston");
-        ubicaciones.add("Dallas");
-        ubicaciones.add("Houston");
-        ubicaciones.add("Kansas City");
-        ubicaciones.add("Los Angeles");
-        ubicaciones.add("Miami");
-        ubicaciones.add("Nueva York/Nueva Jersey");
-        ubicaciones.add("Filadelfia");
-        ubicaciones.add("San Francisco");
-        ubicaciones.add("Seattle");
+    public Sedes(String paisSede, String sede, String identificador, int gollocal, int golvisitantee) {
+        this.paisSede = paisSede;
+        this.sede = sede;
+        this.identificador = generarIdentificador();
+         this.gollocal = gollocal;
+        this.golvisitante = golvisitante;
+    }
 
-        // Agregar ubicaciones de México
-        ubicaciones.add("Guadalajara");
-        ubicaciones.add("Ciudad de México");
-        ubicaciones.add("Monterrey");
+    public String getPaisSede() {
+        return paisSede;
+    }
 
-        // Agregar ubicaciones de Canadá
-        ubicaciones.add("Vancouver");
-        ubicaciones.add("Toronto");
-    }   
+    public String getSede() {
+        return sede;
+    }
+
+    public String getIdentificador() {
+        return identificador;
+    }
+    
+     public int getGolLocal() {
+        return gollocal;
+    }
+
+    public int getGolVisitante() {
+        return golvisitante;
+    }
+    
+    //se utiliza el método getIdentificador() para obtener el identificador del partido
+     private String generarIdentificador() {
+        return UUID.randomUUID().toString();
+    }
+    
+    //método calcularPuntos() que calcula los puntos del partido 
+    
+    public int calcularPuntos() {
+    if (gollocal == golvisitante) {
+        return 1; // Empate, suma 1 punto
+    } else if (gollocal > golvisitante) {
+        return 3; // Victoria del equipo local, suma 3 puntos
+    } else {
+        return 0; // Derrota, no suma puntos
+        
+        }
+    }
+
 }

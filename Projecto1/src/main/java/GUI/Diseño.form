@@ -25,7 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="tblAFC" pref="1712" max="32767" attributes="0"/>
+              <Component id="tblAFC" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -80,7 +80,7 @@
                       <Component id="btnCAFsedeYpaises" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" alignment="0" pref="483" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="542" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -224,7 +224,7 @@
                       <Component id="btnCONCACAFsedesYpaises" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane2" alignment="0" pref="483" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="542" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -322,6 +322,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver sedes y paises"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCONCACAFsedesYpaisesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnCONCACAFtodosLOSpartidos">
               <Properties>
@@ -363,9 +366,9 @@
                       <Component id="btnCOMEBOLtodosLOSpartidos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnCOMEBOLsedesYpaises" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="372" max="32767" attributes="0"/>
+                      <EmptySpace pref="431" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane3" alignment="0" pref="483" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" alignment="0" pref="542" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -463,6 +466,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver sedes y paises"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCOMEBOLsedesYpaisesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnCOMEBOLpartidoXpartido">
               <Properties>
@@ -505,7 +511,7 @@
                       <Component id="btnOFCtodosLOSpartidos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="btnOFCsedesYpaises" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="333" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="392" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane4" alignment="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -605,6 +611,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver sedes y paises"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOFCsedesYpaisesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnOFCpartidoXpartido">
               <Properties>
@@ -755,6 +764,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver sedes y paises"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUEFAsedesYpaisesActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -900,6 +912,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver sedes y paises"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAFCsedesYpaisesActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

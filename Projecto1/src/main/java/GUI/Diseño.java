@@ -113,7 +113,7 @@ public class Diseño extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnCAFsedeYpaises)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
         );
 
         tblAFC.addTab("CAF", jPanel1);
@@ -134,6 +134,11 @@ public class Diseño extends javax.swing.JFrame {
         btnCONCACAFpartidoXpartido.setText("Simular partido por partido");
 
         btnCONCACAFsedesYpaises.setText("Ver sedes y paises");
+        btnCONCACAFsedesYpaises.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCONCACAFsedesYpaisesActionPerformed(evt);
+            }
+        });
 
         btnCONCACAFtodosLOSpartidos.setText("Simular todos los partidos");
 
@@ -160,7 +165,7 @@ public class Diseño extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnCONCACAFsedesYpaises)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
         );
 
         tblAFC.addTab("CONCACAF", jPanel2);
@@ -181,6 +186,11 @@ public class Diseño extends javax.swing.JFrame {
         btnCOMEBOLtodosLOSpartidos.setText("Simular todos los partidos");
 
         btnCOMEBOLsedesYpaises.setText("Ver sedes y paises");
+        btnCOMEBOLsedesYpaises.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCOMEBOLsedesYpaisesActionPerformed(evt);
+            }
+        });
 
         btnCOMEBOLpartidoXpartido.setText("Simular partido por partido");
 
@@ -206,8 +216,8 @@ public class Diseño extends javax.swing.JFrame {
                 .addComponent(btnCOMEBOLtodosLOSpartidos)
                 .addGap(18, 18, 18)
                 .addComponent(btnCOMEBOLsedesYpaises)
-                .addContainerGap(372, Short.MAX_VALUE))
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+                .addContainerGap(431, Short.MAX_VALUE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
         );
 
         tblAFC.addTab("CONMEBOL", jPanel3);
@@ -228,6 +238,11 @@ public class Diseño extends javax.swing.JFrame {
         btnOFCtodosLOSpartidos.setText("Simular todos los partidos");
 
         btnOFCsedesYpaises.setText("Ver sedes y paises");
+        btnOFCsedesYpaises.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOFCsedesYpaisesActionPerformed(evt);
+            }
+        });
 
         btnOFCpartidoXpartido.setText("Simular partido por partido");
 
@@ -254,7 +269,7 @@ public class Diseño extends javax.swing.JFrame {
                 .addComponent(btnOFCtodosLOSpartidos)
                 .addGap(29, 29, 29)
                 .addComponent(btnOFCsedesYpaises)
-                .addGap(0, 333, Short.MAX_VALUE))
+                .addGap(0, 392, Short.MAX_VALUE))
             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
@@ -278,6 +293,11 @@ public class Diseño extends javax.swing.JFrame {
         btnUEFAtodosLOSpartidos.setText("Simular todos los partidos");
 
         btnUEFAsedesYpaises.setText("Ver sedes y paises");
+        btnUEFAsedesYpaises.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUEFAsedesYpaisesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -327,6 +347,11 @@ public class Diseño extends javax.swing.JFrame {
         btnAFCtodosLOSpartido.setText("Simular todos los partidos");
 
         btnAFCsedesYpaises.setText("Ver sedes y paises");
+        btnAFCsedesYpaises.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAFCsedesYpaisesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -364,7 +389,7 @@ public class Diseño extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tblAFC, javax.swing.GroupLayout.DEFAULT_SIZE, 1712, Short.MAX_VALUE)
+                .addComponent(tblAFC)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -379,19 +404,57 @@ public class Diseño extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCAFsedeYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCAFsedeYpaisesActionPerformed
-        // TODO add your handling code here:
-        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del JFrame2
-        frame2.setVisible(true); // Hacer visible el JFrame2
-        this.dispose(); // Cerrar el JFrame1 actual
+        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
+        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
+        this.dispose(); // Cerrar el frame diseño
+        frame2.setResizable(false);
+        frame2.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCAFsedeYpaisesActionPerformed
+
+    private void btnCONCACAFsedesYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCONCACAFsedesYpaisesActionPerformed
+        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
+        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
+        this.dispose(); // Cerrar el frame diseño
+        frame2.setResizable(false);
+        frame2.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnCONCACAFsedesYpaisesActionPerformed
+
+    private void btnCOMEBOLsedesYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCOMEBOLsedesYpaisesActionPerformed
+        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
+        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
+        this.dispose(); // Cerrar el frame diseño
+        frame2.setResizable(false);
+        frame2.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnCOMEBOLsedesYpaisesActionPerformed
+
+    private void btnOFCsedesYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOFCsedesYpaisesActionPerformed
+        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
+        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
+        this.dispose(); // Cerrar el frame diseño
+        frame2.setResizable(false);
+        frame2.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnOFCsedesYpaisesActionPerformed
+
+    private void btnUEFAsedesYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUEFAsedesYpaisesActionPerformed
+        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
+        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
+        this.dispose(); // Cerrar el frame diseño
+        frame2.setResizable(false);
+        frame2.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnUEFAsedesYpaisesActionPerformed
+
+    private void btnAFCsedesYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAFCsedesYpaisesActionPerformed
+        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
+        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
+        this.dispose(); // Cerrar el frame diseño
+        frame2.setResizable(false);
+        frame2.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnAFCsedesYpaisesActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
-   
-    
-     // Botones
+    // Botones
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAFCpartidoXpartido;
     private javax.swing.JButton btnAFCsedesYpaises;
