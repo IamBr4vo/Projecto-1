@@ -27,7 +27,7 @@ public class Confederacion {
         listaEquipos = new ArrayList<>();
     }
     
-     public void agregarEquipo(Equipo equipo) {
+    public void agregarEquipo(Equipo equipo) {
         listaEquipos.add(equipo);
     }  
 
