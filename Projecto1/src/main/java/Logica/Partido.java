@@ -1,5 +1,4 @@
-package GUI;
-
+package Logica;
 import java.util.Random;
 
 /**
@@ -56,16 +55,53 @@ public class Partido {
     //Metodo de simulacion ramdom
     public void simularpartido() {
         Random gol = new Random();
-        gollocal = gol.nextInt(10);
-        golvisitante = gol.nextInt(10);
+        setGollocal(gol.nextInt(10));
+        setGolvisitante(gol.nextInt(10));
     }
 
+    /**
+     * @return the equipolocal
+     */
+    public String getEquipolocal() {
+        return equipolocal;
+    }
+
+    /**
+     * @param equipolocal the equipolocal to set
+     */
+    public void setEquipolocal(String equipolocal) {
+        this.equipolocal = equipolocal;
+    }
+
+    /**
+     * @return the equipovisitante
+     */
+    public String getEquipovisitante() {
+        return equipovisitante;
+    }
+
+    /**
+     * @param equipovisitante the equipovisitante to set
+     */
+    public void setEquipovisitante(String equipovisitante) {
+        this.equipovisitante = equipovisitante;
+    }
+
+    /**
+     * @return the resultado
+     */
+    public int getResultado() {
+        return resultado;
+    }
+
+    /**
+     * @param resultado the resultado to set
+     */
+    public void setResultado(int resultado) {
+        this.resultado = resultado;
+    }
     // Método para obtener el resultado del partido
     public String obtenerresultado() {
-        return equipolocal + " " + gollocal + "  " + equipovisitante + " " + golvisitante;
-        System.out.println("Goles locales: " + gollocal()); 
-        System.out.println("Goles visitantes: " + golvisitante());
+        return getEquipolocal() + " " + getGollocal() + "-" + getGolvisitante() + " " + getGolvisitante();
     }
-    
-
 }
