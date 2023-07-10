@@ -1,6 +1,6 @@
 package Logica;
 import GUI.*;
-import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Bravo
@@ -50,6 +50,7 @@ public class Projecto1 {
         Equipo concacaf39 = new Equipo("Surinam");
         Equipo concacaf40 = new Equipo("Trinidad Y tobago");
         Equipo concacaf41 = new Equipo("Estados Unidos");
+        
         // Agregar equipos de Concacaf a la lista
         CONCACAF.agregarEquipo(concacaf1);
         CONCACAF.agregarEquipo(concacaf2);
@@ -105,6 +106,7 @@ public class Projecto1 {
         Equipo conmebol8 = new Equipo("Paraguay");
         Equipo conmebol9 = new Equipo("Peru");
         Equipo conmebol10 = new Equipo("Uruguay");
+        
         // Agregar equipos de Conmebol a la lista
         CONMEBOL.agregarEquipo(conmebol1);
         CONMEBOL.agregarEquipo(conmebol2);
@@ -479,27 +481,52 @@ public class Projecto1 {
         AFC.agregarEquipo(Afc46);
         AFC.agregarEquipo(Afc47);
         
-        ArrayList<String> sedesEstadosUnidos = new ArrayList<>();
-        sedesEstadosUnidos.add("Atlanta");
-        sedesEstadosUnidos.add("Boston");
-        sedesEstadosUnidos.add("Dallas");
-        sedesEstadosUnidos.add("Houston");
-        sedesEstadosUnidos.add("Kansas City");
-        sedesEstadosUnidos.add("Los Ángeles");
-        sedesEstadosUnidos.add("Miami");
-        sedesEstadosUnidos.add("Nueva York/Nueva Jersey");
-        sedesEstadosUnidos.add("Filadelfia");
-        sedesEstadosUnidos.add("San Francisco");
-        sedesEstadosUnidos.add("Seattle");
-
-        ArrayList<String> sedesMexico = new ArrayList<>();
-        sedesMexico.add("Guadalajara");
-        sedesMexico.add("Ciudad de México");
-        sedesMexico.add("Monterrey");
-
-        ArrayList<String> sedesCanada = new ArrayList<>();
-        sedesCanada.add("Vancouver");
-        sedesCanada.add("Toronto");
+        // Crear sedes para Estados Unidos
+        Sede sedesEstadosUnidos = new Sede(1,"Estados Unidos");
+        Sede USA1 = new Sede("Atlanta");
+        Sede USA2 = new Sede("Boston");
+        Sede USA3 = new Sede("Dallas");
+        Sede USA4 = new Sede("Houston");
+        Sede USA5 = new Sede("Kansas City");
+        Sede USA6 = new Sede("Los Ángeles");
+        Sede USA7 = new Sede("Miami");
+        Sede USA8 = new Sede("Nueva York/Nueva Jersey");
+        Sede USA9 = new Sede("Filadelfia");
+        Sede USA10 = new Sede("San Francisco");
+        Sede USA11 = new Sede("Seattle");
+        
+        //Agregar sedes de Estados Unidos a la lista
+        sedesEstadosUnidos.agregarSedes(USA1);
+        sedesEstadosUnidos.agregarSedes(USA2);
+        sedesEstadosUnidos.agregarSedes(USA3);
+        sedesEstadosUnidos.agregarSedes(USA4);
+        sedesEstadosUnidos.agregarSedes(USA5);
+        sedesEstadosUnidos.agregarSedes(USA6);
+        sedesEstadosUnidos.agregarSedes(USA7);
+        sedesEstadosUnidos.agregarSedes(USA8);
+        sedesEstadosUnidos.agregarSedes(USA9);
+        sedesEstadosUnidos.agregarSedes(USA10);
+        sedesEstadosUnidos.agregarSedes(USA11);
+        
+        // Crear sedes para Mexico
+        Sede sedesMexico = new Sede(2,"Mexico");
+        Sede MEX1 = new Sede("Guadalajara");
+        Sede MEX2 = new Sede("Ciudad de México");
+        Sede MEX3 = new Sede("Monterrey");
+        
+        //Agregar sedes de Mexico a la lista
+        sedesMexico.agregarSedes(MEX1);
+        sedesMexico.agregarSedes(MEX2);
+        sedesMexico.agregarSedes(MEX3);
+       
+        // Crear sedes para Canada
+        Sede sedesCanada = new Sede(3, "Canada");
+        Sede CAN1 = new Sede("Vancouver");
+        Sede CAN2 = new Sede("Toronto");
+        
+        //Agregar sedes de Canada a la lista
+        sedesCanada.agregarSedes(CAN1);
+        sedesCanada.agregarSedes(CAN2);
         
         //Metodo principal para ejecutar la interfaz
         Diseño v = new Diseño();

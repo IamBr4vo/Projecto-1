@@ -1,107 +1,129 @@
 package Logica;
-import java.util.Random;
 
 /**
  *
  * @author deivi
  */
+import java.util.List;
+import java.util.Random;
+
 public class Partido {
+    private List<Equipo> listaEquipos;
+    private Equipo equipo1;
+    private Equipo equipo2;
+    private int golequipo1;
+    private int golequipo2;
 
-    private String equipolocal;
-    private String equipovisitante;
-    private int gollocal;
-    private int golvisitante;
-    private int resultado;
-
-    //Metodo constructor 
-    public Partido(String equipolocal, String equipovisitante, int gollocal, int golvisitante, int resultado) {
-        this.equipolocal = equipolocal;
-        this.equipovisitante = equipovisitante;
-        this.gollocal = gollocal;
-        this.golvisitante = golvisitante;
-        this.resultado = resultado;
-
-    }
-
-    //Metodos get y set
-    /**
-     * @return the gollocal
-     */
-    public int getGollocal() {
-        return gollocal;
+    public Partido(List<Equipo> listaEquipos) {
+        this.listaEquipos = listaEquipos;
     }
 
     /**
-     * @param gollocal the gollocal to set
+     * @return the golequipo1
      */
-    public void setGollocal(int gollocal) {
-        this.gollocal = gollocal;
+    public int getGolequipo1() {
+        return golequipo1;
     }
 
     /**
-     * @return the golvisitante
+     * @param golequipo1 the gollocal to set
      */
-    public int getGolvisitante() {
-        return golvisitante;
+    public void setGolequipo1(int golequipo1) {
+        this.golequipo1 = golequipo1;
     }
 
     /**
-     * @param golvisitante the golvisitante to set
+     * @return the golequipo2
      */
-    public void setGolvisitante(int golvisitante) {
-        this.golvisitante = golvisitante;
+    public int getGolequipo2() {
+        return golequipo2;
     }
 
-    //Metodo de simulacion ramdom
-    public void simularpartido() {
+    /**
+     * @param golequipo2 the golvisitante to set
+     */
+    public void setGolequipo2(int golequipo2) {
+        this.golequipo2 = golequipo2;
+    }
+   
+    /**
+     * @return the listaEquipos
+     */
+    public List<Equipo> getListaEquipos() {
+        return listaEquipos;
+    }
+
+    /**
+     * @param listaEquipos the listaEquipos to set
+     */
+    public void setListaEquipos(List<Equipo> listaEquipos) {
+        this.listaEquipos = listaEquipos;
+    }
+
+    /**
+     * @return the equipo1
+     */
+    public Equipo getEquipo1() {
+        return equipo1;
+    }
+
+    /**
+     * @param equipo1 the equipo1 to set
+     */
+    public void setEquipo1(Equipo equipo1) {
+        this.equipo1 = equipo1;
+    }
+
+    /**
+     * @return the equipo2
+     */
+    public Equipo getEquipo2() {
+        return equipo2;
+    }
+
+    /**
+     * @param equipo2 the equipo2 to set
+     */
+    public void setEquipo2(Equipo equipo2) {
+        this.equipo2 = equipo2;
+    }
+    
+    public void generarPartidoAleatorio() {
+        Random random = new Random();
+        setEquipo1(getListaEquipos().get(random.nextInt(getListaEquipos().size())));
+        setEquipo2(getListaEquipos().get(random.nextInt(getListaEquipos().size())));
+
+        // Verificar que los equipos sean diferentes
+        while (getEquipo1().equals(getEquipo2())) {
+            setEquipo2(getListaEquipos().get(random.nextInt(getListaEquipos().size())));
+        }
+    }
+
+    
+    //Metodo de simulacion de goles aleatorios 
+    public void simularGoles() {
         Random gol = new Random();
-        setGollocal(gol.nextInt(10));
-        setGolvisitante(gol.nextInt(10));
+        setGolequipo1(gol.nextInt(11));
+        setGolequipo2(gol.nextInt(11));
+        calcularPuntos();
     }
 
-    /**
-     * @return the equipolocal
-     */
-    public String getEquipolocal() {
-        return equipolocal;
+    public void calcularPuntos() {
+        if (getGolequipo1() == getGolequipo2()) {
+            // Empate
+            getEquipo1().actualizarPuntos(1);
+            getEquipo2().actualizarPuntos(1);
+        } else if (getGolequipo1() > getGolequipo2()) {
+            // Equipo 1 gana
+            getEquipo1().actualizarPuntos(3);
+        } else {
+            // Equipo 2 gana
+            getEquipo2().actualizarPuntos(3);
+        }
     }
-
-    /**
-     * @param equipolocal the equipolocal to set
-     */
-    public void setEquipolocal(String equipolocal) {
-        this.equipolocal = equipolocal;
-    }
-
-    /**
-     * @return the equipovisitante
-     */
-    public String getEquipovisitante() {
-        return equipovisitante;
-    }
-
-    /**
-     * @param equipovisitante the equipovisitante to set
-     */
-    public void setEquipovisitante(String equipovisitante) {
-        this.equipovisitante = equipovisitante;
-    }
-
-    /**
-     * @return the resultado
-     */
-    public int getResultado() {
-        return resultado;
-    }
-
-    /**
-     * @param resultado the resultado to set
-     */
-    public void setResultado(int resultado) {
-        this.resultado = resultado;
-    }
-    // Método para obtener el resultado del partido
-    public String obtenerresultado() {
-        return getEquipolocal() + " " + getGollocal() + "-" + getGolvisitante() + " " + getGolvisitante();
-    }
+    
+    // Método para mostrar el resultado del partido
+    public String obtenerMarcador() {
+        return getEquipo1() + " " + getGolequipo1() + "-" + getGolequipo2() + " " + getEquipo2();
+    } 
 }

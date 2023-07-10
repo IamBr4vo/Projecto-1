@@ -32,7 +32,7 @@ public class Equipo {
     // Metodos para actualizar la información del equipo
 
     public void aumentarPartidosJugados() {
-        this.setPTS(this.getPTS() + 1);
+        this.setPJ(this.getPJ() + 1);
     }
 
     public void aumentarPartidosGanados() {
