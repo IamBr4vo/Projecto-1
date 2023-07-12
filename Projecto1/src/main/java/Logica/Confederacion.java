@@ -72,4 +72,5 @@ public class Confederacion {
     public void setPlazasRepechaje(int plazasRepechaje) {
         this.plazasRepechaje = plazasRepechaje;
     }
+    hoklaaaa
 }
