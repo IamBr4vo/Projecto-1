@@ -142,13 +142,13 @@ public class Partido {
     public void guardarDatosEquipos() {
         getEquipo1().aumentarPartidosJugados();
         getEquipo2().aumentarPartidosJugados();
-
+        //Gol en contra
         getEquipo1().aumentarGolesContra(golequipo2);
         getEquipo2().aumentarGolesContra(golequipo1);
-
+        //Gol a favor
         getEquipo1().aumentarGolesFavor(golequipo1);
         getEquipo2().aumentarGolesFavor(golequipo2);
-
+        //Goles de diferencia 
         getEquipo1().calcularDiferenciaGoles();
         getEquipo2().calcularDiferenciaGoles();
     }
