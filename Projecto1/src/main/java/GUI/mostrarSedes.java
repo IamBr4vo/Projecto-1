@@ -46,16 +46,16 @@ public class mostrarSedes extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addContainerGap()
                 .addComponent(btnSalir)
-                .addContainerGap(1139, Short.MAX_VALUE))
+                .addContainerGap(1186, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addContainerGap()
                 .addComponent(btnSalir)
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addContainerGap(304, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -65,6 +65,9 @@ public class Diseño extends javax.swing.JFrame {
 
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         concacaf = new javax.swing.JButton();
         caf = new javax.swing.JButton();
@@ -72,21 +75,38 @@ public class Diseño extends javax.swing.JFrame {
         ofc = new javax.swing.JButton();
         uefa = new javax.swing.JButton();
         afc = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         selecciones = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jButton1.setText("Simular Partido");
+
+        jButton2.setText("Simular Todos Los Partidos");
+
+        jButton3.setText("Ver Sedes Y Paises");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 753, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3)
+                    .addComponent(jButton1))
+                .addGap(0, 678, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 503, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jButton1)
+                .addGap(59, 59, 59)
+                .addComponent(jButton2)
+                .addGap(66, 66, 66)
+                .addComponent(jButton3)
+                .addContainerGap(272, Short.MAX_VALUE))
         );
 
         concacaf.setText("CONCACAF");
@@ -164,13 +184,6 @@ public class Diseño extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton9.setText("CAF");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-
         selecciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
@@ -193,14 +206,9 @@ public class Diseño extends javax.swing.JFrame {
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(106, 106, 106)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 460, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel7Layout.createSequentialGroup()
-                    .addGap(566, 566, 566)
-                    .addComponent(jButton9)
-                    .addContainerGap(567, Short.MAX_VALUE)))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,11 +219,6 @@ public class Diseño extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel7Layout.createSequentialGroup()
-                    .addGap(266, 266, 266)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(267, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -244,10 +247,6 @@ public class Diseño extends javax.swing.JFrame {
        llenarTabla(africa);
     }//GEN-LAST:event_cafActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
     private void ofcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ofcActionPerformed
         llenarTabla(oceania);
     }//GEN-LAST:event_ofcActionPerformed
@@ -273,7 +272,9 @@ public class Diseño extends javax.swing.JFrame {
     private javax.swing.JButton caf;
     private javax.swing.JButton concacaf;
     private javax.swing.JButton conmebol;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
