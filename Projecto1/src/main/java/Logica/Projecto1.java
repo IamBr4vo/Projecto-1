@@ -1,6 +1,6 @@
 package Logica;
 import GUI.*;
-import java.util.List; gvg
+import java.util.List; 
 /**
  *
  * @author Bravo
