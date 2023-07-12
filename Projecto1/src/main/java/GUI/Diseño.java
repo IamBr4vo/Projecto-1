@@ -39,7 +39,7 @@ public class Diseño extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) selecciones.getModel();
         model.getDataVector().removeAllElements();
         Object rowData[] = new Object[10];
-        for (int i = 0; i < equiposConfederacion.size(); i++) {
+        for (int i = 1; i < equiposConfederacion.size(); i++) {
             rowData[0] = i;
             rowData[1] = equiposConfederacion.get(i).getNombre();
             rowData[2] = equiposConfederacion.get(i).getPTS();
