@@ -11,4 +11,13 @@
         <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>Logica.Projecto1</exec.mainClass>
     </properties>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230618</version>
+        </dependency>
+
+    </dependencies>
 </project>

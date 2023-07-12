@@ -4,6 +4,11 @@
  */
 package GUI;
 
+import Logica.Confederacion;
+import Logica.Equipo;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Eithel
@@ -13,8 +18,40 @@ public class Diseño extends javax.swing.JFrame {
     /**
      * Creates new form Diseño
      */
-    public Diseño() {
+      List<Equipo> africa;
+        List<Equipo> america;
+        List<Equipo> surAmerica;
+        List<Equipo> oceania;
+        List<Equipo> europa;
+        List<Equipo> asia;
+    public Diseño(Confederacion caf,Confederacion concacaf,Confederacion conmebol,Confederacion ofc,Confederacion uefa,Confederacion afc) {
         initComponents();
+        africa = caf.getListaEquipos();
+        america = concacaf.getListaEquipos();
+        surAmerica = conmebol.getListaEquipos();
+        oceania = ofc.getListaEquipos();
+        europa = uefa.getListaEquipos();
+        asia = afc.getListaEquipos();
+        llenarTabla(africa);
+    }
+
+    public void llenarTabla(List<Equipo> equiposConfederacion) {
+        DefaultTableModel model = (DefaultTableModel) selecciones.getModel();
+        model.getDataVector().removeAllElements();
+        Object rowData[] = new Object[10];
+        for (int i = 0; i < equiposConfederacion.size(); i++) {
+            rowData[0] = i;
+            rowData[1] = equiposConfederacion.get(i).getNombre();
+            rowData[2] = equiposConfederacion.get(i).getPTS();
+            rowData[3] = equiposConfederacion.get(i).getPJ();
+            rowData[4] = equiposConfederacion.get(i).getPG();
+            rowData[5] = equiposConfederacion.get(i).getPE();
+            rowData[6] = equiposConfederacion.get(i).getPP();
+            rowData[7] = equiposConfederacion.get(i).getGF();
+            rowData[8] = equiposConfederacion.get(i).getGC();
+            rowData[9] = equiposConfederacion.get(i).getDF();
+            model.addRow(rowData);
+        }
     }
 
     /**
@@ -26,47 +63,115 @@ public class Diseño extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tblAFC = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        concacaf = new javax.swing.JButton();
+        caf = new javax.swing.JButton();
+        conmebol = new javax.swing.JButton();
+        ofc = new javax.swing.JButton();
+        uefa = new javax.swing.JButton();
+        afc = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tpnCAF = new javax.swing.JTable();
-        btnCAFpartidoXpartido = new javax.swing.JButton();
-        btnCAFtodosLOSpartidos = new javax.swing.JButton();
-        btnCAFsedeYpaises = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        btnCONCACAFpartidoXpartido = new javax.swing.JButton();
-        btnCONCACAFsedesYpaises = new javax.swing.JButton();
-        btnCONCACAFtodosLOSpartidos = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        btnCOMEBOLtodosLOSpartidos = new javax.swing.JButton();
-        btnCOMEBOLsedesYpaises = new javax.swing.JButton();
-        btnCOMEBOLpartidoXpartido = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        btnOFCtodosLOSpartidos = new javax.swing.JButton();
-        btnOFCsedesYpaises = new javax.swing.JButton();
-        btnOFCpartidoXpartido = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
-        btnUEFApartidoXpartido = new javax.swing.JButton();
-        btnUEFAtodosLOSpartidos = new javax.swing.JButton();
-        btnUEFAsedesYpaises = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
-        btnAFCpartidoXpartido = new javax.swing.JButton();
-        btnAFCtodosLOSpartido = new javax.swing.JButton();
-        btnAFCsedesYpaises = new javax.swing.JButton();
+        selecciones = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tpnCAF.setModel(new javax.swing.table.DefaultTableModel(
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 753, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 503, Short.MAX_VALUE)
+        );
+
+        concacaf.setText("CONCACAF");
+        concacaf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                concacafActionPerformed(evt);
+            }
+        });
+
+        caf.setText("CAF");
+        caf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cafActionPerformed(evt);
+            }
+        });
+
+        conmebol.setText("CONMEBOL");
+        conmebol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                conmebolActionPerformed(evt);
+            }
+        });
+
+        ofc.setText("OFC");
+        ofc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ofcActionPerformed(evt);
+            }
+        });
+
+        uefa.setText("UEFA");
+        uefa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uefaActionPerformed(evt);
+            }
+        });
+
+        afc.setText("AFC");
+        afc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afcActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(caf)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(concacaf)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(conmebol)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ofc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(uefa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(afc)
+                .addContainerGap())
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(concacaf, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(conmebol, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(caf, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ofc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(uefa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(afc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jButton9.setText("CAF");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        selecciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
@@ -74,424 +179,107 @@ public class Diseño extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Pos.", "Selección", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
+                "Pos", "Seleccion", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
             }
         ));
-        jScrollPane1.setViewportView(tpnCAF);
+        jScrollPane1.setViewportView(selecciones);
 
-        btnCAFpartidoXpartido.setText("Simular partido por partido");
-
-        btnCAFtodosLOSpartidos.setText("Simular todos los partidos");
-
-        btnCAFsedeYpaises.setText("Ver sedes y paises");
-        btnCAFsedeYpaises.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCAFsedeYpaisesActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCAFtodosLOSpartidos)
-                    .addComponent(btnCAFsedeYpaises)
-                    .addComponent(btnCAFpartidoXpartido))
-                .addContainerGap(775, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 460, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGap(566, 566, 566)
+                    .addComponent(jButton9)
+                    .addContainerGap(567, Short.MAX_VALUE)))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnCAFpartidoXpartido)
-                .addGap(23, 23, 23)
-                .addComponent(btnCAFtodosLOSpartidos)
-                .addGap(18, 18, 18)
-                .addComponent(btnCAFsedeYpaises)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
-        );
-
-        tblAFC.addTab("CAF", jPanel1);
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Pos.", "Seleccion ", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
-
-        btnCONCACAFpartidoXpartido.setText("Simular partido por partido");
-
-        btnCONCACAFsedesYpaises.setText("Ver sedes y paises");
-        btnCONCACAFsedesYpaises.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCONCACAFsedesYpaisesActionPerformed(evt);
-            }
-        });
-
-        btnCONCACAFtodosLOSpartidos.setText("Simular todos los partidos");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCONCACAFpartidoXpartido)
-                    .addComponent(btnCONCACAFtodosLOSpartidos)
-                    .addComponent(btnCONCACAFsedesYpaises))
-                .addGap(0, 774, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnCONCACAFpartidoXpartido)
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCONCACAFtodosLOSpartidos)
-                .addGap(18, 18, 18)
-                .addComponent(btnCONCACAFsedesYpaises)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGap(266, 266, 266)
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(267, Short.MAX_VALUE)))
         );
-
-        tblAFC.addTab("CONCACAF", jPanel2);
-
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Pos", "Seleccion", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable3);
-
-        btnCOMEBOLtodosLOSpartidos.setText("Simular todos los partidos");
-
-        btnCOMEBOLsedesYpaises.setText("Ver sedes y paises");
-        btnCOMEBOLsedesYpaises.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCOMEBOLsedesYpaisesActionPerformed(evt);
-            }
-        });
-
-        btnCOMEBOLpartidoXpartido.setText("Simular partido por partido");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCOMEBOLpartidoXpartido)
-                    .addComponent(btnCOMEBOLtodosLOSpartidos)
-                    .addComponent(btnCOMEBOLsedesYpaises))
-                .addContainerGap(757, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnCOMEBOLpartidoXpartido)
-                .addGap(18, 18, 18)
-                .addComponent(btnCOMEBOLtodosLOSpartidos)
-                .addGap(18, 18, 18)
-                .addComponent(btnCOMEBOLsedesYpaises)
-                .addContainerGap(431, Short.MAX_VALUE))
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
-        );
-
-        tblAFC.addTab("CONMEBOL", jPanel3);
-
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF."
-            }
-        ));
-        jScrollPane4.setViewportView(jTable4);
-
-        btnOFCtodosLOSpartidos.setText("Simular todos los partidos");
-
-        btnOFCsedesYpaises.setText("Ver sedes y paises");
-        btnOFCsedesYpaises.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOFCsedesYpaisesActionPerformed(evt);
-            }
-        });
-
-        btnOFCpartidoXpartido.setText("Simular partido por partido");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnOFCsedesYpaises)
-                    .addComponent(btnOFCtodosLOSpartidos)
-                    .addComponent(btnOFCpartidoXpartido))
-                .addContainerGap(758, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(btnOFCpartidoXpartido)
-                .addGap(33, 33, 33)
-                .addComponent(btnOFCtodosLOSpartidos)
-                .addGap(29, 29, 29)
-                .addComponent(btnOFCsedesYpaises)
-                .addGap(0, 392, Short.MAX_VALUE))
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
-
-        tblAFC.addTab("OFC", jPanel5);
-
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Pos", "Seleccion", "Pts.", "PJ", "PG", "PE", "PE", "GF", "GC", "DIF"
-            }
-        ));
-        jScrollPane5.setViewportView(jTable5);
-
-        btnUEFApartidoXpartido.setText("Simular partido por partido");
-
-        btnUEFAtodosLOSpartidos.setText("Simular todos los partidos");
-
-        btnUEFAsedesYpaises.setText("Ver sedes y paises");
-        btnUEFAsedesYpaises.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUEFAsedesYpaisesActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnUEFApartidoXpartido)
-                    .addComponent(btnUEFAtodosLOSpartidos)
-                    .addComponent(btnUEFAsedesYpaises))
-                .addContainerGap(774, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(btnUEFApartidoXpartido)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnUEFAtodosLOSpartidos)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnUEFAsedesYpaises))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        tblAFC.addTab("UEFA", jPanel4);
-
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Pos", "Seleccion", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
-            }
-        ));
-        jScrollPane6.setViewportView(jTable6);
-
-        btnAFCpartidoXpartido.setText("Simular partido por partido");
-
-        btnAFCtodosLOSpartido.setText("Simular todos los partidos");
-
-        btnAFCsedesYpaises.setText("Ver sedes y paises");
-        btnAFCsedesYpaises.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAFCsedesYpaisesActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAFCpartidoXpartido)
-                    .addComponent(btnAFCsedesYpaises)
-                    .addComponent(btnAFCtodosLOSpartido))
-                .addContainerGap(775, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAFCpartidoXpartido)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAFCtodosLOSpartido)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAFCsedesYpaises))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        tblAFC.addTab("AFC", jPanel6);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tblAFC)
-                .addContainerGap())
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tblAFC, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCAFsedeYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCAFsedeYpaisesActionPerformed
-        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
-        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
-        this.dispose(); // Cerrar el frame diseño
-        frame2.setResizable(false);
-        frame2.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnCAFsedeYpaisesActionPerformed
+    private void concacafActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_concacafActionPerformed
+       llenarTabla(america);
+    }//GEN-LAST:event_concacafActionPerformed
 
-    private void btnCONCACAFsedesYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCONCACAFsedesYpaisesActionPerformed
-        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
-        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
-        this.dispose(); // Cerrar el frame diseño
-        frame2.setResizable(false);
-        frame2.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnCONCACAFsedesYpaisesActionPerformed
+    private void cafActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cafActionPerformed
+       llenarTabla(africa);
+    }//GEN-LAST:event_cafActionPerformed
 
-    private void btnCOMEBOLsedesYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCOMEBOLsedesYpaisesActionPerformed
-        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
-        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
-        this.dispose(); // Cerrar el frame diseño
-        frame2.setResizable(false);
-        frame2.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnCOMEBOLsedesYpaisesActionPerformed
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void btnOFCsedesYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOFCsedesYpaisesActionPerformed
-        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
-        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
-        this.dispose(); // Cerrar el frame diseño
-        frame2.setResizable(false);
-        frame2.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnOFCsedesYpaisesActionPerformed
+    private void ofcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ofcActionPerformed
+        llenarTabla(oceania);
+    }//GEN-LAST:event_ofcActionPerformed
 
-    private void btnUEFAsedesYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUEFAsedesYpaisesActionPerformed
-        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
-        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
-        this.dispose(); // Cerrar el frame diseño
-        frame2.setResizable(false);
-        frame2.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnUEFAsedesYpaisesActionPerformed
+    private void afcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afcActionPerformed
+        llenarTabla(asia);
+    }//GEN-LAST:event_afcActionPerformed
 
-    private void btnAFCsedesYpaisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAFCsedesYpaisesActionPerformed
-        mostrarSedes frame2 = new mostrarSedes(); // Crear una instancia del frame mostrarSedes
-        frame2.setVisible(true); // Hacer visible el frame mostrarSedes
-        this.dispose(); // Cerrar el frame diseño
-        frame2.setResizable(false);
-        frame2.setLocationRelativeTo(null);
-    }//GEN-LAST:event_btnAFCsedesYpaisesActionPerformed
+    private void uefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uefaActionPerformed
+        llenarTabla(europa);
+    }//GEN-LAST:event_uefaActionPerformed
+
+    private void conmebolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conmebolActionPerformed
+        llenarTabla(surAmerica);
+    }//GEN-LAST:event_conmebolActionPerformed
 
     /**
      * @param args the command line arguments
      */
     // Botones
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAFCpartidoXpartido;
-    private javax.swing.JButton btnAFCsedesYpaises;
-    private javax.swing.JButton btnAFCtodosLOSpartido;
-    private javax.swing.JButton btnCAFpartidoXpartido;
-    private javax.swing.JButton btnCAFsedeYpaises;
-    private javax.swing.JButton btnCAFtodosLOSpartidos;
-    private javax.swing.JButton btnCOMEBOLpartidoXpartido;
-    private javax.swing.JButton btnCOMEBOLsedesYpaises;
-    private javax.swing.JButton btnCOMEBOLtodosLOSpartidos;
-    private javax.swing.JButton btnCONCACAFpartidoXpartido;
-    private javax.swing.JButton btnCONCACAFsedesYpaises;
-    private javax.swing.JButton btnCONCACAFtodosLOSpartidos;
-    private javax.swing.JButton btnOFCpartidoXpartido;
-    private javax.swing.JButton btnOFCsedesYpaises;
-    private javax.swing.JButton btnOFCtodosLOSpartidos;
-    private javax.swing.JButton btnUEFApartidoXpartido;
-    private javax.swing.JButton btnUEFAsedesYpaises;
-    private javax.swing.JButton btnUEFAtodosLOSpartidos;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JButton afc;
+    private javax.swing.JButton caf;
+    private javax.swing.JButton concacaf;
+    private javax.swing.JButton conmebol;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
-    private javax.swing.JTabbedPane tblAFC;
-    private javax.swing.JTable tpnCAF;
+    private javax.swing.JButton ofc;
+    private javax.swing.JTable selecciones;
+    private javax.swing.JButton uefa;
     // End of variables declaration//GEN-END:variables
 }

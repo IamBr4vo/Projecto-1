@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Partido {
+
     private List<Equipo> listaEquipos;
     private Equipo equipo1;
     private Equipo equipo2;
@@ -45,7 +46,7 @@ public class Partido {
     public void setGolequipo2(int golequipo2) {
         this.golequipo2 = golequipo2;
     }
-   
+
     /**
      * @return the listaEquipos
      */
@@ -87,7 +88,7 @@ public class Partido {
     public void setEquipo2(Equipo equipo2) {
         this.equipo2 = equipo2;
     }
-    
+
     public void generarPartidoAleatorio() {
         Random random = new Random();
         setEquipo1(getListaEquipos().get(random.nextInt(getListaEquipos().size())));
@@ -99,31 +100,56 @@ public class Partido {
         }
     }
 
-    
     //Metodo de simulacion de goles aleatorios 
-    public void simularGoles() {
+    public void simularGoles(String equipo1, String equipo2) {
         Random gol = new Random();
         setGolequipo1(gol.nextInt(11));
         setGolequipo2(gol.nextInt(11));
-        calcularPuntos();
+        calcularPuntosYDatosDelPartido();
     }
 
-    public void calcularPuntos() {
+    public void calcularPuntosYDatosDelPartido() {
         if (getGolequipo1() == getGolequipo2()) {
             // Empate
             getEquipo1().actualizarPuntos(1);
             getEquipo2().actualizarPuntos(1);
+            //Actualiza Datos De los 2 equipos empatados
+            getEquipo1().aumentarPartidosEmpatados();
+            getEquipo2().aumentarPartidosEmpatados();
         } else if (getGolequipo1() > getGolequipo2()) {
             // Equipo 1 gana
             getEquipo1().actualizarPuntos(3);
+            //Aumentar equipo1 ganados 
+            getEquipo1().aumentarPartidosGanados();
+            //Aumentar Equipo1 partido perdido
+            getEquipo1().aumentarPartidosPerdidos();
         } else {
             // Equipo 2 gana
             getEquipo2().actualizarPuntos(3);
+            //Aumentar equipo2 ganados 
+            getEquipo2().aumentarPartidosGanados();
+            //Aumentar Equipo2 partido perdido
+            getEquipo2().aumentarPartidosPerdidos();
         }
     }
-    
+
     // Método para mostrar el resultado del partido
     public String obtenerMarcador() {
-        return getEquipo1() + " " + getGolequipo1() + "-" + getGolequipo2() + " " + getEquipo2();
-    } 
+        return getEquipo1().getNombre() + " " + getGolequipo1() + " - " + getGolequipo2() + " " + getEquipo2().getNombre();
+    }
+
+    ///Metodo de aumento 
+    public void guardarDatosEquipos() {
+        getEquipo1().aumentarPartidosJugados();
+        getEquipo2().aumentarPartidosJugados();
+
+        getEquipo1().aumentarGolesContra(golequipo2);
+        getEquipo2().aumentarGolesContra(golequipo1);
+
+        getEquipo1().aumentarGolesFavor(golequipo1);
+        getEquipo2().aumentarGolesFavor(golequipo2);
+
+        getEquipo1().calcularDiferenciaGoles();
+        getEquipo2().calcularDiferenciaGoles();
+    }
 }
