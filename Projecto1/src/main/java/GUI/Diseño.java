@@ -184,6 +184,8 @@ public class Diseño extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        selecciones.setBackground(new java.awt.Color(153, 204, 255));
+        selecciones.setForeground(new java.awt.Color(153, 204, 255));
         selecciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
