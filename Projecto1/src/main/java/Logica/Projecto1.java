@@ -528,7 +528,7 @@ public class Projecto1 {
         sedesCanada.agregarSedes(CAN1);
         sedesCanada.agregarSedes(CAN2);
         
-        Confederacion confe = new Confederacion();
+        Confederacion conf = new Confederacion();
         //Metodo principal para ejecutar la interfaz
         Diseño v = new Diseño(CAF,CONCACAF,CONMEBOL,OFC,UEFA,AFC);
         v.setVisible(true);
