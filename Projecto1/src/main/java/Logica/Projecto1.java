@@ -534,5 +534,7 @@ public class Projecto1 {
         v.setVisible(true);
         v.setResizable(false);
         v.setLocationRelativeTo(null);
+        
+        
     }
 }
