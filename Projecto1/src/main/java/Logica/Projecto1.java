@@ -530,7 +530,7 @@ public class Projecto1 {
         
         Confederacion conf = new Confederacion();
         //Metodo principal para ejecutar la interfaz
-        Diseño v = new Diseño(CAF,CONCACAF,CONMEBOL,OFC,UEFA,AFC);
+        Eliminatoria v = new Eliminatoria(CAF,CONCACAF,CONMEBOL,OFC,UEFA,AFC);
         v.setVisible(true);
         v.setResizable(false);
         v.setLocationRelativeTo(null);
