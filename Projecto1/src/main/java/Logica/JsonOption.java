@@ -11,9 +11,7 @@ package Logica;
  */
 import org.json.JSONObject;
 public class JsonOption {
-     JSONObject obj = new JSONObject();
-     
-     
+     JSONObject obj = new JSONObject();     
      public void addGoalTeamOne(int goles) {
          
      }

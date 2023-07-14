@@ -1,6 +1,5 @@
 package Logica;
 import GUI.*;
-import java.util.List; 
 /**
  *
  * @author Bravo
@@ -527,8 +526,6 @@ public class Projecto1 {
         //Agregar sedes de Canada a la lista
         sedesCanada.agregarSedes(CAN1);
         sedesCanada.agregarSedes(CAN2);
-        
-        Confederacion conf = new Confederacion();
         //Metodo principal para ejecutar la interfaz
         Eliminatoria v = new Eliminatoria(CAF,CONCACAF,CONMEBOL,OFC,UEFA,AFC);
         v.setVisible(true);
