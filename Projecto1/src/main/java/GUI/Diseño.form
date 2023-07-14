@@ -48,12 +48,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="670" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                           <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="0" pref="934" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="1133" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -83,7 +84,7 @@
                           <Component id="jButton3" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="182" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -225,17 +226,17 @@
                   <Color blue="f2" green="f2" red="f2" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="10" rowCount="4">
-                    <Column editable="true" title="Pos" type="java.lang.Object"/>
-                    <Column editable="true" title="Seleccion" type="java.lang.Object"/>
-                    <Column editable="true" title="PTS" type="java.lang.Object"/>
-                    <Column editable="true" title="PJ" type="java.lang.Object"/>
-                    <Column editable="true" title="PG" type="java.lang.Object"/>
-                    <Column editable="true" title="PE" type="java.lang.Object"/>
-                    <Column editable="true" title="PP" type="java.lang.Object"/>
-                    <Column editable="true" title="GF" type="java.lang.Object"/>
-                    <Column editable="true" title="GC" type="java.lang.Object"/>
-                    <Column editable="true" title="DIF" type="java.lang.Object"/>
+                  <Table columnCount="10" rowCount="6">
+                    <Column editable="false" title="Pos" type="java.lang.Object"/>
+                    <Column editable="false" title="Seleccion" type="java.lang.Object"/>
+                    <Column editable="false" title="PTS" type="java.lang.Object"/>
+                    <Column editable="false" title="PJ" type="java.lang.Object"/>
+                    <Column editable="false" title="PG" type="java.lang.Object"/>
+                    <Column editable="false" title="PE" type="java.lang.Object"/>
+                    <Column editable="false" title="PP" type="java.lang.Object"/>
+                    <Column editable="false" title="GF" type="java.lang.Object"/>
+                    <Column editable="false" title="GC" type="java.lang.Object"/>
+                    <Column editable="false" title="DIF" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

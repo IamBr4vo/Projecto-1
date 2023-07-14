@@ -151,5 +151,8 @@ public class Partido {
         //Goles de diferencia 
         getEquipo1().calcularDiferenciaGoles();
         getEquipo2().calcularDiferenciaGoles();
+        
+        
     }
+   
 }
