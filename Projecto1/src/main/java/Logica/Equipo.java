@@ -34,17 +34,17 @@ public class Equipo {
     public void aumentarPartidosJugados() {
         this.setPJ(this.getPJ() + 1);
     }
-
+    
     public void aumentarPartidosGanados() {
-        this.setPG(this.getPG() + 1);
+    this.setPG(this.getPG() + 1);
     }
     
     public void aumentarPartidosEmpatados() {
-        this.setPE(this.getPE() + 1);
+    this.setPE(this.getPE() + 1);
     }
-
+    
     public void aumentarPartidosPerdidos() {
-        this.setPP(this.getPP() + 1);
+    this.setPP(this.getPP() + 1);
     }
 
     public void aumentarGolesFavor(int goles) {
@@ -60,7 +60,7 @@ public class Equipo {
     }
 
     public void actualizarPuntos(int puntos) {
-        this.setPTS(this.getPTS() + getPTS());
+        this.setPTS(this.getPTS() + puntos);
     }
 
     /**

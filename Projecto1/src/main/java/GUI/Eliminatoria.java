@@ -6,6 +6,8 @@ package GUI;
 
 import Logica.Confederacion;
 import Logica.Equipo;
+import Logica.Partido;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -155,6 +157,156 @@ public class Eliminatoria extends javax.swing.JFrame {
             model.addRow(rowData);
         }
     }
+    
+ private void actualizarTablaCONMEBOL(List<Equipo> equipos) {
+    // Ordenar la lista de equipos según los puntos y la diferencia de goles
+    equipos.sort((equipo1, equipo2) -> {
+        // Comparar los puntos
+        int comparacionPuntos = Integer.compare(equipo2.getPTS(), equipo1.getPTS());
+        if (comparacionPuntos != 0) {
+            return comparacionPuntos;
+        } else {
+            // En caso de empate en puntos, comparar la diferencia de goles
+            return Integer.compare(equipo2.getDF(), equipo1.getDF());
+        }
+    });
+
+    // Limpiar la tabla
+    DefaultTableModel model = (DefaultTableModel) tblCONMEBOL.getModel();
+    model.getDataVector().removeAllElements();
+    
+    // Llenar la tabla con los datos ordenados
+    Object rowData[] = new Object[10];
+    for (int i = 0; i < equipos.size(); i++) {
+        rowData[0] = i + 1;
+        rowData[1] = equipos.get(i).getNombre();
+        rowData[2] = equipos.get(i).getPTS();
+        rowData[3] = equipos.get(i).getPJ();
+        rowData[4] = equipos.get(i).getPG();
+        rowData[5] = equipos.get(i).getPE();
+        rowData[6] = equipos.get(i).getPP();
+        rowData[7] = equipos.get(i).getGF();
+        rowData[8] = equipos.get(i).getGC();
+        rowData[9] = equipos.get(i).getDF();
+        model.addRow(rowData);
+    }
+}
+ 
+  private void actualizarTablaCAF(List<Equipo> equipos) {
+    // Ordenar la lista de equipos según los puntos y la diferencia de goles
+    equipos.sort((equipo1, equipo2) -> {
+        // Comparar los puntos
+        int comparacionPuntos = Integer.compare(equipo2.getPTS(), equipo1.getPTS());
+        if (comparacionPuntos != 0) {
+            return comparacionPuntos;
+        } else {
+            // En caso de empate en puntos, comparar la diferencia de goles
+            return Integer.compare(equipo2.getDF(), equipo1.getDF());
+        }
+    });
+
+    // Limpiar la tabla
+    DefaultTableModel model = (DefaultTableModel) tblCAF.getModel();
+    model.getDataVector().removeAllElements();
+    
+    // Llenar la tabla con los datos ordenados
+    Object rowData[] = new Object[10];
+    for (int i = 0; i < equipos.size(); i++) {
+        rowData[0] = i + 1;
+        rowData[1] = equipos.get(i).getNombre();
+        rowData[2] = equipos.get(i).getPTS();
+        rowData[3] = equipos.get(i).getPJ();
+        rowData[4] = equipos.get(i).getPG();
+        rowData[5] = equipos.get(i).getPE();
+        rowData[6] = equipos.get(i).getPP();
+        rowData[7] = equipos.get(i).getGF();
+        rowData[8] = equipos.get(i).getGC();
+        rowData[9] = equipos.get(i).getDF();
+        model.addRow(rowData);
+    }
+}
+    
+   private void actualizarTablaCONCACAF(List<Equipo> equipos) {
+    // Ordenar la lista de equipos según los puntos y la diferencia de goles
+    equipos.sort((equipo1, equipo2) -> {
+        // Comparar los puntos
+        int comparacionPuntos = Integer.compare(equipo2.getPTS(), equipo1.getPTS());
+        if (comparacionPuntos != 0) {
+            return comparacionPuntos;
+        } else {
+            // En caso de empate en puntos, comparar la diferencia de goles
+            return Integer.compare(equipo2.getDF(), equipo1.getDF());
+        }
+    });
+
+    // Limpiar la tabla
+    DefaultTableModel model = (DefaultTableModel) tblCONCACAF.getModel();
+    model.getDataVector().removeAllElements();
+    
+    // Llenar la tabla con los datos ordenados
+    Object rowData[] = new Object[10];
+    for (int i = 0; i < equipos.size(); i++) {
+        rowData[0] = i + 1;
+        rowData[1] = equipos.get(i).getNombre();
+        rowData[2] = equipos.get(i).getPTS();
+        rowData[3] = equipos.get(i).getPJ();
+        rowData[4] = equipos.get(i).getPG();
+        rowData[5] = equipos.get(i).getPE();
+        rowData[6] = equipos.get(i).getPP();
+        rowData[7] = equipos.get(i).getGF();
+        rowData[8] = equipos.get(i).getGC();
+        rowData[9] = equipos.get(i).getDF();
+        model.addRow(rowData);
+    }
+}
+    private void actualizarEstadisticasEquipoCAF(Equipo equipo, int golesAFavor, int golesEnContra) {
+    equipo.aumentarPartidosJugados(); // Incrementar los partidos jugados
+
+    if (golesAFavor > golesEnContra) {
+        equipo.actualizarPuntos(3); // Incrementar los puntos
+        equipo.aumentarPartidosGanados(); // Incrementar los partidos ganados
+    } else if (golesAFavor < golesEnContra) {
+        equipo.aumentarPartidosPerdidos(); // Incrementar los partidos perdidos
+    } else {
+        equipo.actualizarPuntos(1); // Incrementar los puntos (por empate)
+        equipo.aumentarPartidosEmpatados(); // Incrementar los partidos empatados
+    }
+
+    equipo.calcularDiferenciaGoles(); // Calcular la diferencia de goles
+}   
+    
+    private void actualizarEstadisticasEquipoCONMEBOL(Equipo equipo, int golesAFavor, int golesEnContra) {
+    equipo.aumentarPartidosJugados(); // Incrementar los partidos jugados
+
+    if (golesAFavor > golesEnContra) {
+        equipo.actualizarPuntos(3); // Incrementar los puntos
+        equipo.aumentarPartidosGanados(); // Incrementar los partidos ganados
+    } else if (golesAFavor < golesEnContra) {
+        equipo.aumentarPartidosPerdidos(); // Incrementar los partidos perdidos
+    } else {
+        equipo.actualizarPuntos(1); // Incrementar los puntos (por empate)
+        equipo.aumentarPartidosEmpatados(); // Incrementar los partidos empatados
+    }
+
+    equipo.calcularDiferenciaGoles(); // Calcular la diferencia de goles
+}
+    
+       private void actualizarEstadisticasEquipoCONCACAF(Equipo equipo, int golesAFavor, int golesEnContra) {
+    equipo.aumentarPartidosJugados(); // Incrementar los partidos jugados
+
+    if (golesAFavor > golesEnContra) {
+        equipo.actualizarPuntos(3); // Incrementar los puntos
+        equipo.aumentarPartidosGanados(); // Incrementar los partidos ganados
+    } else if (golesAFavor < golesEnContra) {
+        equipo.aumentarPartidosPerdidos(); // Incrementar los partidos perdidos
+    } else {
+        equipo.actualizarPuntos(1); // Incrementar los puntos (por empate)
+        equipo.aumentarPartidosEmpatados(); // Incrementar los partidos empatados
+    }
+
+    equipo.calcularDiferenciaGoles(); // Calcular la diferencia de goles
+}
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -245,6 +397,11 @@ public class Eliminatoria extends javax.swing.JFrame {
         });
 
         btnSimularTodosCAF.setText("Simular Todos Los Partidos");
+        btnSimularTodosCAF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimularTodosCAFActionPerformed(evt);
+            }
+        });
 
         btnVerSedesCAF.setText("Ver Sedes y Paises");
         btnVerSedesCAF.addActionListener(new java.awt.event.ActionListener() {
@@ -370,6 +527,11 @@ public class Eliminatoria extends javax.swing.JFrame {
         btnSimularUnoCONMEBOL.setText("Simular Partido");
 
         btnSimularTodosCONMEBOL.setText("Simular Todos Los Partidos");
+        btnSimularTodosCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimularTodosCONMEBOLActionPerformed(evt);
+            }
+        });
 
         btnVerSedesCONMEBOL.setText("Ver Sedes y Paises");
         btnVerSedesCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
@@ -638,11 +800,46 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVerSedesAFCActionPerformed
 
     private void btnSimularTodosCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCONCACAFActionPerformed
-        // TODO add your handling code here:
+    // Obtener la lista de equipos de la confederación CONMEBOL
+    List<Equipo> equiposCONCACAF = america;
+
+    // Crear una lista auxiliar para llevar el registro de los partidos jugados entre equipos
+    List<String> partidosJugados = new ArrayList<>();
+
+    // Simular los partidos entre todos los equipos de la confederación CONMEBOL
+    for (int i = 0; i < equiposCONCACAF.size(); i++) {
+        for (int j = i + 1; j < equiposCONCACAF.size(); j++) {
+            // Verificar si el partido entre los equipos ya ha sido jugado
+            String partidoKey1 = equiposCONCACAF.get(i).getNombre() + "-" + equiposCONCACAF.get(j).getNombre();
+            String partidoKey2 = equiposCONCACAF.get(j).getNombre() + "-" + equiposCONCACAF.get(i).getNombre();
+            if (!partidosJugados.contains(partidoKey1) && !partidosJugados.contains(partidoKey2)) {
+                // Crear un nuevo partido entre los equipos
+                Partido partido = new Partido(equiposCONCACAF);
+                partido.setEquipo1(equiposCONCACAF.get(i));
+                partido.setEquipo2(equiposCONCACAF.get(j));
+
+                // Simular el partido
+                partido.simularGoles(equiposCONCACAF.get(i).getNombre(), equiposCONCACAF.get(j).getNombre());
+                partido.guardarDatosEquipos();
+
+                // Actualizar los puntos y estadísticas de los equipos
+                actualizarEstadisticasEquipoCONCACAF(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+                actualizarEstadisticasEquipoCONCACAF(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
+
+                // Actualizar el registro de partidos jugados
+                partidosJugados.add(partidoKey1);
+            }
+        }
+    }
+
+    // Actualizar la tabla de la confederación CONMEBOL
+    llenarTablaCONCACAF(equiposCONCACAF);
+    // Actualizar la tabla de la confederación CONMEBOL
+    actualizarTablaCONCACAF(equiposCONCACAF);
     }//GEN-LAST:event_btnSimularTodosCONCACAFActionPerformed
 
     private void btnSimularTodosAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosAFCActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_btnSimularTodosAFCActionPerformed
 
     private void btnSimularUnoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoAFCActionPerformed
@@ -652,6 +849,84 @@ public class Eliminatoria extends javax.swing.JFrame {
     private void btnSimularUnoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoCAFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSimularUnoCAFActionPerformed
+
+    private void btnSimularTodosCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCONMEBOLActionPerformed
+    // Obtener la lista de equipos de la confederación CONMEBOL
+    List<Equipo> equiposCONMEBOL = surAmerica;
+
+    // Crear una lista auxiliar para llevar el registro de los partidos jugados entre equipos
+    List<String> partidosJugados = new ArrayList<>();
+
+    // Simular los partidos entre todos los equipos de la confederación CONMEBOL
+    for (int i = 0; i < equiposCONMEBOL.size(); i++) {
+        for (int j = i + 1; j < equiposCONMEBOL.size(); j++) {
+            // Verificar si el partido entre los equipos ya ha sido jugado
+            String partidoKey1 = equiposCONMEBOL.get(i).getNombre() + "-" + equiposCONMEBOL.get(j).getNombre();
+            String partidoKey2 = equiposCONMEBOL.get(j).getNombre() + "-" + equiposCONMEBOL.get(i).getNombre();
+            if (!partidosJugados.contains(partidoKey1) && !partidosJugados.contains(partidoKey2)) {
+                // Crear un nuevo partido entre los equipos
+                Partido partido = new Partido(equiposCONMEBOL);
+                partido.setEquipo1(equiposCONMEBOL.get(i));
+                partido.setEquipo2(equiposCONMEBOL.get(j));
+
+                // Simular el partido
+                partido.simularGoles(equiposCONMEBOL.get(i).getNombre(), equiposCONMEBOL.get(j).getNombre());
+                partido.guardarDatosEquipos();
+
+                // Actualizar los puntos y estadísticas de los equipos
+                actualizarEstadisticasEquipoCONMEBOL(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+                actualizarEstadisticasEquipoCONMEBOL(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
+
+                // Actualizar el registro de partidos jugados
+                partidosJugados.add(partidoKey1);
+            }
+        }
+    }
+
+    // Actualizar la tabla de la confederación CONMEBOL
+    llenarTablaCONMEBOL(equiposCONMEBOL);
+    // Actualizar la tabla de la confederación CONMEBOL
+    actualizarTablaCONMEBOL(equiposCONMEBOL);
+    }//GEN-LAST:event_btnSimularTodosCONMEBOLActionPerformed
+
+    private void btnSimularTodosCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCAFActionPerformed
+    // Obtener la lista de equipos de la confederación CONMEBOL
+    List<Equipo> equiposCAF = africa;
+
+    // Crear una lista auxiliar para llevar el registro de los partidos jugados entre equipos
+    List<String> partidosJugados = new ArrayList<>();
+
+    // Simular los partidos entre todos los equipos de la confederación CONMEBOL
+    for (int i = 0; i < equiposCAF.size(); i++) {
+        for (int j = i + 1; j < equiposCAF.size(); j++) {
+            // Verificar si el partido entre los equipos ya ha sido jugado
+            String partidoKey1 = equiposCAF.get(i).getNombre() + "-" + equiposCAF.get(j).getNombre();
+            String partidoKey2 = equiposCAF.get(j).getNombre() + "-" + equiposCAF.get(i).getNombre();
+            if (!partidosJugados.contains(partidoKey1) && !partidosJugados.contains(partidoKey2)) {
+                // Crear un nuevo partido entre los equipos
+                Partido partido = new Partido(equiposCAF);
+                partido.setEquipo1(equiposCAF.get(i));
+                partido.setEquipo2(equiposCAF.get(j));
+
+                // Simular el partido
+                partido.simularGoles(equiposCAF.get(i).getNombre(), equiposCAF.get(j).getNombre());
+                partido.guardarDatosEquipos();
+
+                // Actualizar los puntos y estadísticas de los equipos
+                actualizarEstadisticasEquipoCAF(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+                actualizarEstadisticasEquipoCAF(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
+
+                // Actualizar el registro de partidos jugados
+                partidosJugados.add(partidoKey1);
+            }
+        }
+    }
+
+    // Actualizar la tabla de la confederación CONMEBOL
+    llenarTablaCAF(equiposCAF);
+    // Actualizar la tabla de la confederación CONMEBOL
+    actualizarTablaCAF(equiposCAF);
+    }//GEN-LAST:event_btnSimularTodosCAFActionPerformed
 
     /**
      * @param args the command line arguments

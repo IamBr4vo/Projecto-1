@@ -194,6 +194,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Simular Todos Los Partidos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSimularTodosCAFActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnVerSedesCAF">
               <Properties>
@@ -485,6 +488,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Simular Todos Los Partidos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSimularTodosCONMEBOLActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnVerSedesCONMEBOL">
               <Properties>

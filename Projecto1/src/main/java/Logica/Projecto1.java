@@ -19,7 +19,6 @@ public class Projecto1 {
         Equipo concacaf9 = new Equipo("Belice");
         Equipo concacaf10 = new Equipo("Bermudas");
         Equipo concacaf11 = new Equipo("Bonaire");
-        Equipo concacaf12 = new Equipo("Canada");
         Equipo concacaf13 = new Equipo("Cuba");
         Equipo concacaf14 = new Equipo("Curazao");
         Equipo concacaf15 = new Equipo("Dominica");
@@ -36,7 +35,6 @@ public class Projecto1 {
         Equipo concacaf26 = new Equipo("Islas Virgenes de los Estados Unidos");
         Equipo concacaf27 = new Equipo("Jamaica");
         Equipo concacaf28 = new Equipo("Martinica");
-        Equipo concacaf29 = new Equipo("Mexico");
         Equipo concacaf30 = new Equipo("Montserrat");
         Equipo concacaf31 = new Equipo("Nicaragua");
         Equipo concacaf32 = new Equipo("Puerto Rico");
@@ -48,7 +46,6 @@ public class Projecto1 {
         Equipo concacaf38 = new Equipo("Sint Maarten");
         Equipo concacaf39 = new Equipo("Surinam");
         Equipo concacaf40 = new Equipo("Trinidad Y tobago");
-        Equipo concacaf41 = new Equipo("Estados Unidos");
         
         // Agregar equipos de Concacaf a la lista
         CONCACAF.agregarEquipo(concacaf1);
@@ -62,7 +59,6 @@ public class Projecto1 {
         CONCACAF.agregarEquipo(concacaf9);
         CONCACAF.agregarEquipo(concacaf10);
         CONCACAF.agregarEquipo(concacaf11);
-        CONCACAF.agregarEquipo(concacaf12);
         CONCACAF.agregarEquipo(concacaf13);
         CONCACAF.agregarEquipo(concacaf14);
         CONCACAF.agregarEquipo(concacaf15);
@@ -79,7 +75,6 @@ public class Projecto1 {
         CONCACAF.agregarEquipo(concacaf26);
         CONCACAF.agregarEquipo(concacaf27);
         CONCACAF.agregarEquipo(concacaf28);
-        CONCACAF.agregarEquipo(concacaf29);
         CONCACAF.agregarEquipo(concacaf30);
         CONCACAF.agregarEquipo(concacaf31);
         CONCACAF.agregarEquipo(concacaf32);
@@ -91,7 +86,6 @@ public class Projecto1 {
         CONCACAF.agregarEquipo(concacaf38);
         CONCACAF.agregarEquipo(concacaf39);
         CONCACAF.agregarEquipo(concacaf40);
-        CONCACAF.agregarEquipo(concacaf41);
        
         // Crear equipos para Conmebol
         Confederacion CONMEBOL = new Confederacion(6,1);

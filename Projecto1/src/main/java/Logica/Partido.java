@@ -121,17 +121,18 @@ public class Partido {
             getEquipo1().actualizarPuntos(3);
             //Aumentar equipo1 ganados 
             getEquipo1().aumentarPartidosGanados();
-            //Aumentar Equipo1 partido perdido
-            getEquipo1().aumentarPartidosPerdidos();
+            //Aumentar Equipo2 partido perdido
+            getEquipo2().aumentarPartidosPerdidos();
         } else {
             // Equipo 2 gana
             getEquipo2().actualizarPuntos(3);
             //Aumentar equipo2 ganados 
             getEquipo2().aumentarPartidosGanados();
-            //Aumentar Equipo2 partido perdido
-            getEquipo2().aumentarPartidosPerdidos();
+            //Aumentar Equipo1 partido perdido
+            getEquipo1().aumentarPartidosPerdidos();
         }
     }
+    
 
     // Método para mostrar el resultado del partido
     public String obtenerMarcador() {
