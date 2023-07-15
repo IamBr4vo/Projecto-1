@@ -17,7 +17,12 @@ import javax.swing.table.DefaultTableModel;
  * @author Eithel
  */
 public class Eliminatoria extends javax.swing.JFrame {
-
+    private boolean partidoJugadoCAF = false;
+    private boolean partidoJugadoCONCACAF = false;
+    private boolean partidoJugadoCONMEBOL = false;
+    private boolean partidoJugadoOFC = false;
+    private boolean partidoJugadoUEFA = false;
+    private boolean partidoJugadoAFC = false;
     /**
      * Creates new form Diseño
      */
@@ -1010,6 +1015,8 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVerSedesAFCActionPerformed
 
     private void btnSimularTodosCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCONCACAFActionPerformed
+        // Verificar si los partidos ya se han jugado
+        if (!partidoJugadoCONCACAF) {// Obtener la lista de equipos de la confederación OFC
         // Obtener la lista de equipos de la confederación CONCACAF
         List<Equipo> equiposCONCACAF = america;
 
@@ -1041,16 +1048,18 @@ public class Eliminatoria extends javax.swing.JFrame {
                 }
             }
         }
-
+        // Actualizar la bandera indicando que los partidos ya se han jugado
+        partidoJugadoCONCACAF = true;
         // Actualizar la tabla de la confederación CONCACAF
         llenarTablaCONCACAF(equiposCONCACAF);
         // Actualizar la tabla de la confederación CONCACAF
         actualizarTablaCONCACAF(equiposCONCACAF);
 
     }//GEN-LAST:event_btnSimularTodosCONCACAFActionPerformed
-
+    }
     private void btnSimularTodosAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosAFCActionPerformed
-        // Obtener la lista de equipos de la confederación OFC
+        // Verificar si los partidos ya se han jugado
+        if (!partidoJugadoAFC) {// Obtener la lista de equipos de la confederación OFC
         List<Equipo> equiposAFC = asia;
 
         // Crear una lista auxiliar para llevar el registro de los partidos jugados entre equipos
@@ -1081,14 +1090,15 @@ public class Eliminatoria extends javax.swing.JFrame {
                 }
             }
         }
-
+        // Actualizar la bandera indicando que los partidos ya se han jugado
+        partidoJugadoAFC = true;
         // Actualizar la tabla de la confederación OFC
         llenarTablaAFC(equiposAFC);
         // Actualizar la tabla de la confederación OFC
         actualizarTablaAFC(equiposAFC);
 
     }//GEN-LAST:event_btnSimularTodosAFCActionPerformed
-
+    }
     private void btnSimularUnoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoAFCActionPerformed
         
         // Obtener la lista de equipos de la confederación OFC
@@ -1173,8 +1183,11 @@ public class Eliminatoria extends javax.swing.JFrame {
         llenarTablaCAF(equiposCAF);
       
     }//GEN-LAST:event_btnSimularUnoCAFActionPerformed
-
+   
+    
     private void btnSimularTodosCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCONMEBOLActionPerformed
+        // Verificar si los partidos ya se han jugado
+        if (!partidoJugadoCONMEBOL) {
         // Obtener la lista de equipos de la confederación CONMEBOL
         List<Equipo> equiposCONMEBOL = surAmerica;
 
@@ -1206,15 +1219,19 @@ public class Eliminatoria extends javax.swing.JFrame {
                 }
             }
         }
+        // Actualizar la bandera indicando que los partidos ya se han jugado
+        partidoJugadoCONMEBOL = true;
 
         // Actualizar la tabla de la confederación CONMEBOL
         llenarTablaCONMEBOL(equiposCONMEBOL);
         // Actualizar la tabla de la confederación CONMEBOL
         actualizarTablaCONMEBOL(equiposCONMEBOL);
-
+        
     }//GEN-LAST:event_btnSimularTodosCONMEBOLActionPerformed
-
+ }
     private void btnSimularTodosCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCAFActionPerformed
+        // Verificar si los partidos ya se han jugado
+        if (!partidoJugadoCAF) {
         // Obtener la lista de equipos de la confederación CAF
         List<Equipo> equiposCAF = africa;
 
@@ -1246,15 +1263,18 @@ public class Eliminatoria extends javax.swing.JFrame {
                 }
             }
         }
-
+        // Actualizar la bandera indicando que los partidos ya se han jugado
+        partidoJugadoCAF = true;
         // Actualizar la tabla de la confederación CAF
         llenarTablaCAF(equiposCAF);
         // Actualizar la tabla de la confederación CAF
         actualizarTablaCAF(equiposCAF);
-
+    }
     }//GEN-LAST:event_btnSimularTodosCAFActionPerformed
 
     private void btnSimularTodosOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosOFCActionPerformed
+        // Verificar si los partidos ya se han jugado
+        if (!partidoJugadoOFC) {
         // Obtener la lista de equipos de la confederación OFC
         List<Equipo> equiposOFC = oceania;
 
@@ -1286,15 +1306,18 @@ public class Eliminatoria extends javax.swing.JFrame {
                 }
             }
         }
-
+        // Actualizar la bandera indicando que los partidos ya se han jugado
+        partidoJugadoOFC = true;
         // Actualizar la tabla de la confederación OFC
         llenarTablaOFC(equiposOFC);
         // Actualizar la tabla de la confederación OFC
         actualizarTablaOFC(equiposOFC);
 
     }//GEN-LAST:event_btnSimularTodosOFCActionPerformed
-
+    }
     private void btnSimularTodosUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosUEFAActionPerformed
+        // Verificar si los partidos ya se han jugado
+        if (!partidoJugadoUEFA) {
         // Obtener la lista de equipos de la confederación CONMEBOL
         List<Equipo> equiposUEFA = europa;
 
@@ -1326,14 +1349,15 @@ public class Eliminatoria extends javax.swing.JFrame {
                 }
             }
         }
-
+        // Actualizar la bandera indicando que los partidos ya se han jugado
+        partidoJugadoUEFA = true;
         // Actualizar la tabla de la confederación UEFA
         llenarTablaUEFA(equiposUEFA);
         // Actualizar la tabla de la confederación UEFA
         actualizarTablaUEFA(equiposUEFA);
 
     }//GEN-LAST:event_btnSimularTodosUEFAActionPerformed
-
+    }
     private void btnSimularUnoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoOFCActionPerformed
         // Obtener la lista de equipos de la confederación OFC
         List<Equipo> equiposOFC = oceania;
