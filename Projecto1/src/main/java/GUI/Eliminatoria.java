@@ -1357,13 +1357,13 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularUnoAFCActionPerformed
 
     private void btnSimularUnoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoCAFActionPerformed
-        if (enfrentamientoActualAFC >= enfrentamientosAFC.size()) {
+        if (enfrentamientoActualCAF >= enfrentamientosCAF.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
-        btnSimularUnoAFC.setEnabled(false);
+        btnSimularUnoCAF.setEnabled(false);
         return;
     }
 
-    Partido partidoActual = enfrentamientosAFC.get(enfrentamientoActualAFC);
+    Partido partidoActual = enfrentamientosCAF.get(enfrentamientoActualCAF);
     Equipo equipoLocal = partidoActual.getEquipo1();
     Equipo equipoVisitante = partidoActual.getEquipo2();
 
@@ -1372,16 +1372,16 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     partidoActual.guardarDatosEquipos();
 
     // Actualizar los puntos y estadísticas de los equipos
-    actualizarEstadisticasEquipoAFC(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
-    actualizarEstadisticasEquipoAFC(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
+    actualizarEstadisticasEquipoCAF(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
+    actualizarEstadisticasEquipoCAF(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
 
     // Incrementar el índice del enfrentamiento actual
-    enfrentamientoActualAFC++;
+    enfrentamientoActualCAF++;
 
     // Actualizar la tabla de la confederación CAF
-    llenarTablaAFC(equiposAFC);
+    llenarTablaCAF(equiposCAF);
     // Actualizar la tabla de la confederación CAF
-    actualizarTablaAFC(equiposAFC);
+    actualizarTablaCAF(equiposCAF);
       
     }//GEN-LAST:event_btnSimularUnoCAFActionPerformed
    
