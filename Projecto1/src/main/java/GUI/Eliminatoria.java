@@ -23,35 +23,36 @@ public class Eliminatoria extends javax.swing.JFrame {
     private boolean partidoJugadoOFC = false;
     private boolean partidoJugadoUEFA = false;
     private boolean partidoJugadoAFC = false;
+    
     private List<Equipo> equiposCONCACAF;
     private List<Equipo> equiposCAF; 
     private List<Equipo> equiposCONMEBOL;
     private List<Equipo> equiposOFC;
     private List<Equipo> equiposUEFA;
-     private List<Equipo> equiposAFC;
+    private List<Equipo> equiposAFC;
+    
     private List<Partido> enfrentamientosCAF;
     private List<Partido> enfrentamientosCONCACAF;
     private List<Partido> enfrentamientosCONMEBOL;
     private List<Partido> enfrentamientosOFC;
     private List<Partido> enfrentamientosUEFA;
      private List<Partido> enfrentamientosAFC;
+     
     private int enfrentamientoActualCAF;
     private int enfrentamientoActualCONCACAF;
-    private int enfrentamientoActualCONMEBOL;// Índice del enfrentamiento actual
+    private int enfrentamientoActualCONMEBOL;
     private int enfrentamientoActualOFC;
     private int enfrentamientoActualUEFA;
     private int enfrentamientoActualAFC;
-    private boolean[][] equiposYaJugaronCAF;          // Matriz para llevar registro de los equipos que ya jugaron entre sí
+    
+     // Matriz para llevar registro de los equipos que ya jugaron entre sí
+    private boolean[][] equiposYaJugaronCAF;         
     private boolean[][] equiposYaJugaronCONCACAF;
     private boolean[][] equiposYaJugaronCONMEBOL;
     private boolean[][] equiposYaJugaronOFC;
     private boolean[][] equiposYaJugaronUEFA;
     private boolean[][] equiposYaJugaronAFC;
 
-
-    /**
-     * Creates new form Diseño
-     */
     List<Equipo> africa;
     List<Equipo> america;
     List<Equipo> surAmerica;
@@ -74,6 +75,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         llenarTablaOFC(oceania);      // Llena la tabla de Oceanía
         llenarTablaUEFA(europa);       // Llena la tabla de Europa
         llenarTablaAFC(asia);         // Llena la tabla de Asia
+        
         inicializarEnfrentamientosAleatoriosCONCACAF();
         inicializarEnfrentamientosAleatoriosCONMEBOL();
         inicializarEnfrentamientosAleatoriosCAF();
@@ -406,89 +408,9 @@ public class Eliminatoria extends javax.swing.JFrame {
             model.addRow(rowData);
         }
     }
+    
     //Metodo para actualizar las estadisticas de cada equipo
-
-    private void actualizarEstadisticasEquipoCAF(Equipo equipo, int golesAFavor, int golesEnContra) {
-        equipo.aumentarPartidosJugados(); // Incrementar los partidos jugados
-
-        if (golesAFavor > golesEnContra) {
-            equipo.actualizarPuntos(3); // Incrementar los puntos
-            equipo.aumentarPartidosGanados(); // Incrementar los partidos ganados
-        } else if (golesAFavor < golesEnContra) {
-            equipo.aumentarPartidosPerdidos(); // Incrementar los partidos perdidos
-        } else {
-            equipo.actualizarPuntos(1); // Incrementar los puntos (por empate)
-            equipo.aumentarPartidosEmpatados(); // Incrementar los partidos empatados
-        }
-
-        equipo.calcularDiferenciaGoles(); // Calcular la diferencia de goles
-    }
-
-    private void actualizarEstadisticasEquipoCONCACAF(Equipo equipo, int golesAFavor, int golesEnContra) {
-        equipo.aumentarPartidosJugados(); // Incrementar los partidos jugados
-
-        if (golesAFavor > golesEnContra) {
-            equipo.actualizarPuntos(3); // Incrementar los puntos
-            equipo.aumentarPartidosGanados(); // Incrementar los partidos ganados
-        } else if (golesAFavor < golesEnContra) {
-            equipo.aumentarPartidosPerdidos(); // Incrementar los partidos perdidos
-        } else {
-            equipo.actualizarPuntos(1); // Incrementar los puntos (por empate)
-            equipo.aumentarPartidosEmpatados(); // Incrementar los partidos empatados
-        }
-
-        equipo.calcularDiferenciaGoles(); // Calcular la diferencia de goles
-    }
-
-    private void actualizarEstadisticasEquipoCONMEBOL(Equipo equipo, int golesAFavor, int golesEnContra) {
-        equipo.aumentarPartidosJugados(); // Incrementar los partidos jugados
-
-        if (golesAFavor > golesEnContra) {
-            equipo.actualizarPuntos(3); // Incrementar los puntos
-            equipo.aumentarPartidosGanados(); // Incrementar los partidos ganados
-        } else if (golesAFavor < golesEnContra) {
-            equipo.aumentarPartidosPerdidos(); // Incrementar los partidos perdidos
-        } else {
-            equipo.actualizarPuntos(1); // Incrementar los puntos (por empate)
-            equipo.aumentarPartidosEmpatados(); // Incrementar los partidos empatados
-        }
-
-        equipo.calcularDiferenciaGoles(); // Calcular la diferencia de goles
-    }
-
-    private void actualizarEstadisticasEquipoOFC(Equipo equipo, int golesAFavor, int golesEnContra) {
-        equipo.aumentarPartidosJugados(); // Incrementar los partidos jugados
-
-        if (golesAFavor > golesEnContra) {
-            equipo.actualizarPuntos(3); // Incrementar los puntos
-            equipo.aumentarPartidosGanados(); // Incrementar los partidos ganados
-        } else if (golesAFavor < golesEnContra) {
-            equipo.aumentarPartidosPerdidos(); // Incrementar los partidos perdidos
-        } else {
-            equipo.actualizarPuntos(1); // Incrementar los puntos (por empate)
-            equipo.aumentarPartidosEmpatados(); // Incrementar los partidos empatados
-        }
-
-        equipo.calcularDiferenciaGoles(); // Calcular la diferencia de goles
-    }
-
-    private void actualizarEstadisticasEquipoUEFA(Equipo equipo, int golesAFavor, int golesEnContra) {
-        equipo.aumentarPartidosJugados(); // Incrementar los partidos jugados
-
-        if (golesAFavor > golesEnContra) {
-            equipo.actualizarPuntos(3); // Incrementar los puntos
-            equipo.aumentarPartidosGanados(); // Incrementar los partidos ganados
-        } else if (golesAFavor < golesEnContra) {
-            equipo.aumentarPartidosPerdidos(); // Incrementar los partidos perdidos
-        } else {
-            equipo.actualizarPuntos(1); // Incrementar los puntos (por empate)
-            equipo.aumentarPartidosEmpatados(); // Incrementar los partidos empatados
-        }
-
-        equipo.calcularDiferenciaGoles(); // Calcular la diferencia de goles
-    }
-
-    private void actualizarEstadisticasEquipoAFC(Equipo equipo, int golesAFavor, int golesEnContra) {
+    private void actualizarEstadisticasEquipo(Equipo equipo, int golesAFavor, int golesEnContra) {
         equipo.aumentarPartidosJugados(); // Incrementar los partidos jugados
 
         if (golesAFavor > golesEnContra) {
@@ -1274,8 +1196,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
             partido.guardarDatosEquipos();
 
             // Actualizar los puntos y estadísticas de los equipos
-            actualizarEstadisticasEquipoCONCACAF(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
-            actualizarEstadisticasEquipoCONCACAF(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
+            actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+            actualizarEstadisticasEquipo(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
 
             // Incrementar el índice del enfrentamiento actual
             enfrentamientoActualCONCACAF++;
@@ -1309,8 +1231,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
             partido.guardarDatosEquipos();
 
             // Actualizar los puntos y estadísticas de los equipos
-            actualizarEstadisticasEquipoAFC(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
-            actualizarEstadisticasEquipoAFC(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
+            actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+            actualizarEstadisticasEquipo(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
 
             // Incrementar el índice del enfrentamiento actual
             enfrentamientoActualAFC++;
@@ -1343,8 +1265,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     partidoActual.guardarDatosEquipos();
 
     // Actualizar los puntos y estadísticas de los equipos
-    actualizarEstadisticasEquipoAFC(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
-    actualizarEstadisticasEquipoAFC(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
 
     // Incrementar el índice del enfrentamiento actual
     enfrentamientoActualAFC++;
@@ -1372,8 +1294,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     partidoActual.guardarDatosEquipos();
 
     // Actualizar los puntos y estadísticas de los equipos
-    actualizarEstadisticasEquipoCAF(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
-    actualizarEstadisticasEquipoCAF(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
 
     // Incrementar el índice del enfrentamiento actual
     enfrentamientoActualCAF++;
@@ -1403,8 +1325,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
             partido.guardarDatosEquipos();
 
             // Actualizar los puntos y estadísticas de los equipos
-            actualizarEstadisticasEquipoCONMEBOL(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
-            actualizarEstadisticasEquipoCONMEBOL(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
+            actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+            actualizarEstadisticasEquipo(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
 
             // Incrementar el índice del enfrentamiento actual
             enfrentamientoActualCONMEBOL++;
@@ -1437,8 +1359,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
             partido.guardarDatosEquipos();
 
             // Actualizar los puntos y estadísticas de los equipos
-            actualizarEstadisticasEquipoCAF(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
-            actualizarEstadisticasEquipoCAF(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
+            actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+            actualizarEstadisticasEquipo(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
 
             // Incrementar el índice del enfrentamiento actual
             enfrentamientoActualCAF++;
@@ -1471,8 +1393,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
             partido.guardarDatosEquipos();
 
             // Actualizar los puntos y estadísticas de los equipos
-            actualizarEstadisticasEquipoOFC(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
-            actualizarEstadisticasEquipoOFC(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
+            actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+            actualizarEstadisticasEquipo(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
 
             // Incrementar el índice del enfrentamiento actual
             enfrentamientoActualOFC++;
@@ -1505,8 +1427,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
             partido.guardarDatosEquipos();
 
             // Actualizar los puntos y estadísticas de los equipos
-            actualizarEstadisticasEquipoUEFA(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
-            actualizarEstadisticasEquipoUEFA(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
+            actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+            actualizarEstadisticasEquipo(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
 
             // Incrementar el índice del enfrentamiento actual
             enfrentamientoActualUEFA++;
@@ -1537,8 +1459,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     partidoActual.guardarDatosEquipos();
 
     // Actualizar los puntos y estadísticas de los equipos
-    actualizarEstadisticasEquipoOFC(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
-    actualizarEstadisticasEquipoOFC(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
 
     // Incrementar el índice del enfrentamiento actual
     enfrentamientoActualOFC++;
@@ -1565,8 +1487,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     partidoActual.guardarDatosEquipos();
 
     // Actualizar los puntos y estadísticas de los equipos
-    actualizarEstadisticasEquipoUEFA(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
-    actualizarEstadisticasEquipoUEFA(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
 
     // Incrementar el índice del enfrentamiento actual
     enfrentamientoActualUEFA++;
@@ -1593,8 +1515,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     partidoActual.guardarDatosEquipos();
 
     // Actualizar los puntos y estadísticas de los equipos
-    actualizarEstadisticasEquipoCONMEBOL(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
-    actualizarEstadisticasEquipoCONMEBOL(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
 
     // Incrementar el índice del enfrentamiento actual
     enfrentamientoActualCONMEBOL++;
@@ -1621,8 +1543,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     partidoActual.guardarDatosEquipos();
 
     // Actualizar los puntos y estadísticas de los equipos
-    actualizarEstadisticasEquipoCONCACAF(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
-    actualizarEstadisticasEquipoCONCACAF(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
+    actualizarEstadisticasEquipo(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
 
     // Incrementar el índice del enfrentamiento actual
     enfrentamientoActualCONCACAF++;
