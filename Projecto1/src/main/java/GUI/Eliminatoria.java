@@ -62,6 +62,27 @@ public class Eliminatoria extends javax.swing.JFrame {
     
     public Eliminatoria(Confederacion caf, Confederacion concacaf, Confederacion conmebol, Confederacion ofc, Confederacion uefa, Confederacion afc) {
         initComponents();
+        //se lleno la tabla 1
+        ColoresTablas renderer1 = new ColoresTablas(9, 9,0);
+        tblCAF.setDefaultRenderer(Object.class, renderer1);
+        //se lleno la tabla 2
+        ColoresTablas renderer2 = new ColoresTablas(6,6,7);
+        tblCONCACAF.setDefaultRenderer(Object.class, renderer2);
+        //se lleno la tabla 3 
+        ColoresTablas renderer3 = new ColoresTablas(6,6,0);
+        tblCONMEBOL.setDefaultRenderer(Object.class, renderer3);
+        //se lleno la tabla 4 
+        ColoresTablas renderer4 = new ColoresTablas(1,1,0);
+        tblOFC.setDefaultRenderer(Object.class, renderer4);
+        //se lleno la tabla 5
+        ColoresTablas renderer5 = new ColoresTablas(16,0,0);
+        tblUEFA.setDefaultRenderer(Object.class, renderer5);
+        //se lleno la tabla 6
+        ColoresTablas renderer6 = new ColoresTablas(8,8,0);
+        tblAFC.setDefaultRenderer(Object.class, renderer6);
+       
+        
+        
         africa = caf.getListaEquipos();
         america = concacaf.getListaEquipos();
         surAmerica = conmebol.getListaEquipos();
