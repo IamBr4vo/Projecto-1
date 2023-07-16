@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import Logica.ColoresTablas;
 import Logica.Confederacion;
 import Logica.Equipo;
 import Logica.Partido;
@@ -62,27 +63,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     
     public Eliminatoria(Confederacion caf, Confederacion concacaf, Confederacion conmebol, Confederacion ofc, Confederacion uefa, Confederacion afc) {
         initComponents();
-        //se lleno la tabla 1
-        ColoresTablas renderer1 = new ColoresTablas(9, 9,0);
-        tblCAF.setDefaultRenderer(Object.class, renderer1);
-        //se lleno la tabla 2
-        ColoresTablas renderer2 = new ColoresTablas(6,6,7);
-        tblCONCACAF.setDefaultRenderer(Object.class, renderer2);
-        //se lleno la tabla 3 
-        ColoresTablas renderer3 = new ColoresTablas(6,6,0);
-        tblCONMEBOL.setDefaultRenderer(Object.class, renderer3);
-        //se lleno la tabla 4 
-        ColoresTablas renderer4 = new ColoresTablas(1,1,0);
-        tblOFC.setDefaultRenderer(Object.class, renderer4);
-        //se lleno la tabla 5
-        ColoresTablas renderer5 = new ColoresTablas(16,0,0);
-        tblUEFA.setDefaultRenderer(Object.class, renderer5);
-        //se lleno la tabla 6
-        ColoresTablas renderer6 = new ColoresTablas(8,8,0);
-        tblAFC.setDefaultRenderer(Object.class, renderer6);
-       
-        
-        
+
         africa = caf.getListaEquipos();
         america = concacaf.getListaEquipos();
         surAmerica = conmebol.getListaEquipos();
@@ -731,7 +712,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTabbedPane1.setBackground(new java.awt.Color(0, 51, 204));
+        jTabbedPane1.setBackground(new java.awt.Color(0, 51, 153));
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
 
@@ -759,10 +740,10 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         });
         tblCAF.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
         tblCAF.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        tblCAF.setGridColor(new java.awt.Color(51, 102, 255));
+        tblCAF.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane1.setViewportView(tblCAF);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 857, 591));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 530));
 
         btnSimularUnoCAF.setText("Simular Partido");
         btnSimularUnoCAF.addActionListener(new java.awt.event.ActionListener() {
@@ -832,7 +813,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
                 return canEdit [columnIndex];
             }
         });
-        tblCONCACAF.setGridColor(new java.awt.Color(51, 102, 255));
+        tblCONCACAF.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane3.setViewportView(tblCONCACAF);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -857,8 +838,10 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
                 .addComponent(btnSimularTodosCONCACAF)
                 .addGap(66, 66, 66)
                 .addComponent(btnVerSedesCONCACAF)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+                .addContainerGap(245, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CONCACAF", jPanel2);
@@ -884,7 +867,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
                 return canEdit [columnIndex];
             }
         });
-        tblCONMEBOL.setGridColor(new java.awt.Color(51, 102, 255));
+        tblCONMEBOL.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane4.setViewportView(tblCONMEBOL);
 
         btnSimularUnoCONMEBOL.setText("Simular Partido");
@@ -913,8 +896,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSimularTodosCONMEBOL)
                     .addComponent(btnVerSedesCONMEBOL)
@@ -925,7 +908,6 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(112, 112, 112)
                 .addComponent(btnSimularUnoCONMEBOL)
@@ -933,7 +915,10 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
                 .addComponent(btnSimularTodosCONMEBOL)
                 .addGap(66, 66, 66)
                 .addComponent(btnVerSedesCONMEBOL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CONMEBOL", jPanel4);
@@ -959,7 +944,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
                 return canEdit [columnIndex];
             }
         });
-        tblOFC.setGridColor(new java.awt.Color(51, 102, 255));
+        tblOFC.setGridColor(new java.awt.Color(51, 51, 51));
         tblOFC.setSelectionBackground(new java.awt.Color(51, 51, 255));
         tblOFC.setSelectionForeground(new java.awt.Color(51, 51, 255));
         jScrollPane5.setViewportView(tblOFC);
@@ -990,8 +975,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSimularUnoOFC)
                     .addComponent(btnSimularTodosOFC)
@@ -1000,7 +985,6 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(138, 138, 138)
                 .addComponent(btnSimularUnoOFC)
@@ -1008,7 +992,10 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
                 .addComponent(btnSimularTodosOFC)
                 .addGap(66, 66, 66)
                 .addComponent(btnVerSedesOFC)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("OFC", jPanel5);
@@ -1034,7 +1021,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
                 return canEdit [columnIndex];
             }
         });
-        tblUEFA.setGridColor(new java.awt.Color(51, 102, 255));
+        tblUEFA.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane6.setViewportView(tblUEFA);
 
         btnSimularUnoUEFA.setText("Simular Partido");
@@ -1063,8 +1050,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSimularUnoUEFA)
                     .addComponent(btnSimularTodosUEFA)
@@ -1073,7 +1060,6 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
                 .addComponent(btnSimularUnoUEFA)
@@ -1081,7 +1067,10 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
                 .addComponent(btnSimularTodosUEFA)
                 .addGap(66, 66, 66)
                 .addComponent(btnVerSedesUEFA)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("UEFA", jPanel6);
@@ -1107,7 +1096,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
                 return canEdit [columnIndex];
             }
         });
-        tblAFC.setGridColor(new java.awt.Color(51, 102, 255));
+        tblAFC.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane7.setViewportView(tblAFC);
 
         btnSimularUnoAFC.setText("Simular Partido");
@@ -1136,8 +1125,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSimularUnoAFC)
                     .addComponent(btnSimularTodosAFC)
@@ -1146,7 +1135,6 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(177, 177, 177)
                 .addComponent(btnSimularUnoAFC)
@@ -1154,7 +1142,10 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
                 .addComponent(btnSimularTodosAFC)
                 .addGap(70, 70, 70)
                 .addComponent(btnVerSedesAFC)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(225, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("AFC", jPanel7);
@@ -1201,7 +1192,10 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnVerSedesAFCActionPerformed
 
     private void btnSimularTodosCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCONCACAFActionPerformed
-    // Verificar si los partidos ya se han jugado
+    //Colores para la tabla
+        ColoresTablas renderer2 = new ColoresTablas(6,6,7);
+        tblCONCACAF.setDefaultRenderer(Object.class, renderer2);
+// Verificar si los partidos ya se han jugado
     if (!partidoJugadoCONCACAF) {
         // Obtener la lista de equipos de la confederación CAF
         List<Equipo> equiposCONCACAF = america;
@@ -1236,6 +1230,9 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularTodosCONCACAFActionPerformed
 
     private void btnSimularTodosAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosAFCActionPerformed
+        ColoresTablas renderer6 = new ColoresTablas(8,8,0);
+        tblAFC.setDefaultRenderer(Object.class, renderer6);
+        
         // Verificar si los partidos ya se han jugado
     if (!partidoJugadoAFC) {
         // Obtener la lista de equipos de la confederación CAF
@@ -1271,6 +1268,9 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }
     private void btnSimularUnoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoAFCActionPerformed
         
+        ColoresTablas renderer6 = new ColoresTablas(8,8,0);
+        tblAFC.setDefaultRenderer(Object.class, renderer6);
+        
          if (enfrentamientoActualAFC >= enfrentamientosAFC.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoAFC.setEnabled(false);
@@ -1300,6 +1300,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularUnoAFCActionPerformed
 
     private void btnSimularUnoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoCAFActionPerformed
+     ColoresTablas renderer1 = new ColoresTablas(9, 9,0);
+     tblCAF.setDefaultRenderer(Object.class, renderer1);
         if (enfrentamientoActualCAF >= enfrentamientosCAF.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoCAF.setEnabled(false);
@@ -1330,6 +1332,9 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
    
     
     private void btnSimularTodosCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCONMEBOLActionPerformed
+
+        ColoresTablas renderer3 = new ColoresTablas(6,6,0);
+        tblCONMEBOL.setDefaultRenderer(Object.class, renderer3);
         // Verificar si los partidos ya se han jugado
     if (!partidoJugadoCONMEBOL) {
         // Obtener la lista de equipos de la confederación CONMEBOL
@@ -1364,6 +1369,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularTodosCONMEBOLActionPerformed
  }
     private void btnSimularTodosCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCAFActionPerformed
+     ColoresTablas renderer1 = new ColoresTablas(9, 9,0);
+     tblCAF.setDefaultRenderer(Object.class, renderer1);
         // Verificar si los partidos ya se han jugado
     if (!partidoJugadoCAF) {
         // Obtener la lista de equipos de la confederación CAF
@@ -1398,7 +1405,10 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularTodosCAFActionPerformed
 
     private void btnSimularTodosOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosOFCActionPerformed
-          // Verificar si los partidos ya se han jugado
+        //se lleno la tabla 4 
+        ColoresTablas renderer4 = new ColoresTablas(1,1,0);
+        tblOFC.setDefaultRenderer(Object.class, renderer4);  
+// Verificar si los partidos ya se han jugado
     if (!partidoJugadoOFC) {
         // Obtener la lista de equipos de la confederación CAF
         List<Equipo> equiposOFC = oceania; 
@@ -1432,7 +1442,11 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularTodosOFCActionPerformed
     }
     private void btnSimularTodosUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosUEFAActionPerformed
-         // Verificar si los partidos ya se han jugado
+        
+        ColoresTablas renderer5 = new ColoresTablas(16,0,0);
+        tblUEFA.setDefaultRenderer(Object.class, renderer5);
+        
+// Verificar si los partidos ya se han jugado
     if (!partidoJugadoUEFA) {
         // Obtener la lista de equipos de la confederación CAF
         List<Equipo> equiposUEFA = europa; 
@@ -1465,7 +1479,11 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularTodosUEFAActionPerformed
     }
     private void btnSimularUnoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoOFCActionPerformed
-            if (enfrentamientoActualOFC >= enfrentamientosOFC.size()) {
+        //Colorear tabla OFC
+        ColoresTablas renderer4 = new ColoresTablas(1,1,0);
+        tblOFC.setDefaultRenderer(Object.class, renderer4);
+        
+        if (enfrentamientoActualOFC >= enfrentamientosOFC.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoOFC.setEnabled(false);
         return;
@@ -1493,6 +1511,10 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularUnoOFCActionPerformed
 
     private void btnSimularUnoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoUEFAActionPerformed
+        
+        ColoresTablas renderer5 = new ColoresTablas(16,0,0);
+        tblUEFA.setDefaultRenderer(Object.class, renderer5);
+        
         if (enfrentamientoActualUEFA >= enfrentamientosUEFA.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoUEFA.setEnabled(false);
@@ -1521,7 +1543,11 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularUnoUEFAActionPerformed
 
     private void btnSimularUnoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoCONMEBOLActionPerformed
-       if (enfrentamientoActualCONMEBOL >= enfrentamientosCONMEBOL.size()) {
+        
+        ColoresTablas renderer3 = new ColoresTablas(6,6,0);
+        tblCONMEBOL.setDefaultRenderer(Object.class, renderer3);
+        
+        if (enfrentamientoActualCONMEBOL >= enfrentamientosCONMEBOL.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoCONMEBOL.setEnabled(false);
         return;
@@ -1549,6 +1575,9 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularUnoCONMEBOLActionPerformed
 
     private void btnSimularUnoCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoCONCACAFActionPerformed
+        //Colores para la tabla
+        ColoresTablas renderer2 = new ColoresTablas(6,6,7);
+        tblCONCACAF.setDefaultRenderer(Object.class, renderer2);
         if (enfrentamientoActualCONCACAF >= enfrentamientosCONCACAF.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoCONCACAF.setEnabled(false);
