@@ -298,13 +298,6 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tblCONCACAF">
                   <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
-                          <Color PropertyName="color" blue="ff" green="66" red="33" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Nirmala UI" size="12" style="1"/>
                     </Property>
@@ -443,13 +436,6 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tblCONMEBOL">
                   <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
-                          <Color PropertyName="color" blue="ff" green="66" red="33" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Nirmala UI" size="12" style="1"/>
                     </Property>
@@ -609,13 +595,6 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tblOFC">
                   <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
-                          <Color PropertyName="color" blue="ff" green="66" red="33" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Nirmala UI" size="12" style="1"/>
                     </Property>
@@ -781,13 +760,6 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tblUEFA">
                   <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
-                          <Color PropertyName="color" blue="ff" green="66" red="33" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Nirmala UI" size="12" style="1"/>
                     </Property>
@@ -947,13 +919,6 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tblAFC">
                   <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
-                          <Color PropertyName="color" blue="ff" green="66" red="33" type="rgb"/>
-                        </LineBorder>
-                      </Border>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Nirmala UI" size="12" style="1"/>
                     </Property>

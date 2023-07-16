@@ -792,7 +792,6 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
             }
         });
 
-        tblCONCACAF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
         tblCONCACAF.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
         tblCONCACAF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -846,7 +845,6 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
 
         jTabbedPane1.addTab("CONCACAF", jPanel2);
 
-        tblCONMEBOL.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
         tblCONMEBOL.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
         tblCONMEBOL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -923,7 +921,6 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
 
         jTabbedPane1.addTab("CONMEBOL", jPanel4);
 
-        tblOFC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
         tblOFC.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
         tblOFC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1000,7 +997,6 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
 
         jTabbedPane1.addTab("OFC", jPanel5);
 
-        tblUEFA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
         tblUEFA.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
         tblUEFA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1075,7 +1071,6 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
 
         jTabbedPane1.addTab("UEFA", jPanel6);
 
-        tblAFC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
         tblAFC.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
         tblAFC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1197,6 +1192,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         tblCONCACAF.setDefaultRenderer(Object.class, renderer2);
 // Verificar si los partidos ya se han jugado
     if (!partidoJugadoCONCACAF) {
+        btnSimularTodosCONCACAF.setEnabled(false);
+        btnSimularUnoCONCACAF.setEnabled(false);
         // Obtener la lista de equipos de la confederación CAF
         List<Equipo> equiposCONCACAF = america;
 
@@ -1235,6 +1232,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         
         // Verificar si los partidos ya se han jugado
     if (!partidoJugadoAFC) {
+        btnSimularTodosAFC.setEnabled(false);
+        btnSimularUnoAFC.setEnabled(false);
         // Obtener la lista de equipos de la confederación CAF
         List<Equipo> equiposAFC = asia;
 
@@ -1274,6 +1273,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
          if (enfrentamientoActualAFC >= enfrentamientosAFC.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoAFC.setEnabled(false);
+        btnSimularTodosAFC.setEnabled(false);
         return;
     }
 
@@ -1305,6 +1305,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         if (enfrentamientoActualCAF >= enfrentamientosCAF.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoCAF.setEnabled(false);
+        btnSimularTodosCAF.setEnabled(false);
         return;
     }
 
@@ -1337,6 +1338,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         tblCONMEBOL.setDefaultRenderer(Object.class, renderer3);
         // Verificar si los partidos ya se han jugado
     if (!partidoJugadoCONMEBOL) {
+        btnSimularTodosCONMEBOL.setEnabled(false);
+        btnSimularUnoCONMEBOL.setEnabled(false);
         // Obtener la lista de equipos de la confederación CONMEBOL
         List<Equipo> equiposCONMEBOL = surAmerica;
 
@@ -1373,6 +1376,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
      tblCAF.setDefaultRenderer(Object.class, renderer1);
         // Verificar si los partidos ya se han jugado
     if (!partidoJugadoCAF) {
+        btnSimularTodosCAF.setEnabled(false);
+        btnSimularUnoCAF.setEnabled(false);
         // Obtener la lista de equipos de la confederación CAF
         List<Equipo> equiposCAF = africa;
 
@@ -1408,8 +1413,10 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         //se lleno la tabla 4 
         ColoresTablas renderer4 = new ColoresTablas(1,1,0);
         tblOFC.setDefaultRenderer(Object.class, renderer4);  
-// Verificar si los partidos ya se han jugado
+        // Verificar si los partidos ya se han jugado
     if (!partidoJugadoOFC) {
+        btnSimularTodosOFC.setEnabled(false);
+        btnSimularUnoOFC.setEnabled(false);
         // Obtener la lista de equipos de la confederación CAF
         List<Equipo> equiposOFC = oceania; 
 
@@ -1448,6 +1455,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         
 // Verificar si los partidos ya se han jugado
     if (!partidoJugadoUEFA) {
+        btnSimularTodosUEFA.setEnabled(false);
+        btnSimularUnoUEFA.setEnabled(false);
         // Obtener la lista de equipos de la confederación CAF
         List<Equipo> equiposUEFA = europa; 
 
@@ -1486,6 +1495,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         if (enfrentamientoActualOFC >= enfrentamientosOFC.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoOFC.setEnabled(false);
+        btnSimularTodosOFC.setEnabled(false);
         return;
     }
 
@@ -1518,6 +1528,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         if (enfrentamientoActualUEFA >= enfrentamientosUEFA.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoUEFA.setEnabled(false);
+        btnSimularTodosUEFA.setEnabled(false);
         return;
     }
 
@@ -1550,6 +1561,7 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         if (enfrentamientoActualCONMEBOL >= enfrentamientosCONMEBOL.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoCONMEBOL.setEnabled(false);
+        btnSimularTodosCONMEBOL.setEnabled(false);
         return;
     }
 
@@ -1579,6 +1591,8 @@ private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
         ColoresTablas renderer2 = new ColoresTablas(6,6,7);
         tblCONCACAF.setDefaultRenderer(Object.class, renderer2);
         if (enfrentamientoActualCONCACAF >= enfrentamientosCONCACAF.size()) {
+        btnSimularUnoCONCACAF.setEnabled(false);
+        btnSimularTodosCONCACAF.setEnabled(false);
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
         btnSimularUnoCONCACAF.setEnabled(false);
         return;
