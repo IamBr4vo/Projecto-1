@@ -27,18 +27,26 @@ public class Eliminatoria extends javax.swing.JFrame {
     private List<Equipo> equiposCAF; 
     private List<Equipo> equiposCONMEBOL;
     private List<Equipo> equiposOFC;
+    private List<Equipo> equiposUEFA;
+     private List<Equipo> equiposAFC;
     private List<Partido> enfrentamientosCAF;
     private List<Partido> enfrentamientosCONCACAF;
     private List<Partido> enfrentamientosCONMEBOL;
     private List<Partido> enfrentamientosOFC;
+    private List<Partido> enfrentamientosUEFA;
+     private List<Partido> enfrentamientosAFC;
     private int enfrentamientoActualCAF;
     private int enfrentamientoActualCONCACAF;
     private int enfrentamientoActualCONMEBOL;// Índice del enfrentamiento actual
     private int enfrentamientoActualOFC;
+    private int enfrentamientoActualUEFA;
+    private int enfrentamientoActualAFC;
     private boolean[][] equiposYaJugaronCAF;          // Matriz para llevar registro de los equipos que ya jugaron entre sí
     private boolean[][] equiposYaJugaronCONCACAF;
     private boolean[][] equiposYaJugaronCONMEBOL;
     private boolean[][] equiposYaJugaronOFC;
+    private boolean[][] equiposYaJugaronUEFA;
+    private boolean[][] equiposYaJugaronAFC;
 
 
     /**
@@ -51,20 +59,6 @@ public class Eliminatoria extends javax.swing.JFrame {
     List<Equipo> europa;
     List<Equipo> asia;
     
-    //Contadores i y j para simular partido
-    int i = 0;
-    int j = 1;
-    int o = 0;
-    int k = 1;
-    int p = 0;
-    int l = 1;
-    int q = 0;
-    int a = 1;
-    int w = 0;
-    int s = 1;
-    int e = 0;
-    int d = 1;
-
     public Eliminatoria(Confederacion caf, Confederacion concacaf, Confederacion conmebol, Confederacion ofc, Confederacion uefa, Confederacion afc) {
         initComponents();
         africa = caf.getListaEquipos();
@@ -84,6 +78,8 @@ public class Eliminatoria extends javax.swing.JFrame {
         inicializarEnfrentamientosAleatoriosCONMEBOL();
         inicializarEnfrentamientosAleatoriosCAF();
         inicializarEnfrentamientosAleatoriosOFC();
+        inicializarEnfrentamientosAleatoriosUEFA();
+        inicializarEnfrentamientosAleatoriosAFC();
     }
 
     //Metodo para llenar la tabla CAF
@@ -547,6 +543,24 @@ private void inicializarEnfrentamientosAleatoriosOFC() {
     enfrentamientoActualOFC = 0;
     btnSimularUnoOFC.setEnabled(true);
 }
+// Método para inicializar los enfrentamientos de manera adecuada para CONMEBOL
+private void inicializarEnfrentamientosAleatoriosUEFA() {
+    equiposUEFA = new ArrayList<>(europa);
+    int numEquipos = equiposUEFA.size();
+    equiposYaJugaronUEFA = new boolean[numEquipos][numEquipos];
+    enfrentamientosUEFA = generarEnfrentamientosUEFA(equiposUEFA);
+    enfrentamientoActualUEFA = 0;
+    btnSimularUnoUEFA.setEnabled(true);
+}
+// Método para inicializar los enfrentamientos de manera adecuada para CONMEBOL
+private void inicializarEnfrentamientosAleatoriosAFC() {
+    equiposAFC = new ArrayList<>(asia);
+    int numEquipos = equiposAFC.size();
+    equiposYaJugaronAFC = new boolean[numEquipos][numEquipos];
+    enfrentamientosAFC = generarEnfrentamientosAFC(equiposAFC);
+    enfrentamientoActualAFC = 0;
+    btnSimularUnoAFC.setEnabled(true);
+}
 
 // Método para generar los enfrentamientos sin repeticiones para CAF
 private List<Partido> generarEnfrentamientosCAF(List<Equipo> equipos) {
@@ -652,6 +666,58 @@ private List<Partido> generarEnfrentamientosOFC(List<Equipo> equipos) {
                 // Actualizar la matriz de equipos ya jugaron
                 equiposYaJugaronOFC[i][j] = true;
                 equiposYaJugaronOFC[j][i] = true;
+            }
+        }
+    }
+
+    Collections.shuffle(enfrentamientos);
+    return enfrentamientos;
+}
+private List<Partido> generarEnfrentamientosUEFA(List<Equipo> equipos) {
+    List<Partido> enfrentamientos = new ArrayList<>();
+    int numEquipos = equipos.size();
+
+    for (int i = 0; i < numEquipos - 1; i++) {
+        for (int j = i + 1; j < numEquipos; j++) {
+            Equipo equipoLocal = equipos.get(i);
+            Equipo equipoVisitante = equipos.get(j);
+
+            // Verificar si el enfrentamiento ya ha sido jugado por ambos equipos
+            if (!equiposYaJugaronUEFA[i][j] && !equiposYaJugaronUEFA[j][i]) {
+                Partido partido = new Partido(equiposUEFA);
+                partido.setEquipo1(equipoLocal);
+                partido.setEquipo2(equipoVisitante);
+                enfrentamientos.add(partido);
+
+                // Actualizar la matriz de equipos ya jugaron
+                equiposYaJugaronUEFA[i][j] = true;
+                equiposYaJugaronUEFA[j][i] = true;
+            }
+        }
+    }
+
+    Collections.shuffle(enfrentamientos);
+    return enfrentamientos;
+}
+private List<Partido> generarEnfrentamientosAFC(List<Equipo> equipos) {
+    List<Partido> enfrentamientos = new ArrayList<>();
+    int numEquipos = equipos.size();
+
+    for (int i = 0; i < numEquipos - 1; i++) {
+        for (int j = i + 1; j < numEquipos; j++) {
+            Equipo equipoLocal = equipos.get(i);
+            Equipo equipoVisitante = equipos.get(j);
+
+            // Verificar si el enfrentamiento ya ha sido jugado por ambos equipos
+            if (!equiposYaJugaronAFC[i][j] && !equiposYaJugaronAFC[j][i]) {
+                Partido partido = new Partido(equiposAFC);
+                partido.setEquipo1(equipoLocal);
+                partido.setEquipo2(equipoVisitante);
+                enfrentamientos.add(partido);
+
+                // Actualizar la matriz de equipos ya jugaron
+                equiposYaJugaronAFC[i][j] = true;
+                equiposYaJugaronAFC[j][i] = true;
             }
         }
     }
@@ -1228,96 +1294,47 @@ private List<Partido> generarEnfrentamientosOFC(List<Equipo> equipos) {
 
     private void btnSimularTodosAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosAFCActionPerformed
         // Verificar si los partidos ya se han jugado
-        if (!partidoJugadoAFC) {// Obtener la lista de equipos de la confederación OFC
+    if (!partidoJugadoAFC) {
+        // Obtener la lista de equipos de la confederación CAF
         List<Equipo> equiposAFC = asia;
 
-        // Crear una lista auxiliar para llevar el registro de los partidos jugados entre equipos
-        List<String> partidosJugados = new ArrayList<>();
+        // Simular los partidos entre todos los equipos de la confederación CAF
+        while (enfrentamientoActualAFC < enfrentamientosAFC.size()) {
+            Partido partido = enfrentamientosAFC.get(enfrentamientoActualAFC);
+            Equipo equipoLocal = partido.getEquipo1();
+            Equipo equipoVisitante = partido.getEquipo2();
 
-        // Simular los partidos entre todos los equipos de la confederación OFC
-        for (int i = 0; i < equiposAFC.size(); i++) {
-            for (int j = i + 1; j < equiposAFC.size(); j++) {
-                // Verificar si el partido entre los equipos ya ha sido jugado
-                String partidoKey1 = equiposAFC.get(i).getNombre() + "-" + equiposAFC.get(j).getNombre();
-                String partidoKey2 = equiposAFC.get(j).getNombre() + "-" + equiposAFC.get(i).getNombre();
-                if (!partidosJugados.contains(partidoKey1) && !partidosJugados.contains(partidoKey2)) {
-                    // Crear un nuevo partido entre los equipos
-                    Partido partido = new Partido(equiposAFC);
-                    partido.setEquipo1(equiposAFC.get(i));
-                    partido.setEquipo2(equiposAFC.get(j));
+            // Simular el partido
+            partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
+            partido.guardarDatosEquipos();
 
-                    // Simular el partido
-                    partido.simularGoles(equiposAFC.get(i).getNombre(), equiposAFC.get(j).getNombre());
-                    partido.guardarDatosEquipos();
+            // Actualizar los puntos y estadísticas de los equipos
+            actualizarEstadisticasEquipoAFC(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+            actualizarEstadisticasEquipoAFC(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
 
-                    // Actualizar los puntos y estadísticas de los equipos
-                    actualizarEstadisticasEquipoAFC(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
-                    actualizarEstadisticasEquipoAFC(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
-
-                    // Actualizar el registro de partidos jugados
-                    partidosJugados.add(partidoKey1);
-                }
-            }
+            // Incrementar el índice del enfrentamiento actual
+            enfrentamientoActualAFC++;
         }
+
         // Actualizar la bandera indicando que los partidos ya se han jugado
         partidoJugadoAFC = true;
-        // Actualizar la tabla de la confederación OFC
+
+        // Actualizar la tabla de la confederación CAF
         llenarTablaAFC(equiposAFC);
-        // Actualizar la tabla de la confederación OFC
+        // Actualizar la tabla de la confederación CAF
         actualizarTablaAFC(equiposAFC);
 
     }//GEN-LAST:event_btnSimularTodosAFCActionPerformed
     }
     private void btnSimularUnoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoAFCActionPerformed
         
-        // Obtener la lista de equipos de la confederación OFC
-        List<Equipo> equiposAFC = asia;
-
-        // Verificar si se han completado todos los enfrentamientos
-        if (e >= equiposAFC.size() - 1) {
-            return;
-        }
-        // Obtener el equipo actual y el siguiente equipo en la lista
-        Equipo equipoLocal = equiposAFC.get(e);
-        Equipo equipoVisitante = equiposAFC.get(d);
-
-        // Crear un nuevo partido entre los equipos
-        Partido partido = new Partido(equiposAFC);
-        partido.setEquipo1(equipoLocal);
-        partido.setEquipo2(equipoVisitante);
-
-        // Simular el partido
-        partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
-        partido.guardarDatosEquipos();
-
-        // Actualizar los puntos y estadísticas de los equipos
-        actualizarEstadisticasEquipoAFC(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
-        actualizarEstadisticasEquipoAFC(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
-
-        // Incrementar los contadores i y j
-        d++;
-        if (d >= equiposAFC.size()) {
-            e++;
-            d = e + 1;
-        }
-        
-        // Si se han completado todos los enfrentamientos, reiniciar los contadores para la fase de vuelta
-        if (e >= equiposAFC.size() && d >= equiposAFC.size()) {
-            return ;
-        }
-
-        // Actualizar la tabla de la confederación OFC
-        llenarTablaAFC(equiposAFC);
-    }//GEN-LAST:event_btnSimularUnoAFCActionPerformed
-
-    private void btnSimularUnoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoCAFActionPerformed
-        if (enfrentamientoActualCAF >= enfrentamientosCAF.size()) {
+         if (enfrentamientoActualAFC >= enfrentamientosAFC.size()) {
         // Desactivar el botón cuando todos los enfrentamientos se han realizado
-        btnSimularUnoCAF.setEnabled(false);
+        btnSimularUnoAFC.setEnabled(false);
         return;
     }
 
-    Partido partidoActual = enfrentamientosCAF.get(enfrentamientoActualCAF);
+    Partido partidoActual = enfrentamientosAFC.get(enfrentamientoActualAFC);
     Equipo equipoLocal = partidoActual.getEquipo1();
     Equipo equipoVisitante = partidoActual.getEquipo2();
 
@@ -1326,16 +1343,45 @@ private List<Partido> generarEnfrentamientosOFC(List<Equipo> equipos) {
     partidoActual.guardarDatosEquipos();
 
     // Actualizar los puntos y estadísticas de los equipos
-    actualizarEstadisticasEquipoCAF(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
-    actualizarEstadisticasEquipoCAF(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
+    actualizarEstadisticasEquipoAFC(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
+    actualizarEstadisticasEquipoAFC(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
 
     // Incrementar el índice del enfrentamiento actual
-    enfrentamientoActualCAF++;
+    enfrentamientoActualAFC++;
 
     // Actualizar la tabla de la confederación CAF
-    llenarTablaCAF(equiposCAF);
+    llenarTablaAFC(equiposAFC);
     // Actualizar la tabla de la confederación CAF
-    actualizarTablaCAF(equiposCAF);
+    actualizarTablaAFC(equiposAFC);
+                                             
+    }//GEN-LAST:event_btnSimularUnoAFCActionPerformed
+
+    private void btnSimularUnoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoCAFActionPerformed
+        if (enfrentamientoActualAFC >= enfrentamientosAFC.size()) {
+        // Desactivar el botón cuando todos los enfrentamientos se han realizado
+        btnSimularUnoAFC.setEnabled(false);
+        return;
+    }
+
+    Partido partidoActual = enfrentamientosAFC.get(enfrentamientoActualAFC);
+    Equipo equipoLocal = partidoActual.getEquipo1();
+    Equipo equipoVisitante = partidoActual.getEquipo2();
+
+    // Simular el partido
+    partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
+    partidoActual.guardarDatosEquipos();
+
+    // Actualizar los puntos y estadísticas de los equipos
+    actualizarEstadisticasEquipoAFC(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
+    actualizarEstadisticasEquipoAFC(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
+
+    // Incrementar el índice del enfrentamiento actual
+    enfrentamientoActualAFC++;
+
+    // Actualizar la tabla de la confederación CAF
+    llenarTablaAFC(equiposAFC);
+    // Actualizar la tabla de la confederación CAF
+    actualizarTablaAFC(equiposAFC);
       
     }//GEN-LAST:event_btnSimularUnoCAFActionPerformed
    
@@ -1443,46 +1489,36 @@ private List<Partido> generarEnfrentamientosOFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularTodosOFCActionPerformed
     }
     private void btnSimularTodosUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosUEFAActionPerformed
-        // Verificar si los partidos ya se han jugado
-        if (!partidoJugadoUEFA) {
-        // Obtener la lista de equipos de la confederación CONMEBOL
-        List<Equipo> equiposUEFA = europa;
+         // Verificar si los partidos ya se han jugado
+    if (!partidoJugadoUEFA) {
+        // Obtener la lista de equipos de la confederación CAF
+        List<Equipo> equiposUEFA = europa; 
 
-        // Crear una lista auxiliar para llevar el registro de los partidos jugados entre equipos
-        List<String> partidosJugados = new ArrayList<>();
+        // Simular los partidos entre todos los equipos de la confederación CAF
+        while (enfrentamientoActualUEFA < enfrentamientosUEFA.size()) {
+            Partido partido = enfrentamientosUEFA.get(enfrentamientoActualUEFA);
+            Equipo equipoLocal = partido.getEquipo1();
+            Equipo equipoVisitante = partido.getEquipo2();
 
-        // Simular los partidos entre todos los equipos de la confederación CONMEBOL
-        for (int i = 0; i < equiposUEFA.size(); i++) {
-            for (int j = i + 1; j < equiposUEFA.size(); j++) {
-                // Verificar si el partido entre los equipos ya ha sido jugado
-                String partidoKey1 = equiposUEFA.get(i).getNombre() + "-" + equiposUEFA.get(j).getNombre();
-                String partidoKey2 = equiposUEFA.get(j).getNombre() + "-" + equiposUEFA.get(i).getNombre();
-                if (!partidosJugados.contains(partidoKey1) && !partidosJugados.contains(partidoKey2)) {
-                    // Crear un nuevo partido entre los equipos
-                    Partido partido = new Partido(equiposUEFA);
-                    partido.setEquipo1(equiposUEFA.get(i));
-                    partido.setEquipo2(equiposUEFA.get(j));
+            // Simular el partido
+            partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
+            partido.guardarDatosEquipos();
 
-                    // Simular el partido
-                    partido.simularGoles(equiposUEFA.get(i).getNombre(), equiposUEFA.get(j).getNombre());
-                    partido.guardarDatosEquipos();
+            // Actualizar los puntos y estadísticas de los equipos
+            actualizarEstadisticasEquipoUEFA(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
+            actualizarEstadisticasEquipoUEFA(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
 
-                    // Actualizar los puntos y estadísticas de los equipos
-                    actualizarEstadisticasEquipoUEFA(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
-                    actualizarEstadisticasEquipoUEFA(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
-
-                    // Actualizar el registro de partidos jugados
-                    partidosJugados.add(partidoKey1);
-                }
-            }
+            // Incrementar el índice del enfrentamiento actual
+            enfrentamientoActualUEFA++;
         }
+
         // Actualizar la bandera indicando que los partidos ya se han jugado
         partidoJugadoUEFA = true;
-        // Actualizar la tabla de la confederación UEFA
-        llenarTablaUEFA(equiposUEFA);
-        // Actualizar la tabla de la confederación UEFA
-        actualizarTablaUEFA(equiposUEFA);
 
+        // Actualizar la tabla de la confederación OFC
+        llenarTablaUEFA(equiposUEFA);
+        // Actualizar la tabla de la confederación OFC
+        actualizarTablaUEFA(equiposUEFA);
     }//GEN-LAST:event_btnSimularTodosUEFAActionPerformed
     }
     private void btnSimularUnoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoOFCActionPerformed
@@ -1514,45 +1550,31 @@ private List<Partido> generarEnfrentamientosOFC(List<Equipo> equipos) {
     }//GEN-LAST:event_btnSimularUnoOFCActionPerformed
 
     private void btnSimularUnoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoUEFAActionPerformed
-       // Obtener la lista de equipos de la confederación OFC
-        List<Equipo> equiposUEFA = europa;
+        if (enfrentamientoActualUEFA >= enfrentamientosUEFA.size()) {
+        // Desactivar el botón cuando todos los enfrentamientos se han realizado
+        btnSimularUnoUEFA.setEnabled(false);
+        return;
+    }
 
-       // Verificar si se han completado todos los enfrentamientos
-        if (w >= equiposUEFA.size() - 1) {
-            return;
-        }
+    Partido partidoActual = enfrentamientosUEFA.get(enfrentamientoActualUEFA);
+    Equipo equipoLocal = partidoActual.getEquipo1();
+    Equipo equipoVisitante = partidoActual.getEquipo2();
 
-       // Obtener el equipo actual y el siguiente equipo en la lista
-        Equipo equipoLocal = equiposUEFA.get(w);
-        Equipo equipoVisitante = equiposUEFA.get(s);
+    // Simular el partido
+    partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
+    partidoActual.guardarDatosEquipos();
 
-       // Crear un nuevo partido entre los equipos
-        Partido partido = new Partido(equiposUEFA);
-        partido.setEquipo1(equipoLocal);
-        partido.setEquipo2(equipoVisitante);
+    // Actualizar los puntos y estadísticas de los equipos
+    actualizarEstadisticasEquipoUEFA(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
+    actualizarEstadisticasEquipoUEFA(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
 
-       // Simular el partido
-        partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
-        partido.guardarDatosEquipos();
+    // Incrementar el índice del enfrentamiento actual
+    enfrentamientoActualUEFA++;
 
-       // Actualizar los puntos y estadísticas de los equipos
-        actualizarEstadisticasEquipoUEFA(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
-        actualizarEstadisticasEquipoUEFA(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
-
-       // Incrementar los contadores i y j
-        s++;
-        if (s >= equiposUEFA.size()) {
-            w++;
-            s = w + 1;
-        }
-
-        // Si se han completado todos los enfrentamientos, reiniciar los contadores para la fase de vuelta
-        if (w >= equiposUEFA.size() && s >= equiposUEFA.size()) {
-            return ;
-        }
-
-       // Actualizar la tabla de la confederación OFC
-        llenarTablaUEFA(equiposUEFA);
+    // Actualizar la tabla de la confederación OFC
+    llenarTablaUEFA(equiposUEFA);
+    // Actualizar la tabla de la confederación OFC
+    actualizarTablaUEFA(equiposUEFA);                     
     }//GEN-LAST:event_btnSimularUnoUEFAActionPerformed
 
     private void btnSimularUnoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoCONMEBOLActionPerformed
