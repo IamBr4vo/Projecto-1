@@ -30,7 +30,6 @@ public class Eliminatoria extends javax.swing.JFrame {
     private List<Equipo> equiposOFC;
     private List<Equipo> equiposUEFA;
     private List<Equipo> equiposAFC;
-
     private List<Partido> enfrentamientosCAF;
     private List<Partido> enfrentamientosCONCACAF;
     private List<Partido> enfrentamientosCONMEBOL;
@@ -59,7 +58,9 @@ public class Eliminatoria extends javax.swing.JFrame {
     List<Equipo> oceania;
     List<Equipo> europa;
     List<Equipo> asia;
+    
     private List<Sede> listaSedes;
+
     private String informeMarcadoresCAF = "";
     private String informeMarcadoresCONCACAF = "";
     private String informeMarcadoresCONMEBOL = "";
@@ -67,41 +68,77 @@ public class Eliminatoria extends javax.swing.JFrame {
     private String informeMarcadoresUEFA = "";
     private String informeMarcadoresAFC = "";
 
+
     public Eliminatoria(Confederacion caf, Confederacion concacaf, Confederacion conmebol, Confederacion ofc, Confederacion uefa, Confederacion afc) {
-        initComponents();
+    initComponents();
+    
+    listaSedes = new ArrayList<>();
+    
+    // Crear sedes para Estados Unidos
+    Sede USA1 = new Sede("Atlanta", "Estados Unidos");
+    Sede USA2 = new Sede("Boston", "Estados Unidos");
+    Sede USA3 = new Sede("Dallas", "Estados Unidos");
+    Sede USA4 = new Sede("Houston", "Estados Unidos");
+    Sede USA5 = new Sede("Kansas City", "Estados Unidos");
+    Sede USA6 = new Sede("Los Ángeles", "Estados Unidos");
+    Sede USA7 = new Sede("Miami", "Estados Unidos");
+    Sede USA8 = new Sede("Nueva York/Nueva Jersey", "Estados Unidos");
+    Sede USA9 = new Sede("Filadelfia", "Estados Unidos");
+    Sede USA10 = new Sede("San Francisco", "Estados Unidos");
+    Sede USA11 = new Sede("Seattle", "Estados Unidos");
+    
+    // Agregar sedes de Estados Unidos a la lista
+    listaSedes.add(USA1);
+    listaSedes.add(USA2);
+    listaSedes.add(USA3);
+    listaSedes.add(USA4);
+    listaSedes.add(USA5);
+    listaSedes.add(USA6);
+    listaSedes.add(USA7);
+    listaSedes.add(USA8);
+    listaSedes.add(USA9);
+    listaSedes.add(USA10);
+    listaSedes.add(USA11);
+    
+    // Crear sedes para México
+    Sede MEX1 = new Sede("Guadalajara", "México");
+    Sede MEX2 = new Sede("Ciudad de México", "México");
+    Sede MEX3 = new Sede("Monterrey", "México");
+    
+    // Agregar sedes de México a la lista
+    listaSedes.add(MEX1);
+    listaSedes.add(MEX2);
+    listaSedes.add(MEX3);
+       
+    // Crear sedes para Canadá
+    Sede CAN1 = new Sede("Vancouver", "Canadá");
+    Sede CAN2 = new Sede("Toronto", "Canadá");
+        
+    // Agregar sedes de Canadá a la lista
+    listaSedes.add(CAN1);
+    listaSedes.add(CAN2);
 
-        africa = caf.getListaEquipos();
-        america = concacaf.getListaEquipos();
-        surAmerica = conmebol.getListaEquipos();
-        oceania = ofc.getListaEquipos();
-        europa = uefa.getListaEquipos();
-        asia = afc.getListaEquipos();
+    africa = caf.getListaEquipos();
+    america = concacaf.getListaEquipos();
+    surAmerica = conmebol.getListaEquipos();
+    oceania = ofc.getListaEquipos();
+    europa = uefa.getListaEquipos();
+    asia = afc.getListaEquipos();
 
-        llenarTablaCAF(africa);       // Fill the Africa table
-        llenarTablaCONCACAF(america);      // Fill the American table
-        llenarTablaCONMEBOL(surAmerica);   // Fill the South America table
-        llenarTablaOFC(oceania);      // Fill the Oceania table
-        llenarTablaUEFA(europa);      // Fill the Europe table
-        llenarTablaAFC(asia);        // Fill the Asia table
+    llenarTablaCAF(africa);       // Llena la tabla de África
+    llenarTablaCONCACAF(america);      // Llena la tabla de América
+    llenarTablaCONMEBOL(surAmerica);   // Llena la tabla de Suramérica
+    llenarTablaOFC(oceania);      // Llena la tabla de Oceanía
+    llenarTablaUEFA(europa);       // Llena la tabla de Europa
+    llenarTablaAFC(asia);         // Llena la tabla de Asia
 
-        inicializarEnfrentamientosAleatoriosCONCACAF();
-        inicializarEnfrentamientosAleatoriosCONMEBOL();
-        inicializarEnfrentamientosAleatoriosCAF();
-        inicializarEnfrentamientosAleatoriosOFC();
-        inicializarEnfrentamientosAleatoriosUEFA();
-        inicializarEnfrentamientosAleatoriosAFC();
-    }
-
-    public void setListaSedes(List<Sede> listaSedes) {
-        this.listaSedes = listaSedes;
-    }
-
-    public Sede obtenerSedeAleatoria() {
-        Random random = new Random();
-        int index = random.nextInt(listaSedes.size());
-        return listaSedes.get(index).obtenerSedeAleatoria();
-    }
-
+    inicializarEnfrentamientosAleatoriosCONCACAF();
+    inicializarEnfrentamientosAleatoriosCONMEBOL();
+    inicializarEnfrentamientosAleatoriosCAF();
+    inicializarEnfrentamientosAleatoriosOFC();
+    inicializarEnfrentamientosAleatoriosUEFA();
+    inicializarEnfrentamientosAleatoriosAFC();
+}
     //Method to fill the CAF table
     public void llenarTablaCAF(List<Equipo> equiposConfederacion) {
         DefaultTableModel model = (DefaultTableModel) tblCAF.getModel();
@@ -705,70 +742,139 @@ public class Eliminatoria extends javax.swing.JFrame {
         Collections.shuffle(enfrentamientos);
         return enfrentamientos;
     }
+    
+// Método para obtener una sede aleatoria de la lista de sedes
+    private Sede obtenerSedeAleatoria() {
+        if (listaSedes.isEmpty()) {
+        throw new IllegalStateException("La lista de sedes está vacía, asegúrate de agregar sedes antes de llamar a este método.");
+    }
+        Random random = new Random();
+        int index = random.nextInt(listaSedes.size());
+        return listaSedes.get(index);
+    }
 
-    //Method to get marker CAF
+    // Método para obtener el país de una sede específica
+    private String obtenerPaisDeSede(String paisSede) {
+    for (Sede s : listaSedes) {
+        if (s.getSede().equals(paisSede)) {
+            return s.getPaisSede();
+        }
+    }
+    return "País no encontrado";
+    }
+   
     public void obtenerMarcadorCAF(String equipo1, int golequipo1, String equipo2, int golequipo2) {
         String informe = "Informe del partido:\n";
         informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
         informe += equipo1 + ": " + golequipo1 + " goles\n";
         informe += equipo2 + ": " + golequipo2 + " goles\n";
+        
+        // Obtener sede aleatoria de la lista de sedes
+        Sede sedeAleatoria = obtenerSedeAleatoria();
+        // Agregar información de la sede aleatoria y el país de la sede
+        System.out.println("Sede aleatoria: " + sedeAleatoria.getSede());
+        System.out.println("País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()));
+        
+        informe += "El partido se jugó en la sede de " + sedeAleatoria.getSede() + "\n";
+        informe += "País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()) + "\n";
 
-        // Store the information in the global variable
+        // Almacenar la información en la variable global
         informeMarcadoresCAF += informe + "\n";
     }
-
-    //Method to get marker CONCACAF
+    
     public void obtenerMarcadorCONCACAF(String equipo1, int golequipo1, String equipo2, int golequipo2) {
-        String informe = "Informe del partido:\n";
-        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
-        informe += equipo1 + ": " + golequipo1 + " goles\n";
-        informe += equipo2 + ": " + golequipo2 + " goles\n";
+    String informe = "Informe del partido:\n";
+    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+    informe += equipo1 + ": " + golequipo1 + " goles\n";
+    informe += equipo2 + ": " + golequipo2 + " goles\n";
 
-        // Store the information in the global variable
-        informeMarcadoresCONCACAF += informe + "\n";
+    // Obtener sede aleatoria de la lista de sedes
+    Sede sedeAleatoria = obtenerSedeAleatoria();
+
+    // Agregar información de la sede aleatoria y el país de la sede
+    System.out.println("Sede aleatoria: " + sedeAleatoria.getSede());
+    System.out.println("País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()));
+
+    informe += "El partido se jugó en la sede de " + sedeAleatoria.getSede() + "\n";
+    informe += "País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()) + "\n";
+
+    // Almacenar la información en la variable global
+    informeMarcadoresCONCACAF += informe + "\n";
     }
-
-    //Method to get marker CONMEBOL
+    
     public void obtenerMarcadorCONMEBOL(String equipo1, int golequipo1, String equipo2, int golequipo2) {
-        String informe = "Informe del partido:\n";
-        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
-        informe += equipo1 + ": " + golequipo1 + " goles\n";
-        informe += equipo2 + ": " + golequipo2 + " goles\n";
+    String informe = "Informe del partido:\n";
+    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+    informe += equipo1 + ": " + golequipo1 + " goles\n";
+    informe += equipo2 + ": " + golequipo2 + " goles\n";
+    // Obtener sede aleatoria de la lista de sedes
+    Sede sedeAleatoria = obtenerSedeAleatoria();
 
-        // Store the information in the global variable
-        informeMarcadoresCONMEBOL += informe + "\n";
+    // Agregar información de la sede aleatoria y el país de la sede
+    System.out.println("Sede aleatoria: " + sedeAleatoria.getSede());
+    System.out.println("País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()));
+
+    informe += "El partido se jugó en la sede de " + sedeAleatoria.getSede() + "\n";
+    informe += "País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()) + "\n";
+    // Almacenar la información en la variable global
+    informeMarcadoresCONMEBOL += informe + "\n";
     }
-
+    
     public void obtenerMarcadorOFC(String equipo1, int golequipo1, String equipo2, int golequipo2) {
-        String informe = "Informe del partido:\n";
-        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
-        informe += equipo1 + ": " + golequipo1 + " goles\n";
-        informe += equipo2 + ": " + golequipo2 + " goles\n";
+    String informe = "Informe del partido:\n";
+    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+    informe += equipo1 + ": " + golequipo1 + " goles\n";
+    informe += equipo2 + ": " + golequipo2 + " goles\n";
+    // Obtener sede aleatoria de la lista de sedes
+    Sede sedeAleatoria = obtenerSedeAleatoria();
 
-        // Almacenar la información en la variable global
-        informeMarcadoresOFC += informe + "\n";
+    // Agregar información de la sede aleatoria y el país de la sede
+    System.out.println("Sede aleatoria: " + sedeAleatoria.getSede());
+    System.out.println("País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()));
+
+    informe += "El partido se jugó en la sede de " + sedeAleatoria.getSede() + "\n";
+    informe += "País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()) + "\n";
+    // Almacenar la información en la variable global
+    informeMarcadoresOFC += informe + "\n";
     }
-
+     
     public void obtenerMarcadorUEFA(String equipo1, int golequipo1, String equipo2, int golequipo2) {
-        String informe = "Informe del partido:\n";
-        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
-        informe += equipo1 + ": " + golequipo1 + " goles\n";
-        informe += equipo2 + ": " + golequipo2 + " goles\n";
+    String informe = "Informe del partido:\n";
+    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+    informe += equipo1 + ": " + golequipo1 + " goles\n";
+    informe += equipo2 + ": " + golequipo2 + " goles\n";
+    // Obtener sede aleatoria de la lista de sedes
+    Sede sedeAleatoria = obtenerSedeAleatoria();
 
-        // Almacenar la información en la variable global
-        informeMarcadoresUEFA += informe + "\n";
+    // Agregar información de la sede aleatoria y el país de la sede
+    System.out.println("Sede aleatoria: " + sedeAleatoria.getSede());
+    System.out.println("País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()));
+
+    informe += "El partido se jugó en la sede de " + sedeAleatoria.getSede() + "\n";
+    informe += "País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()) + "\n";
+    // Almacenar la información en la variable global
+    informeMarcadoresUEFA += informe + "\n";
     }
-
+     
     public void obtenerMarcadorAFC(String equipo1, int golequipo1, String equipo2, int golequipo2) {
-        String informe = "Informe del partido:\n";
-        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
-        informe += equipo1 + ": " + golequipo1 + " goles\n";
-        informe += equipo2 + ": " + golequipo2 + " goles\n";
+    String informe = "Informe del partido:\n";
+    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+    informe += equipo1 + ": " + golequipo1 + " goles\n";
+    informe += equipo2 + ": " + golequipo2 + " goles\n";
+    
+    // Obtener sede aleatoria de la lista de sedes
+    Sede sedeAleatoria = obtenerSedeAleatoria();
 
-        // Almacenar la información en la variable global
-        informeMarcadoresAFC += informe + "\n";
+    // Agregar información de la sede aleatoria y el país de la sede
+    System.out.println("Sede aleatoria: " + sedeAleatoria.getSede());
+    System.out.println("País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()));
 
+    informe += "El partido se jugó en la sede de " + sedeAleatoria.getSede() + "\n";
+    informe += "País de la sede: " + obtenerPaisDeSede(sedeAleatoria.getSede()) + "\n";
+    // Almacenar la información en la variable global
+    informeMarcadoresAFC += informe + "\n";
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
