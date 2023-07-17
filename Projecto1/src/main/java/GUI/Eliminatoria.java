@@ -8,9 +8,11 @@ import Logica.ColoresTablas;
 import Logica.Confederacion;
 import Logica.Equipo;
 import Logica.Partido;
+import Logica.Sede;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -61,6 +63,14 @@ public class Eliminatoria extends javax.swing.JFrame {
     List<Equipo> oceania;
     List<Equipo> europa;
     List<Equipo> asia;
+    private List<Sede> listaSedes;
+    private String informeMarcadoresCAF = "";
+    private String informeMarcadoresCONCACAF = "";
+    private String informeMarcadoresCONMEBOL = "";
+    private String informeMarcadoresOFC = "";
+    private String informeMarcadoresUEFA = "";
+    private String informeMarcadoresAFC = "";
+    
     
    
 
@@ -88,6 +98,16 @@ public class Eliminatoria extends javax.swing.JFrame {
         inicializarEnfrentamientosAleatoriosUEFA();
         inicializarEnfrentamientosAleatoriosAFC();
     }
+    public void setListaSedes(List<Sede> listaSedes) {
+        this.listaSedes = listaSedes;
+    }
+
+    public Sede obtenerSedeAleatoria() {
+        Random random = new Random();
+        int index = random.nextInt(listaSedes.size());
+        return listaSedes.get(index).obtenerSedeAleatoria();
+    }
+
 
     //Metodo para llenar la tabla CAF
     public void llenarTablaCAF(List<Equipo> equiposConfederacion) {
@@ -432,7 +452,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         equipo.calcularDiferenciaGoles(); // Calcular la diferencia de goles
     }
 
-// Método para inicializar los enfrentamientos de manera adecuada para CAF
+    // Método para inicializar los enfrentamientos de manera adecuada para CONCACAF
     private void inicializarEnfrentamientosAleatoriosCAF() {
         equiposCAF = new ArrayList<>(africa);
         int numEquipos = equiposCAF.size();
@@ -684,11 +704,69 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
 
         Collections.shuffle(enfrentamientos);
-        return enfrentamientos;
-        
-
+        return enfrentamientos;    
     }
+    
+   public void obtenerMarcadorCAF(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+        String informe = "Informe del partido:\n";
+        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+        informe += equipo1 + ": " + golequipo1 + " goles\n";
+        informe += equipo2 + ": " + golequipo2 + " goles\n";
 
+        // Almacenar la información en la variable global
+        informeMarcadoresCAF += informe + "\n";
+    }
+    
+    public void obtenerMarcadorCONCACAF(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+    String informe = "Informe del partido:\n";
+    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+    informe += equipo1 + ": " + golequipo1 + " goles\n";
+    informe += equipo2 + ": " + golequipo2 + " goles\n";
+
+    // Almacenar la información en la variable global
+    informeMarcadoresCONCACAF += informe + "\n";
+    }
+    
+    public void obtenerMarcadorCONMEBOL(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+    String informe = "Informe del partido:\n";
+    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+    informe += equipo1 + ": " + golequipo1 + " goles\n";
+    informe += equipo2 + ": " + golequipo2 + " goles\n";
+
+    // Almacenar la información en la variable global
+    informeMarcadoresCONMEBOL += informe + "\n";
+    }
+    
+     public void obtenerMarcadorOFC(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+    String informe = "Informe del partido:\n";
+    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+    informe += equipo1 + ": " + golequipo1 + " goles\n";
+    informe += equipo2 + ": " + golequipo2 + " goles\n";
+
+    // Almacenar la información en la variable global
+    informeMarcadoresOFC += informe + "\n";
+    }
+     
+     public void obtenerMarcadorUEFA(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+    String informe = "Informe del partido:\n";
+    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+    informe += equipo1 + ": " + golequipo1 + " goles\n";
+    informe += equipo2 + ": " + golequipo2 + " goles\n";
+
+    // Almacenar la información en la variable global
+    informeMarcadoresUEFA += informe + "\n";
+    }
+     
+    public void obtenerMarcadorAFC(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+    String informe = "Informe del partido:\n";
+    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+    informe += equipo1 + ": " + golequipo1 + " goles\n";
+    informe += equipo2 + ": " + golequipo2 + " goles\n";
+
+    // Almacenar la información en la variable global
+    informeMarcadoresAFC += informe + "\n";
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -699,6 +777,8 @@ public class Eliminatoria extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -746,7 +826,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         btnSimularUnoAFC = new javax.swing.JButton();
         btnSimularTodosAFC = new javax.swing.JButton();
         btnVerSedesAFC = new javax.swing.JButton();
-        jScrollPane12 = new javax.swing.JScrollPane();
+        jScrollPane13 = new javax.swing.JScrollPane();
         txtAFC = new javax.swing.JTextArea();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -759,6 +839,10 @@ public class Eliminatoria extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane12.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -801,7 +885,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnSimularUnoCAFActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSimularUnoCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 80, -1, -1));
+        jPanel1.add(btnSimularUnoCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 10, -1, -1));
 
         btnSimularTodosCAF.setText("Simular Todos Los Partidos");
         btnSimularTodosCAF.addActionListener(new java.awt.event.ActionListener() {
@@ -809,7 +893,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnSimularTodosCAFActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSimularTodosCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 130, -1, -1));
+        jPanel1.add(btnSimularTodosCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, -1, -1));
 
         btnVerSedesCAF.setText("Ver Sedes y Paises");
         btnVerSedesCAF.addActionListener(new java.awt.event.ActionListener() {
@@ -817,13 +901,13 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnVerSedesCAFActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerSedesCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 190, -1, -1));
+        jPanel1.add(btnVerSedesCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 80, -1, -1));
 
         txtCAF.setColumns(20);
         txtCAF.setRows(5);
         jScrollPane2.setViewportView(txtCAF);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 240, 280, 300));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 110, 410, 450));
 
         jTabbedPane1.addTab("CAF", jPanel1);
 
@@ -881,29 +965,25 @@ public class Eliminatoria extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSimularTodosCONCACAF)
-                            .addComponent(btnSimularUnoCONCACAF)
-                            .addComponent(btnVerSedesCONCACAF)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(153, Short.MAX_VALUE))
+                    .addComponent(btnSimularTodosCONCACAF)
+                    .addComponent(btnSimularUnoCONCACAF)
+                    .addComponent(btnVerSedesCONCACAF)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
+                .addGap(17, 17, 17)
                 .addComponent(btnSimularUnoCONCACAF)
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
                 .addComponent(btnSimularTodosCONCACAF)
-                .addGap(65, 65, 65)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnVerSedesCONCACAF)
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -966,27 +1046,25 @@ public class Eliminatoria extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSimularTodosCONMEBOL)
+                    .addComponent(btnSimularUnoCONMEBOL)
                     .addComponent(btnVerSedesCONMEBOL)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(btnSimularUnoCONMEBOL))
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 170, Short.MAX_VALUE))
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 29, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
+                .addGap(14, 14, 14)
                 .addComponent(btnSimularUnoCONMEBOL)
-                .addGap(56, 56, 56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSimularTodosCONMEBOL)
-                .addGap(66, 66, 66)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnVerSedesCONMEBOL)
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1051,25 +1129,25 @@ public class Eliminatoria extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVerSedesOFC)
                     .addComponent(btnSimularUnoOFC)
                     .addComponent(btnSimularTodosOFC)
-                    .addComponent(btnVerSedesOFC)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 183, Short.MAX_VALUE))
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(138, 138, 138)
+                .addContainerGap()
                 .addComponent(btnSimularUnoOFC)
-                .addGap(56, 56, 56)
+                .addGap(18, 18, 18)
                 .addComponent(btnSimularTodosOFC)
-                .addGap(66, 66, 66)
+                .addGap(18, 18, 18)
                 .addComponent(btnVerSedesOFC)
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1132,25 +1210,25 @@ public class Eliminatoria extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSimularUnoUEFA)
                     .addComponent(btnSimularTodosUEFA)
+                    .addComponent(btnSimularUnoUEFA)
                     .addComponent(btnVerSedesUEFA)
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 173, Short.MAX_VALUE))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 46, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(160, 160, 160)
+                .addContainerGap()
                 .addComponent(btnSimularUnoUEFA)
-                .addGap(56, 56, 56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSimularTodosUEFA)
-                .addGap(66, 66, 66)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnVerSedesUEFA)
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1205,7 +1283,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         txtAFC.setColumns(20);
         txtAFC.setRows(5);
-        jScrollPane12.setViewportView(txtAFC);
+        jScrollPane13.setViewportView(txtAFC);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1213,37 +1291,29 @@ public class Eliminatoria extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(btnVerSedesAFC)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnSimularUnoAFC)
-                                    .addComponent(btnSimularTodosAFC))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 169, Short.MAX_VALUE))))
+                    .addComponent(btnSimularTodosAFC)
+                    .addComponent(btnSimularUnoAFC)
+                    .addComponent(btnVerSedesAFC)
+                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 19, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 73, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
                 .addComponent(btnSimularUnoAFC)
-                .addGap(52, 52, 52)
+                .addGap(18, 18, 18)
                 .addComponent(btnSimularTodosAFC)
-                .addGap(70, 70, 70)
+                .addGap(18, 18, 18)
                 .addComponent(btnVerSedesAFC)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("AFC", jPanel7);
@@ -1266,30 +1336,28 @@ public class Eliminatoria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerSedesCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerSedesCAFActionPerformed
-        // TODO add your handling code here:
+        txtCAF.setText(informeMarcadoresCAF);
        
     }//GEN-LAST:event_btnVerSedesCAFActionPerformed
 
     private void btnVerSedesCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerSedesCONCACAFActionPerformed
-        // TODO add your handling code here:
+        txtCONCACAF.setText(informeMarcadoresCONCACAF);
     }//GEN-LAST:event_btnVerSedesCONCACAFActionPerformed
 
     private void btnVerSedesCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerSedesCONMEBOLActionPerformed
-        // TODO add your handling code here:
+        txtCONMEBOL.setText(informeMarcadoresCONMEBOL);
     }//GEN-LAST:event_btnVerSedesCONMEBOLActionPerformed
 
     private void btnVerSedesOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerSedesOFCActionPerformed
-        // TODO add your handling code here:
+        txtOFC.setText(informeMarcadoresOFC);
     }//GEN-LAST:event_btnVerSedesOFCActionPerformed
 
     private void btnVerSedesUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerSedesUEFAActionPerformed
-        // TODO add your handling code here:
+        txtUEFA.setText(informeMarcadoresUEFA);
     }//GEN-LAST:event_btnVerSedesUEFAActionPerformed
 
     private void btnVerSedesAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerSedesAFCActionPerformed
-        String obtenerMarcador = null;
-        // TODO add your handling code here:
-        txtCAF.setText(obtenerMarcador);
+        txtAFC.setText(informeMarcadoresAFC);
     }//GEN-LAST:event_btnVerSedesAFCActionPerformed
 
     private void btnSimularTodosCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCONCACAFActionPerformed
@@ -1312,6 +1380,8 @@ public class Eliminatoria extends javax.swing.JFrame {
                 // Simular el partido
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
                 partido.guardarDatosEquipos();
+                obtenerMarcadorCONCACAF(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
+
 
                 // Actualizar los puntos y estadísticas de los equipos
                 actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
@@ -1352,6 +1422,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 // Simular el partido
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
                 partido.guardarDatosEquipos();
+                obtenerMarcadorAFC(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
 
                 // Actualizar los puntos y estadísticas de los equipos
                 actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
@@ -1359,6 +1430,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
                 // Incrementar el índice del enfrentamiento actual
                 enfrentamientoActualAFC++;
+                
             }
 
             // Actualizar la bandera indicando que los partidos ya se han jugado
@@ -1390,11 +1462,8 @@ public class Eliminatoria extends javax.swing.JFrame {
         // Simular el partido
         partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
         partidoActual.guardarDatosEquipos();
-        List<String> obtenerMarcadores = new ArrayList<>();
-        
-        for (String obtenerMarcador : obtenerMarcadores ) {
-            txtCAF.append(obtenerMarcador + "\n\n");
-        }
+        obtenerMarcadorAFC(equipoLocal.getNombre(), partidoActual.getGolequipo1(), equipoVisitante.getNombre(), partidoActual.getGolequipo2());
+
 
         // Actualizar los puntos y estadísticas de los equipos
         actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
@@ -1427,6 +1496,8 @@ public class Eliminatoria extends javax.swing.JFrame {
         // Simular el partido
         partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
         partidoActual.guardarDatosEquipos();
+        obtenerMarcadorCAF(equipoLocal.getNombre(), partidoActual.getGolequipo1(), equipoVisitante.getNombre(), partidoActual.getGolequipo2());
+
 
         // Actualizar los puntos y estadísticas de los equipos
         actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
@@ -1463,6 +1534,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 // Simular el partido
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
                 partido.guardarDatosEquipos();
+                obtenerMarcadorCONMEBOL(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
 
                 // Actualizar los puntos y estadísticas de los equipos
                 actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
@@ -1501,6 +1573,8 @@ public class Eliminatoria extends javax.swing.JFrame {
                 // Simular el partido
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
                 partido.guardarDatosEquipos();
+                obtenerMarcadorCAF(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
+
 
                 // Actualizar los puntos y estadísticas de los equipos
                 actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
@@ -1540,6 +1614,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 // Simular el partido
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
                 partido.guardarDatosEquipos();
+                obtenerMarcadorOFC(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
 
                 // Actualizar los puntos y estadísticas de los equipos
                 actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
@@ -1579,6 +1654,9 @@ public class Eliminatoria extends javax.swing.JFrame {
 
                 // Simular el partido
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
+                
+                obtenerMarcadorUEFA(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
+
 
                 // Actualizar los puntos y estadísticas de los equipos
                 actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
@@ -1616,6 +1694,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         // Simular el partido
         partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
         partidoActual.guardarDatosEquipos();
+        obtenerMarcadorOFC(equipoLocal.getNombre(), partidoActual.getGolequipo1(), equipoVisitante.getNombre(), partidoActual.getGolequipo2());
 
         // Actualizar los puntos y estadísticas de los equipos
         actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
@@ -1649,6 +1728,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         // Simular el partido
         partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
         partidoActual.guardarDatosEquipos();
+        obtenerMarcadorUEFA(equipoLocal.getNombre(), partidoActual.getGolequipo1(), equipoVisitante.getNombre(), partidoActual.getGolequipo2());
 
         // Actualizar los puntos y estadísticas de los equipos
         actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
@@ -1682,7 +1762,8 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         // Simular el partido
         partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
-        partidoActual.guardarDatosEquipos();
+        partidoActual.guardarDatosEquipos();  
+        obtenerMarcadorCONMEBOL(equipoLocal.getNombre(), partidoActual.getGolequipo1(), equipoVisitante.getNombre(), partidoActual.getGolequipo2());
 
         // Actualizar los puntos y estadísticas de los equipos
         actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
@@ -1717,6 +1798,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         // Simular el partido
         partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
         partidoActual.guardarDatosEquipos();
+        obtenerMarcadorCONCACAF(equipoLocal.getNombre(), partidoActual.getGolequipo1(), equipoVisitante.getNombre(), partidoActual.getGolequipo2());
 
         // Actualizar los puntos y estadísticas de los equipos
         actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
@@ -1766,6 +1848,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1775,6 +1858,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTable tblAFC;
     private javax.swing.JTable tblCAF;
     private javax.swing.JTable tblCONCACAF;

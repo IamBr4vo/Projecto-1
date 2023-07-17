@@ -520,6 +520,7 @@ public class Projecto1 {
         //Agregar sedes de Canada a la lista
         sedesCanada.agregarSedes(CAN1);
         sedesCanada.agregarSedes(CAN2);
+        
         //Metodo principal para ejecutar la interfaz
         Eliminatoria v = new Eliminatoria(CAF,CONCACAF,CONMEBOL,OFC,UEFA,AFC);
         v.setVisible(true);
