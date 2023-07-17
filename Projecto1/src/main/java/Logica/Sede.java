@@ -1,38 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Logica;
 
 /**
  *
  * @author Fabri
  */
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Sede{
+public class Sede {
+
     private List<Sede> listaSedes;
     private int identificador;
     private String paisSede;
     private String sede;
-    
+
     public Sede(String sede) {
-    this.sede = sede;
-    listaSedes = new ArrayList<>(); // Inicializar la lista de Sedes
+        this.sede = sede;
+        listaSedes = new ArrayList<>(); // Initialize the list of where to play
     }
-    
+
     public Sede(int identificador, String paisSede) {
         this.identificador = identificador;
         this.paisSede = paisSede;
-        listaSedes = new ArrayList<>(); // Inicializar la lista de Sedes
+        listaSedes = new ArrayList<>(); // Initialize the list of where to play
     }
-    
+
     public void agregarSedes(Sede sede) {
         getListaSedes().add(sede);
-    }  
+    }
+
     /**
      * @return the listaSedes
      */
@@ -88,7 +85,7 @@ public class Sede{
     public void setSede(String sede) {
         this.sede = sede;
     }
-    
+
     public Sede obtenerSedeAleatoria() {
         Random random = new Random();
         int indiceAleatorio = random.nextInt(listaSedes.size());

@@ -2,7 +2,7 @@ package Logica;
 
 /**
  *
- * @author deivi
+ * @author deivis
  */
 import java.util.List;
 import java.util.Random;
@@ -94,28 +94,28 @@ public class Partido {
         setEquipo1(getListaEquipos().get(random.nextInt(getListaEquipos().size())));
         setEquipo2(getListaEquipos().get(random.nextInt(getListaEquipos().size())));
 
-        // Verificar que los equipos sean diferentes
+        // Check that the teams are different
         while (getEquipo1().equals(getEquipo2())) {
             setEquipo2(getListaEquipos().get(random.nextInt(getListaEquipos().size())));
         }
     }
 
-    //Metodo de simulacion de goles aleatorios 
+//Random goals simulation method
     public void simularGoles(String equipo1, String equipo2) {
         Random gol = new Random();
         setGolequipo1(gol.nextInt(11));
         setGolequipo2(gol.nextInt(11));
     }
-    
-    ///Metodo de aumento de goles en contra, goles a favor y diferencia de goles
+
+///Method of increasing goals against, goals for and goal difference
     public void guardarDatosEquipos() {
-        //Gol en contra
+//Goal against
         getEquipo1().aumentarGolesContra(golequipo2);
         getEquipo2().aumentarGolesContra(golequipo1);
-        //Gol a favor
+        // Goal team
         getEquipo1().aumentarGolesFavor(golequipo1);
         getEquipo2().aumentarGolesFavor(golequipo2);
-        //Goles de diferencia 
+//Goal difference
         getEquipo1().calcularDiferenciaGoles();
         getEquipo2().calcularDiferenciaGoles();
     }

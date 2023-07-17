@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Logica;
 
 import java.util.ArrayList;
@@ -11,25 +7,26 @@ import java.util.List;
  *
  * @author Eithel
  */
-//Metodo constructor y se crea una lista donde van a ir todos los equipos que jugaran y sus respectivas confederaciones
+//Constructor method and a list is created where all the teams that will play and their respective confederations will go
 public class Confederacion {
+
     private List<Equipo> listaEquipos;
     private int plazasDirectas;
     private int plazasRepechaje;
-    
+
     public Confederacion() {
-    listaEquipos = new ArrayList<>(); // Inicializar la lista de equipos
+        listaEquipos = new ArrayList<>(); // Initialize the equipment list
     }
-    
-    public Confederacion(int plazasDirectas, int plazasRepechaje){
+
+    public Confederacion(int plazasDirectas, int plazasRepechaje) {
         this.plazasDirectas = plazasDirectas;
         this.plazasRepechaje = plazasRepechaje;
-        listaEquipos = new ArrayList<>(); // Inicializar la lista de equipos
+        listaEquipos = new ArrayList<>(); // Initialize the equipment list
     }
-    
+
     public void agregarEquipo(Equipo equipo) {
         listaEquipos.add(equipo);
-    }  
+    }
 
     /**
      * @return the listaEquipos
@@ -72,5 +69,5 @@ public class Confederacion {
     public void setPlazasRepechaje(int plazasRepechaje) {
         this.plazasRepechaje = plazasRepechaje;
     }
-    
+
 }

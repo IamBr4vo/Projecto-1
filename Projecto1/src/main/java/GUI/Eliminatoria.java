@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
 
 import Logica.ColoresTablas;
@@ -49,7 +45,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     private int enfrentamientoActualUEFA;
     private int enfrentamientoActualAFC;
 
-    // Matriz para llevar registro de los equipos que ya jugaron entre sí
+    // Array to keep track of the teams that have already played each other
     private boolean[][] equiposYaJugaronCAF;
     private boolean[][] equiposYaJugaronCONCACAF;
     private boolean[][] equiposYaJugaronCONMEBOL;
@@ -70,9 +66,6 @@ public class Eliminatoria extends javax.swing.JFrame {
     private String informeMarcadoresOFC = "";
     private String informeMarcadoresUEFA = "";
     private String informeMarcadoresAFC = "";
-    
-    
-   
 
     public Eliminatoria(Confederacion caf, Confederacion concacaf, Confederacion conmebol, Confederacion ofc, Confederacion uefa, Confederacion afc) {
         initComponents();
@@ -84,12 +77,12 @@ public class Eliminatoria extends javax.swing.JFrame {
         europa = uefa.getListaEquipos();
         asia = afc.getListaEquipos();
 
-        llenarTablaCAF(africa);       // Llena la tabla de África
-        llenarTablaCONCACAF(america);      // Llena la tabla de América
-        llenarTablaCONMEBOL(surAmerica);   // Llena la tabla de Suramérica
-        llenarTablaOFC(oceania);      // Llena la tabla de Oceanía
-        llenarTablaUEFA(europa);       // Llena la tabla de Europa
-        llenarTablaAFC(asia);         // Llena la tabla de Asia
+        llenarTablaCAF(africa);       // Fill the Africa table
+        llenarTablaCONCACAF(america);      // Fill the American table
+        llenarTablaCONMEBOL(surAmerica);   // Fill the South America table
+        llenarTablaOFC(oceania);      // Fill the Oceania table
+        llenarTablaUEFA(europa);      // Fill the Europe table
+        llenarTablaAFC(asia);        // Fill the Asia table
 
         inicializarEnfrentamientosAleatoriosCONCACAF();
         inicializarEnfrentamientosAleatoriosCONMEBOL();
@@ -98,6 +91,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         inicializarEnfrentamientosAleatoriosUEFA();
         inicializarEnfrentamientosAleatoriosAFC();
     }
+
     public void setListaSedes(List<Sede> listaSedes) {
         this.listaSedes = listaSedes;
     }
@@ -108,8 +102,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         return listaSedes.get(index).obtenerSedeAleatoria();
     }
 
-
-    //Metodo para llenar la tabla CAF
+    //Method to fill the CAF table
     public void llenarTablaCAF(List<Equipo> equiposConfederacion) {
         DefaultTableModel model = (DefaultTableModel) tblCAF.getModel();
         model.getDataVector().removeAllElements();
@@ -130,7 +123,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblCAF.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
-    //Metodo para llenar la tabla CONCACAF
+    //Method to fill the CONCACAF table
     public void llenarTablaCONCACAF(List<Equipo> equiposConfederacion) {
         DefaultTableModel model = (DefaultTableModel) tblCONCACAF.getModel();
         model.getDataVector().removeAllElements();
@@ -151,7 +144,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblCONCACAF.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
-    //Metodo para llenar la tabla CONMEBOL
+    //Method to fill the CONMEBOL table
     public void llenarTablaCONMEBOL(List<Equipo> equiposConfederacion) {
         DefaultTableModel model = (DefaultTableModel) tblCONMEBOL.getModel();
         model.getDataVector().removeAllElements();
@@ -172,7 +165,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblCONMEBOL.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
-    //Metodo para llenar la tabla OFC
+    //Method to fill the OFC table
     public void llenarTablaOFC(List<Equipo> equiposConfederacion) {
         DefaultTableModel model = (DefaultTableModel) tblOFC.getModel();
         model.getDataVector().removeAllElements();
@@ -193,7 +186,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblOFC.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
-    //Metodo para llenar la tabla UEFA
+    //Method to fill the UEFA table
     public void llenarTablaUEFA(List<Equipo> equiposConfederacion) {
         DefaultTableModel model = (DefaultTableModel) tblUEFA.getModel();
         model.getDataVector().removeAllElements();
@@ -214,7 +207,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblUEFA.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
-    //Metodo para llenar la tabla AFC
+    //Method to fill the AFC table
     public void llenarTablaAFC(List<Equipo> equiposConfederacion) {
         DefaultTableModel model = (DefaultTableModel) tblAFC.getModel();
         model.getDataVector().removeAllElements();
@@ -235,25 +228,25 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblAFC.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
-//Metodo para actualizar las tablas de posiciones de cada equipo
+//Method to update the position tables of each team
     private void actualizarTablaCAF(List<Equipo> equipos) {
-        // Ordenar la lista de equipos según los puntos y la diferencia de goles
+        // Sort the list of teams based on points and goal difference
         equipos.sort((equipo1, equipo2) -> {
-            // Comparar los puntos
+            // Compare the points
             int comparacionPuntos = Integer.compare(equipo2.getPTS(), equipo1.getPTS());
             if (comparacionPuntos != 0) {
                 return comparacionPuntos;
             } else {
-                // En caso de empate en puntos, comparar la diferencia de goles
+                // In case of a tie on points, compare the goal difference
                 return Integer.compare(equipo2.getDF(), equipo1.getDF());
             }
         });
 
-        // Limpiar la tabla
+        // Clean a table
         DefaultTableModel model = (DefaultTableModel) tblCAF.getModel();
         model.getDataVector().removeAllElements();
 
-        // Llenar la tabla con los datos ordenados
+        // Fill the table with the sorted data
         Object rowData[] = new Object[10];
         for (int i = 0; i < equipos.size(); i++) {
             rowData[0] = i + 1;
@@ -271,23 +264,23 @@ public class Eliminatoria extends javax.swing.JFrame {
     }
 
     private void actualizarTablaCONCACAF(List<Equipo> equipos) {
-        // Ordenar la lista de equipos según los puntos y la diferencia de goles
+        // Sort the list of teams based on points and goal difference
         equipos.sort((equipo1, equipo2) -> {
-            // Comparar los puntos
+            // Compare the points
             int comparacionPuntos = Integer.compare(equipo2.getPTS(), equipo1.getPTS());
             if (comparacionPuntos != 0) {
                 return comparacionPuntos;
             } else {
-                // En caso de empate en puntos, comparar la diferencia de goles
+                // In case of a tie on points, compare the goal difference
                 return Integer.compare(equipo2.getDF(), equipo1.getDF());
             }
         });
 
-        // Limpiar la tabla
+        // Clear the table
         DefaultTableModel model = (DefaultTableModel) tblCONCACAF.getModel();
         model.getDataVector().removeAllElements();
 
-        // Llenar la tabla con los datos ordenados
+        // Fill the table with the sorted data
         Object rowData[] = new Object[10];
         for (int i = 0; i < equipos.size(); i++) {
             rowData[0] = i + 1;
@@ -440,24 +433,24 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
     }
 
-    //Metodo para actualizar las estadisticas de cada equipo
+    //Method to update the statistics of each team
     private void actualizarEstadisticasEquipo(Equipo equipo, int golesAFavor, int golesEnContra) {
         equipo.aumentarPartidosJugados(); // Incrementar los partidos jugados
 
         if (golesAFavor > golesEnContra) {
-            equipo.actualizarPuntos(3); // Incrementar los puntos
-            equipo.aumentarPartidosGanados(); // Incrementar los partidos ganados
+            equipo.actualizarPuntos(3); // Increase games played
+            equipo.aumentarPartidosGanados(); // Increase matches won
         } else if (golesAFavor < golesEnContra) {
-            equipo.aumentarPartidosPerdidos(); // Incrementar los partidos perdidos
+            equipo.aumentarPartidosPerdidos(); // Increase games lost
         } else {
-            equipo.actualizarPuntos(1); // Incrementar los puntos (por empate)
-            equipo.aumentarPartidosEmpatados(); // Incrementar los partidos empatados
+            equipo.actualizarPuntos(1); // Increase points (for tie)
+            equipo.aumentarPartidosEmpatados(); // Increase tied games
         }
 
-        equipo.calcularDiferenciaGoles(); // Calcular la diferencia de goles
+        equipo.calcularDiferenciaGoles();// Calculate goal difference
     }
 
-    // Método para inicializar los enfrentamientos de manera adecuada para CONCACAF
+    // Method to initialize matches appropriately for CAF
     private void inicializarEnfrentamientosAleatoriosCAF() {
         equiposCAF = new ArrayList<>(africa);
         int numEquipos = equiposCAF.size();
@@ -467,7 +460,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         btnSimularUnoCAF.setEnabled(true);
     }
 
-// Método para inicializar los enfrentamientos de manera adecuada para CONCACAF
+    // Method to initialize matches appropriately for CONCACAF
     private void inicializarEnfrentamientosAleatoriosCONCACAF() {
         equiposCONCACAF = new ArrayList<>(america);
         int numEquipos = equiposCONCACAF.size();
@@ -477,7 +470,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         btnSimularUnoCONCACAF.setEnabled(true);
     }
 
-// Método para inicializar los enfrentamientos de manera adecuada para CONMEBOL
+    // Method to initialize matches appropriately for CONMEBOL
     private void inicializarEnfrentamientosAleatoriosCONMEBOL() {
         equiposCONMEBOL = new ArrayList<>(surAmerica);
         int numEquipos = equiposCONMEBOL.size();
@@ -486,8 +479,8 @@ public class Eliminatoria extends javax.swing.JFrame {
         enfrentamientoActualCONMEBOL = 0;
         btnSimularUnoCONMEBOL.setEnabled(true);
     }
-// Método para inicializar los enfrentamientos de manera adecuada para OFC
 
+    // Method to initialize matches appropriately for OFC
     private void inicializarEnfrentamientosAleatoriosOFC() {
         equiposOFC = new ArrayList<>(oceania);
         int numEquipos = equiposOFC.size();
@@ -496,8 +489,8 @@ public class Eliminatoria extends javax.swing.JFrame {
         enfrentamientoActualOFC = 0;
         btnSimularUnoOFC.setEnabled(true);
     }
-// Método para inicializar los enfrentamientos de manera adecuada para UEFA
 
+    // Method to initialize matches appropriately for UEFA
     private void inicializarEnfrentamientosAleatoriosUEFA() {
         equiposUEFA = new ArrayList<>(europa);
         int numEquipos = equiposUEFA.size();
@@ -506,7 +499,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         enfrentamientoActualUEFA = 0;
         btnSimularUnoUEFA.setEnabled(true);
     }
-// Método para inicializar los enfrentamientos de manera adecuada para AFC
+// Method to initialize matches appropriately for AFC
 
     private void inicializarEnfrentamientosAleatoriosAFC() {
         equiposAFC = new ArrayList<>(asia);
@@ -517,7 +510,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         btnSimularUnoAFC.setEnabled(true);
     }
 
-// Método para generar los enfrentamientos sin repeticiones para CAF
+// Method to initialize matches appropriately for CAF
     private List<Partido> generarEnfrentamientosCAF(List<Equipo> equipos) {
         List<Partido> enfrentamientos = new ArrayList<>();
         int numEquipos = equipos.size();
@@ -527,14 +520,14 @@ public class Eliminatoria extends javax.swing.JFrame {
                 Equipo equipoLocal = equipos.get(i);
                 Equipo equipoVisitante = equipos.get(j);
 
-                // Verificar si el enfrentamiento ya ha sido jugado por ambos equipos
+                // Check if the match has already been played by the 2 teams
                 if (!equiposYaJugaronCAF[i][j] && !equiposYaJugaronCAF[j][i]) {
                     Partido partido = new Partido(equiposCAF);
                     partido.setEquipo1(equipoLocal);
                     partido.setEquipo2(equipoVisitante);
                     enfrentamientos.add(partido);
 
-                    // Actualizar la matriz de equipos ya jugaron
+                    // Update the array of teams already played
                     equiposYaJugaronCAF[i][j] = true;
                     equiposYaJugaronCAF[j][i] = true;
 
@@ -550,7 +543,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         return enfrentamientos;
     }
 
-// Método para generar los enfrentamientos sin repeticiones para CONCACAF
+// Method to generate the matches without replays for CONCACAF
     private List<Partido> generarEnfrentamientosCONCACAF(List<Equipo> equipos) {
         List<Partido> enfrentamientos = new ArrayList<>();
         int numEquipos = equipos.size();
@@ -560,14 +553,14 @@ public class Eliminatoria extends javax.swing.JFrame {
                 Equipo equipoLocal = equipos.get(i);
                 Equipo equipoVisitante = equipos.get(j);
 
-                // Verificar si el enfrentamiento ya ha sido jugado por ambos equipos
+                // Check if the match has already been played by the 2 teams
                 if (!equiposYaJugaronCONCACAF[i][j] && !equiposYaJugaronCONCACAF[j][i]) {
                     Partido partido = new Partido(equiposCONCACAF);
                     partido.setEquipo1(equipoLocal);
                     partido.setEquipo2(equipoVisitante);
                     enfrentamientos.add(partido);
 
-                    // Actualizar la matriz de equipos ya jugaron
+                    // Update the array of teams already played
                     equiposYaJugaronCONCACAF[i][j] = true;
                     equiposYaJugaronCONCACAF[j][i] = true;
 
@@ -583,18 +576,18 @@ public class Eliminatoria extends javax.swing.JFrame {
         return enfrentamientos;
     }
 
-// Método para generar los enfrentamientos sin repeticiones para CONMEBOL
+// Method to generate matchups without replays for CONMEBOL
     private List<Partido> generarEnfrentamientosCONMEBOL(List<Equipo> equipos) {
         List<Partido> enfrentamientos = new ArrayList<>();
         int numEquipos = equipos.size();
 
-        // Generar enfrentamientos de ida y vuelta
+        // Check if the match has already been played by the 2 teams
         for (int i = 0; i < numEquipos - 1; i++) {
             for (int j = i + 1; j < numEquipos; j++) {
                 Equipo equipoLocal = equipos.get(i);
                 Equipo equipoVisitante = equipos.get(j);
 
-                // Verificar si el enfrentamiento ya ha sido jugado por ambos equipos
+                // Check if the match has already been played by the 2 teams
                 if (!equiposYaJugaronCONMEBOL[i][j] && !equiposYaJugaronCONMEBOL[j][i]) {
                     Partido partidoIda = new Partido(equiposCONMEBOL);
                     partidoIda.setEquipo1(equipoLocal);
@@ -603,6 +596,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                     equiposYaJugaronCONMEBOL[i][j] = true;
                     equiposYaJugaronCONMEBOL[j][i] = true;
 
+                    // Update the array of teams already played
                     Partido partidoVuelta = new Partido(equiposCONMEBOL);
                     partidoVuelta.setEquipo1(equipoVisitante);
                     partidoVuelta.setEquipo2(equipoLocal);
@@ -709,69 +703,73 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
 
         Collections.shuffle(enfrentamientos);
-        return enfrentamientos;    
+        return enfrentamientos;
     }
-    
-   public void obtenerMarcadorCAF(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+
+    //Method to get marker CAF
+    public void obtenerMarcadorCAF(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+        String informe = "Informe del partido:\n";
+        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+        informe += equipo1 + ": " + golequipo1 + " goles\n";
+        informe += equipo2 + ": " + golequipo2 + " goles\n";
+
+        // Store the information in the global variable
+        informeMarcadoresCAF += informe + "\n";
+    }
+
+    //Method to get marker CONCACAF
+    public void obtenerMarcadorCONCACAF(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+        String informe = "Informe del partido:\n";
+        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+        informe += equipo1 + ": " + golequipo1 + " goles\n";
+        informe += equipo2 + ": " + golequipo2 + " goles\n";
+
+        // Store the information in the global variable
+        informeMarcadoresCONCACAF += informe + "\n";
+    }
+
+    //Method to get marker CONMEBOL
+    public void obtenerMarcadorCONMEBOL(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+        String informe = "Informe del partido:\n";
+        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+        informe += equipo1 + ": " + golequipo1 + " goles\n";
+        informe += equipo2 + ": " + golequipo2 + " goles\n";
+
+        // Store the information in the global variable
+        informeMarcadoresCONMEBOL += informe + "\n";
+    }
+
+    public void obtenerMarcadorOFC(String equipo1, int golequipo1, String equipo2, int golequipo2) {
         String informe = "Informe del partido:\n";
         informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
         informe += equipo1 + ": " + golequipo1 + " goles\n";
         informe += equipo2 + ": " + golequipo2 + " goles\n";
 
         // Almacenar la información en la variable global
-        informeMarcadoresCAF += informe + "\n";
+        informeMarcadoresOFC += informe + "\n";
     }
-    
-    public void obtenerMarcadorCONCACAF(String equipo1, int golequipo1, String equipo2, int golequipo2) {
-    String informe = "Informe del partido:\n";
-    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
-    informe += equipo1 + ": " + golequipo1 + " goles\n";
-    informe += equipo2 + ": " + golequipo2 + " goles\n";
 
-    // Almacenar la información en la variable global
-    informeMarcadoresCONCACAF += informe + "\n";
-    }
-    
-    public void obtenerMarcadorCONMEBOL(String equipo1, int golequipo1, String equipo2, int golequipo2) {
-    String informe = "Informe del partido:\n";
-    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
-    informe += equipo1 + ": " + golequipo1 + " goles\n";
-    informe += equipo2 + ": " + golequipo2 + " goles\n";
+    public void obtenerMarcadorUEFA(String equipo1, int golequipo1, String equipo2, int golequipo2) {
+        String informe = "Informe del partido:\n";
+        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+        informe += equipo1 + ": " + golequipo1 + " goles\n";
+        informe += equipo2 + ": " + golequipo2 + " goles\n";
 
-    // Almacenar la información en la variable global
-    informeMarcadoresCONMEBOL += informe + "\n";
+        // Almacenar la información en la variable global
+        informeMarcadoresUEFA += informe + "\n";
     }
-    
-     public void obtenerMarcadorOFC(String equipo1, int golequipo1, String equipo2, int golequipo2) {
-    String informe = "Informe del partido:\n";
-    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
-    informe += equipo1 + ": " + golequipo1 + " goles\n";
-    informe += equipo2 + ": " + golequipo2 + " goles\n";
 
-    // Almacenar la información en la variable global
-    informeMarcadoresOFC += informe + "\n";
-    }
-     
-     public void obtenerMarcadorUEFA(String equipo1, int golequipo1, String equipo2, int golequipo2) {
-    String informe = "Informe del partido:\n";
-    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
-    informe += equipo1 + ": " + golequipo1 + " goles\n";
-    informe += equipo2 + ": " + golequipo2 + " goles\n";
-
-    // Almacenar la información en la variable global
-    informeMarcadoresUEFA += informe + "\n";
-    }
-     
     public void obtenerMarcadorAFC(String equipo1, int golequipo1, String equipo2, int golequipo2) {
-    String informe = "Informe del partido:\n";
-    informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
-    informe += equipo1 + ": " + golequipo1 + " goles\n";
-    informe += equipo2 + ": " + golequipo2 + " goles\n";
+        String informe = "Informe del partido:\n";
+        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+        informe += equipo1 + ": " + golequipo1 + " goles\n";
+        informe += equipo2 + ": " + golequipo2 + " goles\n";
 
-    // Almacenar la información en la variable global
-    informeMarcadoresAFC += informe + "\n";
-    
+        // Almacenar la información en la variable global
+        informeMarcadoresAFC += informe + "\n";
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1414,7 +1412,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
     private void btnVerSedesCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerSedesCAFActionPerformed
         txtCAF.setText(informeMarcadoresCAF);
-       
+
     }//GEN-LAST:event_btnVerSedesCAFActionPerformed
 
     private void btnVerSedesCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerSedesCONCACAFActionPerformed
@@ -1438,42 +1436,41 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVerSedesAFCActionPerformed
 
     private void btnSimularTodosCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCONCACAFActionPerformed
-        //Colores para la tabla
+        // Colors for the table
         ColoresTablas renderer2 = new ColoresTablas(6, 6, 7);
         tblCONCACAF.setDefaultRenderer(Object.class, renderer2);
-// Verificar si los partidos ya se han jugado
+        // Check if the matches have already been played
         if (!partidoJugadoCONCACAF) {
             btnSimularTodosCONCACAF.setEnabled(false);
             btnSimularUnoCONCACAF.setEnabled(false);
-            // Obtener la lista de equipos de la confederación CAF
+            // Obtain the list of teams from the CAF confederation
             List<Equipo> equiposCONCACAF = america;
 
-            // Simular los partidos entre todos los equipos de la confederación CAF
+            // Simulate the matches between all the teams of the CAF confederation
             while (enfrentamientoActualCONCACAF < enfrentamientosCONCACAF.size()) {
                 Partido partido = enfrentamientosCONCACAF.get(enfrentamientoActualCONCACAF);
                 Equipo equipoLocal = partido.getEquipo1();
                 Equipo equipoVisitante = partido.getEquipo2();
 
-                // Simular el partido
+                // Simulate the match
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
                 partido.guardarDatosEquipos();
                 obtenerMarcadorCONCACAF(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
 
-
-                // Actualizar los puntos y estadísticas de los equipos
+                // Update team points and stats
                 actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
                 actualizarEstadisticasEquipo(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
 
-                // Incrementar el índice del enfrentamiento actual
+                // Increase the rate of the current matchup
                 enfrentamientoActualCONCACAF++;
             }
 
-            // Actualizar la bandera indicando que los partidos ya se han jugado
+            // Update the flag indicating that the matches have already been played
             partidoJugadoCONCACAF = true;
 
-            // Actualizar la tabla de la confederación CAF
+            // Update the CAF confederation table
             llenarTablaCONCACAF(equiposCONCACAF);
-            // Actualizar la tabla de la confederación CAF
+            // Update the CAF confederation table
             actualizarTablaCONCACAF(equiposCONCACAF);
         }
 
@@ -1483,39 +1480,38 @@ public class Eliminatoria extends javax.swing.JFrame {
         ColoresTablas renderer6 = new ColoresTablas(8, 8, 0);
         tblAFC.setDefaultRenderer(Object.class, renderer6);
 
-        // Verificar si los partidos ya se han jugado
+        // Check if the matches have already been played
         if (!partidoJugadoAFC) {
             btnSimularTodosAFC.setEnabled(false);
             btnSimularUnoAFC.setEnabled(false);
-            // Obtener la lista de equipos de la confederación CAF
+            // Obtain the list of teams from the CAF confederation
             List<Equipo> equiposAFC = asia;
 
-            // Simular los partidos entre todos los equipos de la confederación CAF
+            // Simulate the matches between all the teams of the CAF confederation
             while (enfrentamientoActualAFC < enfrentamientosAFC.size()) {
                 Partido partido = enfrentamientosAFC.get(enfrentamientoActualAFC);
                 Equipo equipoLocal = partido.getEquipo1();
                 Equipo equipoVisitante = partido.getEquipo2();
 
-                // Simular el partido
+                // Simulate the match
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
                 partido.guardarDatosEquipos();
                 obtenerMarcadorAFC(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
 
-                // Actualizar los puntos y estadísticas de los equipos
+                // Update team points and stats
                 actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
                 actualizarEstadisticasEquipo(partido.getEquipo2(), partido.getGolequipo2(), partido.getGolequipo1());
 
-                // Incrementar el índice del enfrentamiento actual
+                // Increase the rate of the current matchup
                 enfrentamientoActualAFC++;
-                
+
             }
 
-            // Actualizar la bandera indicando que los partidos ya se han jugado
+            // Update the flag indicating that the matches have already been played
             partidoJugadoAFC = true;
 
-            // Actualizar la tabla de la confederación CAF
+            // Update the CAF confederation table
             llenarTablaAFC(equiposAFC);
-            // Actualizar la tabla de la confederación CAF
             actualizarTablaAFC(equiposAFC);
 
     }//GEN-LAST:event_btnSimularTodosAFCActionPerformed
@@ -1526,7 +1522,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblAFC.setDefaultRenderer(Object.class, renderer6);
 
         if (enfrentamientoActualAFC >= enfrentamientosAFC.size()) {
-            // Desactivar el botón cuando todos los enfrentamientos se han realizado
+            // Disable button when all matches are done
             btnSimularUnoAFC.setEnabled(false);
             btnSimularTodosAFC.setEnabled(false);
             return;
@@ -1540,7 +1536,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
         partidoActual.guardarDatosEquipos();
         obtenerMarcadorAFC(equipoLocal.getNombre(), partidoActual.getGolequipo1(), equipoVisitante.getNombre(), partidoActual.getGolequipo2());
-
 
         // Actualizar los puntos y estadísticas de los equipos
         actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
@@ -1574,7 +1569,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
         partidoActual.guardarDatosEquipos();
         obtenerMarcadorCAF(equipoLocal.getNombre(), partidoActual.getGolequipo1(), equipoVisitante.getNombre(), partidoActual.getGolequipo2());
-
 
         // Actualizar los puntos y estadísticas de los equipos
         actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
@@ -1651,7 +1645,6 @@ public class Eliminatoria extends javax.swing.JFrame {
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
                 partido.guardarDatosEquipos();
                 obtenerMarcadorCAF(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
-
 
                 // Actualizar los puntos y estadísticas de los equipos
                 actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
@@ -1733,7 +1726,6 @@ public class Eliminatoria extends javax.swing.JFrame {
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
                 partido.guardarDatosEquipos();
                 obtenerMarcadorUEFA(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
-
 
                 // Actualizar los puntos y estadísticas de los equipos
                 actualizarEstadisticasEquipo(partido.getEquipo1(), partido.getGolequipo1(), partido.getGolequipo2());
@@ -1839,7 +1831,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         // Simular el partido
         partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
-        partidoActual.guardarDatosEquipos();  
+        partidoActual.guardarDatosEquipos();
         obtenerMarcadorCONMEBOL(equipoLocal.getNombre(), partidoActual.getGolequipo1(), equipoVisitante.getNombre(), partidoActual.getGolequipo2());
 
         // Actualizar los puntos y estadísticas de los equipos
@@ -1857,14 +1849,14 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSimularUnoCONMEBOLActionPerformed
 
     private void btnSimularUnoCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoCONCACAFActionPerformed
-        //Colores para la tabla
+        // Colors for the table
         ColoresTablas renderer2 = new ColoresTablas(6, 6, 7);
         tblCONCACAF.setDefaultRenderer(Object.class, renderer2);
         if (enfrentamientoActualCONCACAF >= enfrentamientosCONCACAF.size()) {
             // Desactivar el botón cuando todos los enfrentamientos se han realizado
             btnSimularUnoCONCACAF.setEnabled(false);
             btnSimularTodosCONCACAF.setEnabled(false);
-            // Desactivar el botón cuando todos los enfrentamientos se han realizado
+            // Disable the button when all matches are complete
             return;
         }
 
@@ -1872,21 +1864,20 @@ public class Eliminatoria extends javax.swing.JFrame {
         Equipo equipoLocal = partidoActual.getEquipo1();
         Equipo equipoVisitante = partidoActual.getEquipo2();
 
-        // Simular el partido
+        // Simulate the match
         partidoActual.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
         partidoActual.guardarDatosEquipos();
         obtenerMarcadorCONCACAF(equipoLocal.getNombre(), partidoActual.getGolequipo1(), equipoVisitante.getNombre(), partidoActual.getGolequipo2());
 
-        // Actualizar los puntos y estadísticas de los equipos
+        // Update team points and stats
         actualizarEstadisticasEquipo(partidoActual.getEquipo1(), partidoActual.getGolequipo1(), partidoActual.getGolequipo2());
         actualizarEstadisticasEquipo(partidoActual.getEquipo2(), partidoActual.getGolequipo2(), partidoActual.getGolequipo1());
 
-        // Incrementar el índice del enfrentamiento actual
+        // Increase the rate of the current matchup
         enfrentamientoActualCONCACAF++;
 
-        // Actualizar la tabla de la confederación CAF
+        // Update the CAF confederation table
         llenarTablaCONCACAF(equiposCONCACAF);
-        // Actualizar la tabla de la confederación CAF
         actualizarTablaCONCACAF(equiposCONCACAF);
 
     }//GEN-LAST:event_btnSimularUnoCONCACAFActionPerformed

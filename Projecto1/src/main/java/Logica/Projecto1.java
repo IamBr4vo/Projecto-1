@@ -1,13 +1,16 @@
 package Logica;
+
 import GUI.*;
+
 /**
  *
  * @author Bravo
  */
 public class Projecto1 {
+
     public static void main(String[] args) {
-        // Crear equipos para Concacaf
-        Confederacion CONCACAF = new Confederacion(9,1);
+        // Create teams for Concacaf
+        Confederacion CONCACAF = new Confederacion(9, 1);
         Equipo concacaf1 = new Equipo("Costa Rica");
         Equipo concacaf2 = new Equipo("Panama");
         Equipo concacaf3 = new Equipo("Honduras");
@@ -46,8 +49,8 @@ public class Projecto1 {
         Equipo concacaf38 = new Equipo("Sint Maarten");
         Equipo concacaf39 = new Equipo("Surinam");
         Equipo concacaf40 = new Equipo("Trinidad Y tobago");
-        
-        // Agregar equipos de Concacaf a la lista
+
+        // Add Concacaf teams to the list
         CONCACAF.agregarEquipo(concacaf1);
         CONCACAF.agregarEquipo(concacaf2);
         CONCACAF.agregarEquipo(concacaf3);
@@ -86,9 +89,9 @@ public class Projecto1 {
         CONCACAF.agregarEquipo(concacaf38);
         CONCACAF.agregarEquipo(concacaf39);
         CONCACAF.agregarEquipo(concacaf40);
-       
-        // Crear equipos para Conmebol
-        Confederacion CONMEBOL = new Confederacion(6,1);
+
+        // Create teams for Conmebol
+        Confederacion CONMEBOL = new Confederacion(6, 1);
         Equipo conmebol1 = new Equipo("Brazil");
         Equipo conmebol2 = new Equipo("Colombia");
         Equipo conmebol3 = new Equipo("Venezuela");
@@ -99,8 +102,8 @@ public class Projecto1 {
         Equipo conmebol8 = new Equipo("Paraguay");
         Equipo conmebol9 = new Equipo("Peru");
         Equipo conmebol10 = new Equipo("Uruguay");
-        
-        // Agregar equipos de Conmebol a la lista
+
+        // Add CONMEBOL teams to the list
         CONMEBOL.agregarEquipo(conmebol1);
         CONMEBOL.agregarEquipo(conmebol2);
         CONMEBOL.agregarEquipo(conmebol3);
@@ -111,9 +114,9 @@ public class Projecto1 {
         CONMEBOL.agregarEquipo(conmebol8);
         CONMEBOL.agregarEquipo(conmebol9);
         CONMEBOL.agregarEquipo(conmebol10);
-        
-        // Crear equipos para CAF
-        Confederacion CAF = new Confederacion(9,1);
+
+        // Create teams for CAF 
+        Confederacion CAF = new Confederacion(9, 1);
         Equipo Caf1 = new Equipo("Camerún");
         Equipo Caf2 = new Equipo("Tunez");
         Equipo Caf3 = new Equipo("Marruecos");
@@ -170,8 +173,8 @@ public class Projecto1 {
         Equipo Caf54 = new Equipo("Zambia");
         Equipo Caf55 = new Equipo("Zamzibar");
         Equipo Caf56 = new Equipo("Zimbabue");
-        
-        // Agregar equipos de CAF a la lista
+
+        // Add CAF teams to the list
         CAF.agregarEquipo(Caf1);
         CAF.agregarEquipo(Caf2);
         CAF.agregarEquipo(Caf3);
@@ -228,9 +231,9 @@ public class Projecto1 {
         CAF.agregarEquipo(Caf54);
         CAF.agregarEquipo(Caf55);
         CAF.agregarEquipo(Caf56);
-        
-        // Crear equipos para OFC
-        Confederacion OFC = new Confederacion(1,1);
+
+        // Create teams for OFC
+        Confederacion OFC = new Confederacion(1, 1);
         Equipo Ofc1 = new Equipo("Nueva Zelanda");
         Equipo Ofc2 = new Equipo("Samoa");
         Equipo Ofc3 = new Equipo("Tonga");
@@ -244,8 +247,8 @@ public class Projecto1 {
         Equipo Ofc11 = new Equipo("Samoa Americana");
         Equipo Ofc12 = new Equipo("Tahiti");
         Equipo Ofc13 = new Equipo("Tuvalu");
-        
-        // Agregar equipos de OFC a la lista
+
+        // Add OFC teams to the list
         OFC.agregarEquipo(Ofc1);
         OFC.agregarEquipo(Ofc2);
         OFC.agregarEquipo(Ofc3);
@@ -259,9 +262,9 @@ public class Projecto1 {
         OFC.agregarEquipo(Ofc11);
         OFC.agregarEquipo(Ofc12);
         OFC.agregarEquipo(Ofc13);
-        
-        // Crear equipos para UEFA
-        Confederacion UEFA = new Confederacion(16,0);
+
+        // Create teams for UEFA
+        Confederacion UEFA = new Confederacion(16, 0);
         Equipo Uefa1 = new Equipo("Alemania");
         Equipo Uefa2 = new Equipo("España");
         Equipo Uefa3 = new Equipo("Portugal");
@@ -317,8 +320,8 @@ public class Projecto1 {
         Equipo Uefa53 = new Equipo("Suiza");
         Equipo Uefa54 = new Equipo("Turquia");
         Equipo Uefa55 = new Equipo("Ucrania");
-        
-        // Agregar equipos de UEFA a la lista
+
+        // Add UEFA teams to the list
         UEFA.agregarEquipo(Uefa1);
         UEFA.agregarEquipo(Uefa2);
         UEFA.agregarEquipo(Uefa3);
@@ -374,9 +377,9 @@ public class Projecto1 {
         UEFA.agregarEquipo(Uefa53);
         UEFA.agregarEquipo(Uefa54);
         UEFA.agregarEquipo(Uefa55);
-        
-        // Crear equipos para AFC
-        Confederacion AFC = new Confederacion(8,1);
+
+        // Create teams for AFC
+        Confederacion AFC = new Confederacion(8, 1);
         Equipo Afc1 = new Equipo("Australia");
         Equipo Afc2 = new Equipo("China");
         Equipo Afc3 = new Equipo("Indonesia");
@@ -424,8 +427,8 @@ public class Projecto1 {
         Equipo Afc45 = new Equipo("Uzbekistan");
         Equipo Afc46 = new Equipo("Vietnam");
         Equipo Afc47 = new Equipo("Yemen");
-        
-        // Agregar equipos de AFC a la lista
+
+        // Add AFC teams to the list
         AFC.agregarEquipo(Afc1);
         AFC.agregarEquipo(Afc2);
         AFC.agregarEquipo(Afc3);
@@ -473,9 +476,9 @@ public class Projecto1 {
         AFC.agregarEquipo(Afc45);
         AFC.agregarEquipo(Afc46);
         AFC.agregarEquipo(Afc47);
-        
-        // Crear sedes para Estados Unidos
-        Sede sedesEstadosUnidos = new Sede(1,"Estados Unidos");
+
+        // Create locations for the United States
+        Sede sedesEstadosUnidos = new Sede(1, "Estados Unidos");
         Sede USA1 = new Sede("Atlanta");
         Sede USA2 = new Sede("Boston");
         Sede USA3 = new Sede("Dallas");
@@ -487,8 +490,8 @@ public class Projecto1 {
         Sede USA9 = new Sede("Filadelfia");
         Sede USA10 = new Sede("San Francisco");
         Sede USA11 = new Sede("Seattle");
-        
-        //Agregar sedes de Estados Unidos a la lista
+
+        //Add US locations to the list
         sedesEstadosUnidos.agregarSedes(USA1);
         sedesEstadosUnidos.agregarSedes(USA2);
         sedesEstadosUnidos.agregarSedes(USA3);
@@ -500,33 +503,32 @@ public class Projecto1 {
         sedesEstadosUnidos.agregarSedes(USA9);
         sedesEstadosUnidos.agregarSedes(USA10);
         sedesEstadosUnidos.agregarSedes(USA11);
-        
-        // Crear sedes para Mexico
-        Sede sedesMexico = new Sede(2,"Mexico");
+
+        /// Create locations for the Mexico
+        Sede sedesMexico = new Sede(2, "Mexico");
         Sede MEX1 = new Sede("Guadalajara");
         Sede MEX2 = new Sede("Ciudad de México");
         Sede MEX3 = new Sede("Monterrey");
-        
-        //Agregar sedes de Mexico a la lista
+
+        //Add Mexico locations to the lis
         sedesMexico.agregarSedes(MEX1);
         sedesMexico.agregarSedes(MEX2);
         sedesMexico.agregarSedes(MEX3);
-       
-        // Crear sedes para Canada
+
+        // Create locations for the Canada
         Sede sedesCanada = new Sede(3, "Canada");
         Sede CAN1 = new Sede("Vancouver");
         Sede CAN2 = new Sede("Toronto");
-        
-        //Agregar sedes de Canada a la lista
+
+        //Add Canada locations to the lis
         sedesCanada.agregarSedes(CAN1);
         sedesCanada.agregarSedes(CAN2);
-        
-        //Metodo principal para ejecutar la interfaz
-        Eliminatoria v = new Eliminatoria(CAF,CONCACAF,CONMEBOL,OFC,UEFA,AFC);
+
+        //Main method to execute the interface
+        Eliminatoria v = new Eliminatoria(CAF, CONCACAF, CONMEBOL, OFC, UEFA, AFC);
         v.setVisible(true);
         v.setResizable(false);
         v.setLocationRelativeTo(null);
-        
-        
+
     }
 }

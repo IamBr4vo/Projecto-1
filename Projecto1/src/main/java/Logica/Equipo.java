@@ -1,13 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Logica;
+
 /**
  *
  * @author Bravo
  */
 public class Equipo {
+
     private String nombre;
     private int PTS;
     private int PJ;
@@ -17,7 +15,7 @@ public class Equipo {
     private int GF;
     private int GC;
     private int DF;
-  
+
     public Equipo(String nombre) {
         this.nombre = nombre;
         this.PTS = 0;
@@ -29,22 +27,22 @@ public class Equipo {
         this.GC = 0;
         this.DF = 0;
     }
-    // Metodos para actualizar la información del equipo
+    // Methods to update team information
 
     public void aumentarPartidosJugados() {
         this.setPJ(this.getPJ() + 1);
     }
-    
+
     public void aumentarPartidosGanados() {
-    this.setPG(this.getPG() + 1);
+        this.setPG(this.getPG() + 1);
     }
-    
+
     public void aumentarPartidosEmpatados() {
-    this.setPE(this.getPE() + 1);
+        this.setPE(this.getPE() + 1);
     }
-    
+
     public void aumentarPartidosPerdidos() {
-    this.setPP(this.getPP() + 1);
+        this.setPP(this.getPP() + 1);
     }
 
     public void aumentarGolesFavor(int goles) {
@@ -76,6 +74,7 @@ public class Equipo {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     /**
      * @return the PTS
      */
