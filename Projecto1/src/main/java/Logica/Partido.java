@@ -105,32 +105,6 @@ public class Partido {
         Random gol = new Random();
         setGolequipo1(gol.nextInt(11));
         setGolequipo2(gol.nextInt(11));
-        calcularPuntosYDatosDelPartido();
-    }
-
-    public void calcularPuntosYDatosDelPartido() {
-        if (getGolequipo1() == getGolequipo2()) {
-            // Empate
-            getEquipo1().actualizarPuntos(1);
-            getEquipo2().actualizarPuntos(1);
-            //Actualiza Datos De los 2 equipos empatados
-            getEquipo1().aumentarPartidosEmpatados();
-            getEquipo2().aumentarPartidosEmpatados();
-        } else if (getGolequipo1() > getGolequipo2()) {
-            // Equipo 1 gana
-            getEquipo1().actualizarPuntos(3);
-            //Aumentar equipo1 ganados 
-            getEquipo1().aumentarPartidosGanados();
-            //Aumentar Equipo2 partido perdido
-            getEquipo2().aumentarPartidosPerdidos();
-        } else {
-            // Equipo 2 gana
-            getEquipo2().actualizarPuntos(3);
-            //Aumentar equipo2 ganados 
-            getEquipo2().aumentarPartidosGanados();
-            //Aumentar Equipo1 partido perdido
-            getEquipo1().aumentarPartidosPerdidos();
-        }
     }
     
 
@@ -139,10 +113,8 @@ public class Partido {
         return getEquipo1().getNombre() + " " + getGolequipo1() + " - " + getGolequipo2() + " " + getEquipo2().getNombre();
     }
 
-    ///Metodo de aumento 
+    ///Metodo de aumento de goles en contra, goles a favor y diferencia de goles
     public void guardarDatosEquipos() {
-        getEquipo1().aumentarPartidosJugados();
-        getEquipo2().aumentarPartidosJugados();
         //Gol en contra
         getEquipo1().aumentarGolesContra(golequipo2);
         getEquipo2().aumentarGolesContra(golequipo1);
