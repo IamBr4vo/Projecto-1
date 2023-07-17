@@ -477,53 +477,6 @@ public class Projecto1 {
         AFC.agregarEquipo(Afc46);
         AFC.agregarEquipo(Afc47);
 
-        // Create locations for the United States
-        Sede sedesEstadosUnidos = new Sede(1, "Estados Unidos");
-        Sede USA1 = new Sede("Atlanta");
-        Sede USA2 = new Sede("Boston");
-        Sede USA3 = new Sede("Dallas");
-        Sede USA4 = new Sede("Houston");
-        Sede USA5 = new Sede("Kansas City");
-        Sede USA6 = new Sede("Los Ángeles");
-        Sede USA7 = new Sede("Miami");
-        Sede USA8 = new Sede("Nueva York/Nueva Jersey");
-        Sede USA9 = new Sede("Filadelfia");
-        Sede USA10 = new Sede("San Francisco");
-        Sede USA11 = new Sede("Seattle");
-
-        //Add US locations to the list
-        sedesEstadosUnidos.agregarSedes(USA1);
-        sedesEstadosUnidos.agregarSedes(USA2);
-        sedesEstadosUnidos.agregarSedes(USA3);
-        sedesEstadosUnidos.agregarSedes(USA4);
-        sedesEstadosUnidos.agregarSedes(USA5);
-        sedesEstadosUnidos.agregarSedes(USA6);
-        sedesEstadosUnidos.agregarSedes(USA7);
-        sedesEstadosUnidos.agregarSedes(USA8);
-        sedesEstadosUnidos.agregarSedes(USA9);
-        sedesEstadosUnidos.agregarSedes(USA10);
-        sedesEstadosUnidos.agregarSedes(USA11);
-
-        /// Create locations for the Mexico
-        Sede sedesMexico = new Sede(2, "Mexico");
-        Sede MEX1 = new Sede("Guadalajara");
-        Sede MEX2 = new Sede("Ciudad de México");
-        Sede MEX3 = new Sede("Monterrey");
-
-        //Add Mexico locations to the lis
-        sedesMexico.agregarSedes(MEX1);
-        sedesMexico.agregarSedes(MEX2);
-        sedesMexico.agregarSedes(MEX3);
-
-        // Create locations for the Canada
-        Sede sedesCanada = new Sede(3, "Canada");
-        Sede CAN1 = new Sede("Vancouver");
-        Sede CAN2 = new Sede("Toronto");
-
-        //Add Canada locations to the lis
-        sedesCanada.agregarSedes(CAN1);
-        sedesCanada.agregarSedes(CAN2);
-
         //Main method to execute the interface
         Eliminatoria v = new Eliminatoria(CAF, CONCACAF, CONMEBOL, OFC, UEFA, AFC);
         v.setVisible(true);
