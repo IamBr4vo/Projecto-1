@@ -910,7 +910,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         });
         jPanel1.add(btnSimularTodosCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, -1, -1));
 
-        btnVerSedesCAF.setText("Ver Sedes y Paises");
+        btnVerSedesCAF.setText("Resultados");
         btnVerSedesCAF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerSedesCAFActionPerformed(evt);
@@ -940,7 +940,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
 
-        btnVerSedesCONCACAF.setText("Ver Sedes y Paises");
+        btnVerSedesCONCACAF.setText("Resultados");
         btnVerSedesCONCACAF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerSedesCONCACAFActionPerformed(evt);
@@ -1068,7 +1068,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
 
-        btnVerSedesCONMEBOL.setText("Ver Sedes y Paises");
+        btnVerSedesCONMEBOL.setText("Resultados");
         btnVerSedesCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerSedesCONMEBOLActionPerformed(evt);
@@ -1163,7 +1163,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
 
-        btnVerSedesOFC.setText("Ver Sedes y Paises");
+        btnVerSedesOFC.setText("Resultados");
         btnVerSedesOFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerSedesOFCActionPerformed(evt);
@@ -1256,7 +1256,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
 
-        btnVerSedesUEFA.setText("Ver Sedes y Paises");
+        btnVerSedesUEFA.setText("Resultados");
         btnVerSedesUEFA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerSedesUEFAActionPerformed(evt);

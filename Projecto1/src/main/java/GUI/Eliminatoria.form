@@ -224,7 +224,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnVerSedesCAF">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Sedes y Paises"/>
+                <Property name="text" type="java.lang.String" value="Resultados"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerSedesCAFActionPerformed"/>
@@ -321,7 +321,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnVerSedesCONCACAF">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Sedes y Paises"/>
+                <Property name="text" type="java.lang.String" value="Resultados"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerSedesCONCACAFActionPerformed"/>
@@ -588,7 +588,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnVerSedesCONMEBOL">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Sedes y Paises"/>
+                <Property name="text" type="java.lang.String" value="Resultados"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerSedesCONMEBOLActionPerformed"/>
@@ -771,7 +771,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnVerSedesOFC">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Sedes y Paises"/>
+                <Property name="text" type="java.lang.String" value="Resultados"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerSedesOFCActionPerformed"/>
@@ -948,7 +948,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnVerSedesUEFA">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Sedes y Paises"/>
+                <Property name="text" type="java.lang.String" value="Resultados"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerSedesUEFAActionPerformed"/>
