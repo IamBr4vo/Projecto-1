@@ -127,7 +127,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             rowData[9] = equiposConfederacion.get(i).getDF();
             model.addRow(rowData);
         }
-        
+        tblCAF.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
     //Metodo para llenar la tabla CONCACAF
@@ -148,6 +148,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             rowData[9] = equiposConfederacion.get(i).getDF();
             model.addRow(rowData);
         }
+        tblCONCACAF.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
     //Metodo para llenar la tabla CONMEBOL
@@ -168,6 +169,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             rowData[9] = equiposConfederacion.get(i).getDF();
             model.addRow(rowData);
         }
+        tblCONMEBOL.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
     //Metodo para llenar la tabla OFC
@@ -188,6 +190,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             rowData[9] = equiposConfederacion.get(i).getDF();
             model.addRow(rowData);
         }
+        tblOFC.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
     //Metodo para llenar la tabla UEFA
@@ -208,6 +211,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             rowData[9] = equiposConfederacion.get(i).getDF();
             model.addRow(rowData);
         }
+        tblUEFA.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
     //Metodo para llenar la tabla AFC
@@ -228,6 +232,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             rowData[9] = equiposConfederacion.get(i).getDF();
             model.addRow(rowData);
         }
+        tblAFC.setShowGrid(false); // Quitar las líneas de la tabla
     }
 
 //Metodo para actualizar las tablas de posiciones de cada equipo
@@ -876,6 +881,18 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblCAF.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tblCAF.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane1.setViewportView(tblCAF);
+        if (tblCAF.getColumnModel().getColumnCount() > 0) {
+            tblCAF.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblCAF.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblCAF.getColumnModel().getColumn(2).setPreferredWidth(60);
+            tblCAF.getColumnModel().getColumn(3).setPreferredWidth(60);
+            tblCAF.getColumnModel().getColumn(4).setPreferredWidth(60);
+            tblCAF.getColumnModel().getColumn(5).setPreferredWidth(60);
+            tblCAF.getColumnModel().getColumn(6).setPreferredWidth(60);
+            tblCAF.getColumnModel().getColumn(7).setPreferredWidth(60);
+            tblCAF.getColumnModel().getColumn(8).setPreferredWidth(60);
+            tblCAF.getColumnModel().getColumn(9).setPreferredWidth(60);
+        }
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 530));
 
@@ -954,6 +971,18 @@ public class Eliminatoria extends javax.swing.JFrame {
         });
         tblCONCACAF.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane3.setViewportView(tblCONCACAF);
+        if (tblCONCACAF.getColumnModel().getColumnCount() > 0) {
+            tblCONCACAF.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblCONCACAF.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblCONCACAF.getColumnModel().getColumn(2).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(3).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(4).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(5).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(6).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(7).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(8).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(9).setPreferredWidth(60);
+        }
 
         txtCONCACAF.setColumns(20);
         txtCONCACAF.setRows(5);
@@ -1014,6 +1043,18 @@ public class Eliminatoria extends javax.swing.JFrame {
         });
         tblCONMEBOL.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane4.setViewportView(tblCONMEBOL);
+        if (tblCONMEBOL.getColumnModel().getColumnCount() > 0) {
+            tblCONMEBOL.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblCONMEBOL.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblCONMEBOL.getColumnModel().getColumn(2).setPreferredWidth(60);
+            tblCONMEBOL.getColumnModel().getColumn(3).setPreferredWidth(60);
+            tblCONMEBOL.getColumnModel().getColumn(4).setPreferredWidth(60);
+            tblCONMEBOL.getColumnModel().getColumn(5).setPreferredWidth(60);
+            tblCONMEBOL.getColumnModel().getColumn(6).setPreferredWidth(60);
+            tblCONMEBOL.getColumnModel().getColumn(7).setPreferredWidth(60);
+            tblCONMEBOL.getColumnModel().getColumn(8).setPreferredWidth(60);
+            tblCONMEBOL.getColumnModel().getColumn(9).setPreferredWidth(60);
+        }
 
         btnSimularUnoCONMEBOL.setText("Simular Partido");
         btnSimularUnoCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
@@ -1097,6 +1138,18 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblOFC.setSelectionBackground(new java.awt.Color(51, 51, 255));
         tblOFC.setSelectionForeground(new java.awt.Color(51, 51, 255));
         jScrollPane5.setViewportView(tblOFC);
+        if (tblOFC.getColumnModel().getColumnCount() > 0) {
+            tblOFC.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblOFC.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblOFC.getColumnModel().getColumn(2).setPreferredWidth(60);
+            tblOFC.getColumnModel().getColumn(3).setPreferredWidth(60);
+            tblOFC.getColumnModel().getColumn(4).setPreferredWidth(60);
+            tblOFC.getColumnModel().getColumn(5).setPreferredWidth(60);
+            tblOFC.getColumnModel().getColumn(6).setPreferredWidth(60);
+            tblOFC.getColumnModel().getColumn(7).setPreferredWidth(60);
+            tblOFC.getColumnModel().getColumn(8).setPreferredWidth(60);
+            tblOFC.getColumnModel().getColumn(9).setPreferredWidth(60);
+        }
 
         btnSimularUnoOFC.setText("Simular Partido");
         btnSimularUnoOFC.addActionListener(new java.awt.event.ActionListener() {
@@ -1178,6 +1231,18 @@ public class Eliminatoria extends javax.swing.JFrame {
         });
         tblUEFA.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane6.setViewportView(tblUEFA);
+        if (tblUEFA.getColumnModel().getColumnCount() > 0) {
+            tblUEFA.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblUEFA.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblUEFA.getColumnModel().getColumn(2).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(3).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(4).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(5).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(6).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(7).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(8).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(9).setPreferredWidth(60);
+        }
 
         btnSimularUnoUEFA.setText("Simular Partido");
         btnSimularUnoUEFA.addActionListener(new java.awt.event.ActionListener() {
@@ -1259,6 +1324,18 @@ public class Eliminatoria extends javax.swing.JFrame {
         });
         tblAFC.setGridColor(new java.awt.Color(51, 51, 51));
         jScrollPane7.setViewportView(tblAFC);
+        if (tblAFC.getColumnModel().getColumnCount() > 0) {
+            tblAFC.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblAFC.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblAFC.getColumnModel().getColumn(2).setPreferredWidth(60);
+            tblAFC.getColumnModel().getColumn(3).setPreferredWidth(60);
+            tblAFC.getColumnModel().getColumn(4).setPreferredWidth(60);
+            tblAFC.getColumnModel().getColumn(5).setPreferredWidth(60);
+            tblAFC.getColumnModel().getColumn(6).setPreferredWidth(60);
+            tblAFC.getColumnModel().getColumn(7).setPreferredWidth(60);
+            tblAFC.getColumnModel().getColumn(8).setPreferredWidth(60);
+            tblAFC.getColumnModel().getColumn(9).setPreferredWidth(60);
+        }
 
         btnSimularUnoAFC.setText("Simular Partido");
         btnSimularUnoAFC.addActionListener(new java.awt.event.ActionListener() {
@@ -1654,7 +1731,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
                 // Simular el partido
                 partido.simularGoles(equipoLocal.getNombre(), equipoVisitante.getNombre());
-                
+                partido.guardarDatosEquipos();
                 obtenerMarcadorUEFA(equipoLocal.getNombre(), partido.getGolequipo1(), equipoVisitante.getNombre(), partido.getGolequipo2());
 
 
@@ -1873,7 +1950,4 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JTextArea txtUEFA;
     // End of variables declaration//GEN-END:variables
 
-    private String resultadoCAF() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
