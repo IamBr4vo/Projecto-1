@@ -106,13 +106,19 @@ public class Partido {
         setGolequipo1(gol.nextInt(11));
         setGolequipo2(gol.nextInt(11));
     }
-    
 
     // Método para mostrar el resultado del partido
-    public String obtenerMarcador() {
-        return getEquipo1().getNombre() + " " + getGolequipo1() + " - " + getGolequipo2() + " " + getEquipo2().getNombre();
-    }
+    public String obtenerMarcador(String equipo1, int golequipo1, String equipo2, int golequipo2) {
 
+        String informe = "Informe del partido:\n";
+        informe += "Equipos: " + equipo1 + " vs " + equipo2 + "\n";
+        informe += equipo1 + ": " + golequipo1 + " goles\n";
+        informe += equipo2 + ": " + golequipo2 + " goles\n";
+
+        return informe;
+
+    }
+    
     ///Metodo de aumento de goles en contra, goles a favor y diferencia de goles
     public void guardarDatosEquipos() {
         //Gol en contra
@@ -124,8 +130,6 @@ public class Partido {
         //Goles de diferencia 
         getEquipo1().calcularDiferenciaGoles();
         getEquipo2().calcularDiferenciaGoles();
-        
-        
     }
-   
+
 }
