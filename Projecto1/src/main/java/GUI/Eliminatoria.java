@@ -1000,7 +1000,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             tblCAF.getColumnModel().getColumn(9).setPreferredWidth(60);
         }
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 850, 510));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 520));
 
         btnSimularUnoCAF.setText("Simular Partido");
         btnSimularUnoCAF.addActionListener(new java.awt.event.ActionListener() {
@@ -1026,6 +1026,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         });
         jPanel1.add(btnVerSedesCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 60, -1, -1));
 
+        txtCAF.setEditable(false);
         txtCAF.setColumns(20);
         txtCAF.setRows(5);
         jScrollPane2.setViewportView(txtCAF);
@@ -1090,6 +1091,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             tblCONCACAF.getColumnModel().getColumn(9).setPreferredWidth(60);
         }
 
+        txtCONCACAF.setEditable(false);
         txtCONCACAF.setColumns(20);
         txtCONCACAF.setRows(5);
         jScrollPane8.setViewportView(txtCONCACAF);
@@ -1182,6 +1184,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
 
+        txtCONMEBOL.setEditable(false);
         txtCONMEBOL.setColumns(20);
         txtCONMEBOL.setRows(5);
         jScrollPane9.setViewportView(txtCONMEBOL);
@@ -1276,6 +1279,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
 
+        txtOFC.setEditable(false);
         txtOFC.setColumns(20);
         txtOFC.setRows(5);
         jScrollPane10.setViewportView(txtOFC);
@@ -1368,6 +1372,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
 
+        txtUEFA.setEditable(false);
         txtUEFA.setColumns(20);
         txtUEFA.setRows(5);
         jScrollPane11.setViewportView(txtUEFA);
@@ -1460,6 +1465,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
 
+        txtAFC.setEditable(false);
         txtAFC.setColumns(20);
         txtAFC.setRows(5);
         jScrollPane13.setViewportView(txtAFC);
@@ -1548,7 +1554,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
     private void btnSimularTodosCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodosCONCACAFActionPerformed
         // Colors for the table
-        ColoresTablas renderer2 = new ColoresTablas(6, 6, 7);
+        ColoresTablas renderer2 = new ColoresTablas(3, 3, 4);
         tblCONCACAF.setDefaultRenderer(Object.class, renderer2);
         // Check if the matches have already been played
         if (!partidoJugadoCONCACAF) {
@@ -1961,7 +1967,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
     private void btnSimularUnoCONCACAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularUnoCONCACAFActionPerformed
         // Colors for the table
-        ColoresTablas renderer2 = new ColoresTablas(6, 6, 7);
+        ColoresTablas renderer2 = new ColoresTablas(3, 3, 4);
         tblCONCACAF.setDefaultRenderer(Object.class, renderer2);
         if (enfrentamientoActualCONCACAF >= enfrentamientosCONCACAF.size()) {
             // Desactivar el botón cuando todos los enfrentamientos se han realizado

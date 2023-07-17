@@ -114,7 +114,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="10" width="850" height="510"/>
+                  <AbsoluteConstraints x="0" y="0" width="850" height="520"/>
                 </Constraint>
               </Constraints>
 
@@ -260,6 +260,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="txtCAF">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
@@ -437,6 +438,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="txtCONCACAF">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
@@ -614,6 +616,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="txtCONMEBOL">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
@@ -797,6 +800,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="txtOFC">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
@@ -974,6 +978,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="txtUEFA">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
@@ -1151,6 +1156,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="txtAFC">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
