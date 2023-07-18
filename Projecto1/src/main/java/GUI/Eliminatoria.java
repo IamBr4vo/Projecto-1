@@ -898,14 +898,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         btnVerSedesCAF = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtCAF = new javax.swing.JTextArea();
-        jPanel2 = new javax.swing.JPanel();
-        btnSimularUnoCONCACAF = new javax.swing.JButton();
-        btnSimularTodosCONCACAF = new javax.swing.JButton();
-        btnVerSedesCONCACAF = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tblCONCACAF = new javax.swing.JTable();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        txtCONCACAF = new javax.swing.JTextArea();
+        ltlcaf = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblCONMEBOL = new javax.swing.JTable();
@@ -914,6 +907,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         btnVerSedesCONMEBOL = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
         txtCONMEBOL = new javax.swing.JTextArea();
+        ltlconmebol = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tblOFC = new javax.swing.JTable();
@@ -922,14 +916,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         btnVerSedesOFC = new javax.swing.JButton();
         jScrollPane10 = new javax.swing.JScrollPane();
         txtOFC = new javax.swing.JTextArea();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        tblUEFA = new javax.swing.JTable();
-        btnSimularUnoUEFA = new javax.swing.JButton();
-        btnSimularTodosUEFA = new javax.swing.JButton();
-        btnVerSedesUEFA = new javax.swing.JButton();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        txtUEFA = new javax.swing.JTextArea();
+        ltlOFC = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         tblAFC = new javax.swing.JTable();
@@ -938,6 +925,25 @@ public class Eliminatoria extends javax.swing.JFrame {
         btnVerSedesAFC = new javax.swing.JButton();
         jScrollPane13 = new javax.swing.JScrollPane();
         txtAFC = new javax.swing.JTextArea();
+        ltlAFC = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btnSimularUnoCONCACAF = new javax.swing.JButton();
+        btnSimularTodosCONCACAF = new javax.swing.JButton();
+        btnVerSedesCONCACAF = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblCONCACAF = new javax.swing.JTable();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        txtCONCACAF = new javax.swing.JTextArea();
+        ltlCONCACAF = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblUEFA = new javax.swing.JTable();
+        btnSimularUnoUEFA = new javax.swing.JButton();
+        btnSimularTodosUEFA = new javax.swing.JButton();
+        btnVerSedesUEFA = new javax.swing.JButton();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        txtUEFA = new javax.swing.JTextArea();
+        ltlUEFA = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -956,6 +962,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         jScrollPane12.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setBackground(new java.awt.Color(0, 51, 153));
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("Confederaciónes"));
@@ -1001,7 +1008,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             tblCAF.getColumnModel().getColumn(9).setPreferredWidth(60);
         }
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 520));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 290));
 
         btnSimularUnoCAF.setText("Simular Partido");
         btnSimularUnoCAF.addActionListener(new java.awt.event.ActionListener() {
@@ -1009,7 +1016,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnSimularUnoCAFActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSimularUnoCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 0, -1, -1));
+        jPanel1.add(btnSimularUnoCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
         btnSimularTodosCAF.setText("Simular Todos Los Partidos");
         btnSimularTodosCAF.addActionListener(new java.awt.event.ActionListener() {
@@ -1017,7 +1024,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnSimularTodosCAFActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSimularTodosCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 30, -1, -1));
+        jPanel1.add(btnSimularTodosCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
         btnVerSedesCAF.setText("Resultados");
         btnVerSedesCAF.addActionListener(new java.awt.event.ActionListener() {
@@ -1025,109 +1032,21 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnVerSedesCAFActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerSedesCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 60, -1, -1));
+        jPanel1.add(btnVerSedesCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, -1, -1));
 
         txtCAF.setEditable(false);
         txtCAF.setColumns(20);
         txtCAF.setRows(5);
         jScrollPane2.setViewportView(txtCAF);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 100, 390, 420));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 0, 390, 320));
+
+        ltlcaf.setIcon(new javax.swing.ImageIcon("C:\\Users\\50684\\Documents\\Projecto-1\\Projecto1\\Fondos\\CAF.jpg")); // NOI18N
+        jPanel1.add(ltlcaf, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -170, 1390, 820));
 
         jTabbedPane1.addTab("CAF", jPanel1);
 
-        btnSimularUnoCONCACAF.setText("Simular Partido");
-        btnSimularUnoCONCACAF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSimularUnoCONCACAFActionPerformed(evt);
-            }
-        });
-
-        btnSimularTodosCONCACAF.setText("Simular Todos Los Partidos");
-        btnSimularTodosCONCACAF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSimularTodosCONCACAFActionPerformed(evt);
-            }
-        });
-
-        btnVerSedesCONCACAF.setText("Resultados");
-        btnVerSedesCONCACAF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerSedesCONCACAFActionPerformed(evt);
-            }
-        });
-
-        tblCONCACAF.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        tblCONCACAF.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Pos", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblCONCACAF.setGridColor(new java.awt.Color(51, 51, 51));
-        jScrollPane3.setViewportView(tblCONCACAF);
-        if (tblCONCACAF.getColumnModel().getColumnCount() > 0) {
-            tblCONCACAF.getColumnModel().getColumn(0).setPreferredWidth(30);
-            tblCONCACAF.getColumnModel().getColumn(1).setPreferredWidth(200);
-            tblCONCACAF.getColumnModel().getColumn(2).setPreferredWidth(60);
-            tblCONCACAF.getColumnModel().getColumn(3).setPreferredWidth(60);
-            tblCONCACAF.getColumnModel().getColumn(4).setPreferredWidth(60);
-            tblCONCACAF.getColumnModel().getColumn(5).setPreferredWidth(60);
-            tblCONCACAF.getColumnModel().getColumn(6).setPreferredWidth(60);
-            tblCONCACAF.getColumnModel().getColumn(7).setPreferredWidth(60);
-            tblCONCACAF.getColumnModel().getColumn(8).setPreferredWidth(60);
-            tblCONCACAF.getColumnModel().getColumn(9).setPreferredWidth(60);
-        }
-
-        txtCONCACAF.setEditable(false);
-        txtCONCACAF.setColumns(20);
-        txtCONCACAF.setRows(5);
-        jScrollPane8.setViewportView(txtCONCACAF);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSimularTodosCONCACAF)
-                    .addComponent(btnSimularUnoCONCACAF)
-                    .addComponent(btnVerSedesCONCACAF)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnSimularUnoCONCACAF)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSimularTodosCONCACAF)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnVerSedesCONCACAF)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 31, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("CONCACAF", jPanel2);
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblCONMEBOL.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
         tblCONMEBOL.setModel(new javax.swing.table.DefaultTableModel(
@@ -1164,12 +1083,15 @@ public class Eliminatoria extends javax.swing.JFrame {
             tblCONMEBOL.getColumnModel().getColumn(9).setPreferredWidth(60);
         }
 
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 290));
+
         btnSimularUnoCONMEBOL.setText("Simular Partido");
         btnSimularUnoCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularUnoCONMEBOLActionPerformed(evt);
             }
         });
+        jPanel4.add(btnSimularUnoCONMEBOL, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 295, -1, -1));
 
         btnSimularTodosCONMEBOL.setText("Simular Todos Los Partidos");
         btnSimularTodosCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
@@ -1177,6 +1099,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnSimularTodosCONMEBOLActionPerformed(evt);
             }
         });
+        jPanel4.add(btnSimularTodosCONMEBOL, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 295, -1, -1));
 
         btnVerSedesCONMEBOL.setText("Resultados");
         btnVerSedesCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
@@ -1184,43 +1107,21 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnVerSedesCONMEBOLActionPerformed(evt);
             }
         });
+        jPanel4.add(btnVerSedesCONMEBOL, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 295, -1, -1));
 
         txtCONMEBOL.setEditable(false);
         txtCONMEBOL.setColumns(20);
         txtCONMEBOL.setRows(5);
         jScrollPane9.setViewportView(txtCONMEBOL);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSimularUnoCONMEBOL)
-                    .addComponent(btnVerSedesCONMEBOL)
-                    .addComponent(btnSimularTodosCONMEBOL)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(btnSimularUnoCONMEBOL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSimularTodosCONMEBOL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnVerSedesCONMEBOL)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 31, Short.MAX_VALUE))
-        );
+        jPanel4.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 0, 390, 318));
+
+        ltlconmebol.setIcon(new javax.swing.ImageIcon("C:\\Users\\50684\\Documents\\Projecto-1\\Projecto1\\Fondos\\Comebol.jpg")); // NOI18N
+        jPanel4.add(ltlconmebol, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1340, 660));
 
         jTabbedPane1.addTab("CONMEBOL", jPanel4);
+
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblOFC.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
         tblOFC.setModel(new javax.swing.table.DefaultTableModel(
@@ -1259,12 +1160,15 @@ public class Eliminatoria extends javax.swing.JFrame {
             tblOFC.getColumnModel().getColumn(9).setPreferredWidth(60);
         }
 
+        jPanel5.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 290));
+
         btnSimularUnoOFC.setText("Simular Partido");
         btnSimularUnoOFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularUnoOFCActionPerformed(evt);
             }
         });
+        jPanel5.add(btnSimularUnoOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, -1, -1));
 
         btnSimularTodosOFC.setText("Simular Todos Los Partidos");
         btnSimularTodosOFC.addActionListener(new java.awt.event.ActionListener() {
@@ -1272,6 +1176,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnSimularTodosOFCActionPerformed(evt);
             }
         });
+        jPanel5.add(btnSimularTodosOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
         btnVerSedesOFC.setText("Resultados");
         btnVerSedesOFC.addActionListener(new java.awt.event.ActionListener() {
@@ -1279,136 +1184,21 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnVerSedesOFCActionPerformed(evt);
             }
         });
+        jPanel5.add(btnVerSedesOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, -1));
 
         txtOFC.setEditable(false);
         txtOFC.setColumns(20);
         txtOFC.setRows(5);
         jScrollPane10.setViewportView(txtOFC);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSimularTodosOFC)
-                    .addComponent(btnSimularUnoOFC)
-                    .addComponent(btnVerSedesOFC)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btnSimularUnoOFC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSimularTodosOFC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnVerSedesOFC)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 31, Short.MAX_VALUE))
-        );
+        jPanel5.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, 390, 330));
+
+        ltlOFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\50684\\Documents\\Projecto-1\\Projecto1\\Fondos\\OFC.jpg")); // NOI18N
+        jPanel5.add(ltlOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -70, 1350, 710));
 
         jTabbedPane1.addTab("OFC", jPanel5);
 
-        tblUEFA.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
-        tblUEFA.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Pos", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblUEFA.setGridColor(new java.awt.Color(51, 51, 51));
-        jScrollPane6.setViewportView(tblUEFA);
-        if (tblUEFA.getColumnModel().getColumnCount() > 0) {
-            tblUEFA.getColumnModel().getColumn(0).setPreferredWidth(30);
-            tblUEFA.getColumnModel().getColumn(1).setPreferredWidth(200);
-            tblUEFA.getColumnModel().getColumn(2).setPreferredWidth(60);
-            tblUEFA.getColumnModel().getColumn(3).setPreferredWidth(60);
-            tblUEFA.getColumnModel().getColumn(4).setPreferredWidth(60);
-            tblUEFA.getColumnModel().getColumn(5).setPreferredWidth(60);
-            tblUEFA.getColumnModel().getColumn(6).setPreferredWidth(60);
-            tblUEFA.getColumnModel().getColumn(7).setPreferredWidth(60);
-            tblUEFA.getColumnModel().getColumn(8).setPreferredWidth(60);
-            tblUEFA.getColumnModel().getColumn(9).setPreferredWidth(60);
-        }
-
-        btnSimularUnoUEFA.setText("Simular Partido");
-        btnSimularUnoUEFA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSimularUnoUEFAActionPerformed(evt);
-            }
-        });
-
-        btnSimularTodosUEFA.setText("Simular Todos Los Partidos");
-        btnSimularTodosUEFA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSimularTodosUEFAActionPerformed(evt);
-            }
-        });
-
-        btnVerSedesUEFA.setText("Resultados");
-        btnVerSedesUEFA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerSedesUEFAActionPerformed(evt);
-            }
-        });
-
-        txtUEFA.setEditable(false);
-        txtUEFA.setColumns(20);
-        txtUEFA.setRows(5);
-        jScrollPane11.setViewportView(txtUEFA);
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSimularTodosUEFA)
-                    .addComponent(btnSimularUnoUEFA)
-                    .addComponent(btnVerSedesUEFA)
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(btnSimularUnoUEFA)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSimularTodosUEFA)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnVerSedesUEFA)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 31, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("UEFA", jPanel6);
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblAFC.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
         tblAFC.setModel(new javax.swing.table.DefaultTableModel(
@@ -1445,12 +1235,15 @@ public class Eliminatoria extends javax.swing.JFrame {
             tblAFC.getColumnModel().getColumn(9).setPreferredWidth(60);
         }
 
+        jPanel7.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 320));
+
         btnSimularUnoAFC.setText("Simular Partido");
         btnSimularUnoAFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularUnoAFCActionPerformed(evt);
             }
         });
+        jPanel7.add(btnSimularUnoAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
 
         btnSimularTodosAFC.setText("Simular Todos Los Partidos");
         btnSimularTodosAFC.addActionListener(new java.awt.event.ActionListener() {
@@ -1458,6 +1251,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnSimularTodosAFCActionPerformed(evt);
             }
         });
+        jPanel7.add(btnSimularTodosAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
         btnVerSedesAFC.setText("Ver Sedes y Paises");
         btnVerSedesAFC.addActionListener(new java.awt.event.ActionListener() {
@@ -1465,65 +1259,175 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnVerSedesAFCActionPerformed(evt);
             }
         });
+        jPanel7.add(btnVerSedesAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, -1));
 
         txtAFC.setEditable(false);
         txtAFC.setColumns(20);
         txtAFC.setRows(5);
         jScrollPane13.setViewportView(txtAFC);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSimularTodosAFC)
-                    .addComponent(btnSimularUnoAFC)
-                    .addComponent(btnVerSedesAFC)
-                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(btnSimularUnoAFC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSimularTodosAFC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnVerSedesAFC)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 31, Short.MAX_VALUE))
-        );
+        jPanel7.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, 390, 370));
+
+        ltlAFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\50684\\Documents\\Projecto-1\\Projecto1\\Fondos\\AFC.jpg")); // NOI18N
+        jPanel7.add(ltlAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -114, 1320, 760));
 
         jTabbedPane1.addTab("AFC", jPanel7);
 
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnSimularUnoCONCACAF.setText("Simular Partido");
+        btnSimularUnoCONCACAF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimularUnoCONCACAFActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSimularUnoCONCACAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
+
+        btnSimularTodosCONCACAF.setText("Simular Todos Los Partidos");
+        btnSimularTodosCONCACAF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimularTodosCONCACAFActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSimularTodosCONCACAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
+
+        btnVerSedesCONCACAF.setText("Resultados");
+        btnVerSedesCONCACAF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerSedesCONCACAFActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnVerSedesCONCACAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
+
+        tblCONCACAF.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        tblCONCACAF.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Pos", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblCONCACAF.setGridColor(new java.awt.Color(51, 51, 51));
+        jScrollPane3.setViewportView(tblCONCACAF);
+        if (tblCONCACAF.getColumnModel().getColumnCount() > 0) {
+            tblCONCACAF.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblCONCACAF.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblCONCACAF.getColumnModel().getColumn(2).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(3).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(4).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(5).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(6).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(7).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(8).setPreferredWidth(60);
+            tblCONCACAF.getColumnModel().getColumn(9).setPreferredWidth(60);
+        }
+
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 280));
+
+        txtCONCACAF.setEditable(false);
+        txtCONCACAF.setColumns(20);
+        txtCONCACAF.setRows(5);
+        jScrollPane8.setViewportView(txtCONCACAF);
+
+        jPanel2.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 0, 380, 340));
+
+        ltlCONCACAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\50684\\Documents\\Projecto-1\\Projecto1\\Fondos\\Concacaf.jpg")); // NOI18N
+        jPanel2.add(ltlCONCACAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -80, 1310, 730));
+
+        jTabbedPane1.addTab("CONCACAF", jPanel2);
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblUEFA.setFont(new java.awt.Font("Nirmala UI", 1, 12)); // NOI18N
+        tblUEFA.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Pos", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblUEFA.setGridColor(new java.awt.Color(51, 51, 51));
+        jScrollPane6.setViewportView(tblUEFA);
+        if (tblUEFA.getColumnModel().getColumnCount() > 0) {
+            tblUEFA.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblUEFA.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblUEFA.getColumnModel().getColumn(2).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(3).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(4).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(5).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(6).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(7).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(8).setPreferredWidth(60);
+            tblUEFA.getColumnModel().getColumn(9).setPreferredWidth(60);
+        }
+
+        jPanel6.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 270));
+
+        btnSimularUnoUEFA.setText("Simular Partido");
+        btnSimularUnoUEFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimularUnoUEFAActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnSimularUnoUEFA, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
+
+        btnSimularTodosUEFA.setText("Simular Todos Los Partidos");
+        btnSimularTodosUEFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimularTodosUEFAActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnSimularTodosUEFA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
+
+        btnVerSedesUEFA.setText("Resultados");
+        btnVerSedesUEFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerSedesUEFAActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnVerSedesUEFA, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, -1, -1));
+
+        txtUEFA.setEditable(false);
+        txtUEFA.setColumns(20);
+        txtUEFA.setRows(5);
+        jScrollPane11.setViewportView(txtUEFA);
+
+        jPanel6.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 0, 390, 330));
+
+        ltlUEFA.setIcon(new javax.swing.ImageIcon("C:\\Users\\50684\\Documents\\Projecto-1\\Projecto1\\Fondos\\UEFA.jpg")); // NOI18N
+        jPanel6.add(ltlUEFA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1400, 670));
+
+        jTabbedPane1.addTab("UEFA", jPanel6);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1400, -1));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Clasificación al Mundial 2026");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(177, 177, 177)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
-        );
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1985,6 +1889,12 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel ltlAFC;
+    private javax.swing.JLabel ltlCONCACAF;
+    private javax.swing.JLabel ltlOFC;
+    private javax.swing.JLabel ltlUEFA;
+    private javax.swing.JLabel ltlcaf;
+    private javax.swing.JLabel ltlconmebol;
     private javax.swing.JTable tblAFC;
     private javax.swing.JTable tblCAF;
     private javax.swing.JTable tblCONCACAF;
@@ -1999,4 +1909,4 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JTextArea txtUEFA;
     // End of variables declaration//GEN-END:variables
 
-}
+ }
