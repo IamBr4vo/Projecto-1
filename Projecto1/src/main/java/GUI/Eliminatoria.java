@@ -73,7 +73,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         listaSedes = new ArrayList<>();
 
-        // Crear sedes para Estados Unidos
+        // Create locations for the United States
         Sede USA1 = new Sede("Atlanta", "Estados Unidos");
         Sede USA2 = new Sede("Boston", "Estados Unidos");
         Sede USA3 = new Sede("Dallas", "Estados Unidos");
@@ -86,7 +86,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         Sede USA10 = new Sede("San Francisco", "Estados Unidos");
         Sede USA11 = new Sede("Seattle", "Estados Unidos");
 
-        // Agregar sedes de Estados Unidos a la lista
+        // Add US locations to the list
         listaSedes.add(USA1);
         listaSedes.add(USA2);
         listaSedes.add(USA3);
@@ -99,21 +99,21 @@ public class Eliminatoria extends javax.swing.JFrame {
         listaSedes.add(USA10);
         listaSedes.add(USA11);
 
-        // Crear sedes para México
+        // Create locations for Mexico
         Sede MEX1 = new Sede("Guadalajara", "México");
         Sede MEX2 = new Sede("Ciudad de México", "México");
         Sede MEX3 = new Sede("Monterrey", "México");
 
-        // Agregar sedes de México a la lista
+        // Add offices in Mexico to the list
         listaSedes.add(MEX1);
         listaSedes.add(MEX2);
         listaSedes.add(MEX3);
 
-        // Crear sedes para Canadá
+        // Create sites for Canada
         Sede CAN1 = new Sede("Vancouver", "Canadá");
         Sede CAN2 = new Sede("Toronto", "Canadá");
 
-        // Agregar sedes de Canadá a la lista
+        // Add Canadian locations to the list
         listaSedes.add(CAN1);
         listaSedes.add(CAN2);
 
@@ -1909,4 +1909,4 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JTextArea txtUEFA;
     // End of variables declaration//GEN-END:variables
 
- }
+}
